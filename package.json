@@ -20,7 +20,8 @@
     "eslint-config-next": "13.4.2",
     "next": "13.4.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.7",
