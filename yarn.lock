@@ -1440,6 +1440,14 @@
     "@prismicio/richtext" "^2.1.4"
     imgix-url-builder "^0.0.3"
 
+"@prismicio/client@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-7.0.1.tgz#5cc9693a81c52c3e71721271ca2583cbb7004445"
+  integrity sha512-f4SDcDwVB2T73QKJJtzXd8LsfvDgIqOQNhC78bwsKLb1BjfPZNucsyIcRI9jGZdGxcU7lA+HStkYHw6z98ofKQ==
+  dependencies:
+    "@prismicio/richtext" "^2.1.5"
+    imgix-url-builder "^0.0.3"
+
 "@prismicio/custom-types-client@1.2.0-alpha.0":
   version "1.2.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@prismicio/custom-types-client/-/custom-types-client-1.2.0-alpha.0.tgz#fccea6676baa585d0d123fda421a28237ea25ad0"
@@ -1553,19 +1561,20 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/next@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.1.0.tgz#7430494d698a50dfaaa85f9ae500bd72ab90fcfa"
-  integrity sha512-eU2FK13MmiqhBIs0BgLBaGQi4NLnBOUqS3Ll5OjLV2xDG8PICKZV5mCExrxF4lEH2HmT+l44hHNqfBHdQgpHVA==
+"@prismicio/next@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.2.1.tgz#e998ec8dec980b0f4171b79de4c654899a3b8b6f"
+  integrity sha512-GXTB//RG3BfFw3syZioN0FVhs6EEiPyuPwpze5AqTJktietP08D4pXjPntcN2bAluHjE5nxuqkUWEl9DubpJWg==
   dependencies:
     imgix-url-builder "^0.0.3"
+    mri "^1.2.0"
 
-"@prismicio/react@^2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.6.1.tgz#8efc80b0016b2e68ab05cd399c05a2ceb5e2065a"
-  integrity sha512-A2mutbOixkvDjO6VNixONplqYhCiGGLuIj9l+x0Qw9fwU4Tio+azlTXGyceL2S1kgoTB50rJVIFkmGJFiToTqw==
+"@prismicio/react@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.6.2.tgz#48c45735f61cc3f0d8f39b4d94905a0afcfaed2a"
+  integrity sha512-mdkogLMtK25Q9+95ym+58WycURXmGb8cRjPiZ3NRu2NxRKAwnieUwrEcczrCUN7+laQxSz71sEZIvDZDXZtzaw==
   dependencies:
-    "@prismicio/richtext" "^2.1.4"
+    "@prismicio/richtext" "^2.1.5"
 
 "@prismicio/richtext@2.1.1":
   version "2.1.1"
@@ -1578,6 +1587,13 @@
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@prismicio/richtext/-/richtext-2.1.4.tgz#c79070542f395ce4bfb44e32dc82dfb5ef828c91"
   integrity sha512-hyC8XItj+2yMmLGNjg9xGA/lRMO5UgbPF132VFrpZHzHhtIKvHN3iYxCZxnrEoPaTcT6JjA8vWyYLjmmB49bvw==
+  dependencies:
+    "@prismicio/types" "^0.2.7"
+
+"@prismicio/richtext@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@prismicio/richtext/-/richtext-2.1.5.tgz#8a433939765bead2a521150fb15af0b49c6af421"
+  integrity sha512-Sf6iCsciPmfK3uQeFmeY9RTRSuhrCVzyU39OkiJ1VJn8O0531pKapGoWS+5WGxouJtE5+jGqV8L+L2mKP7NkXQ==
   dependencies:
     "@prismicio/types" "^0.2.7"
 
@@ -1598,6 +1614,13 @@
     "@prismicio/types" "^0.2.7"
     fp-ts "^2.13.1"
     io-ts "^2.2.19"
+
+"@prismicio/slice-simulator-react@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@prismicio/slice-simulator-react/-/slice-simulator-react-0.2.3.tgz#01d7bfb598d0cbe950356ec2c9c8b88201ee020b"
+  integrity sha512-v9fBg/QZnlByBV0SyH5UVHay30TgX3y1JYZUkVIq4mNxQMqzetd+W/If/mh2qZeVF5NyQiNbENvqJkeNkY3fMw==
+  dependencies:
+    "@prismicio/slice-simulator-core" "^0.2.7"
 
 "@prismicio/types-internal@2.0.0-alpha.7":
   version "2.0.0-alpha.7"
@@ -3307,7 +3330,7 @@ cliui@^8.0.1:
     strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
 
-clsx@1.2.1, clsx@^1.1.1:
+clsx@1.2.1, clsx@^1.1.1, clsx@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
