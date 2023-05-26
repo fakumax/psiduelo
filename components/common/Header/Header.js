@@ -5,7 +5,11 @@ import { PrismicNextImage } from '@prismicio/next';
 // import { Bounded } from './Bounded';
 
 export const Header = ({ navigation }) => {
-  //   console.log(navigation);
+  console.log(navigation);
+  console.log(navigation.data.slices);
+  console.log(navigation.data.icons.iconimage);
+  const { icons } = navigation.data;
+  console.log(icons);
   return (
     <div>
       <div>
@@ -14,8 +18,15 @@ export const Header = ({ navigation }) => {
           <PrismicText field={settings.data.siteTitle} />
         </PrismicLink> */}
         <nav>
-          <PrismicNextImage field={navigation.data.imagelogo} />
-          <PrismicLink field={navigation.data.linklogo}>Link</PrismicLink>
+          <PrismicNextImage field={navigation.data.logoimage} />
+          <PrismicLink field={navigation.data.logolink}>Link</PrismicLink>
+          {icons.map((item) => {
+            return (
+              <>
+                <PrismicNextImage field={item.iconimage} />
+              </>
+            );
+          })}
 
           {/* <ul>
             {navigation.data?.links.map((item) => (

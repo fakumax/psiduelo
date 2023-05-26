@@ -9,16 +9,38 @@ type Simplify<T> = {
 /** Content for Navigation documents */
 interface NavigationDocumentData {
   /**
-   * Name field in *Navigation*
+   * LogoImage field in *Navigation*
    *
-   * - **Field Type**: Title
-   * - **Placeholder**: Name of the navigation list
-   * - **API ID Path**: navigation.name
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.logoimage
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
    *
    */
-  name: prismic.TitleField;
+  logoimage: prismic.ImageField<never>;
+  /**
+   * LogoLink field in *Navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.logolink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  logolink: prismic.LinkField;
+  /**
+   * Icons field in *Navigation*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.icons[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  icons: prismic.GroupField<Simplify<NavigationDocumentDataIconsItem>>;
   /**
    * Slice Zone field in *Navigation*
    *
@@ -32,6 +54,42 @@ interface NavigationDocumentData {
   slices: prismic.SliceZone<NavigationDocumentDataSlicesSlice>;
 }
 /**
+ * Item in Navigation → Icons
+ *
+ */
+export interface NavigationDocumentDataIconsItem {
+  /**
+   * IconImage field in *Navigation → Icons*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.icons[].iconimage
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  iconimage: prismic.ImageField<never>;
+  /**
+   * IconDescription field in *Navigation → Icons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.icons[].icondescription
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  icondescription: prismic.KeyTextField;
+  /**
+   * IconLink field in *Navigation → Icons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.icons[].iconlink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  iconlink: prismic.LinkField;
+}
+/**
  * Slice for *Navigation → Slice Zone*
  *
  */
@@ -40,13 +98,13 @@ type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
  * Navigation document from Prismic
  *
  * - **API ID**: `navigation`
- * - **Repeatable**: `true`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavigationDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
+  prismic.PrismicDocumentWithoutUID<
     Simplify<NavigationDocumentData>,
     "navigation",
     Lang
@@ -239,6 +297,7 @@ declare module "@prismicio/client" {
   namespace Content {
     export type {
       NavigationDocumentData,
+      NavigationDocumentDataIconsItem,
       NavigationDocumentDataSlicesSlice,
       NavigationDocument,
       PageDocumentData,

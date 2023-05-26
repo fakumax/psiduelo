@@ -1,24 +1,44 @@
 {
   "id": "navigation",
   "label": "Navigation",
-  "repeatable": true,
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "name": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Name",
-          "placeholder": "Name of the navigation list",
-          "allowTargetBlank": false,
-          "single": "heading1"
-        }
+      "logoimage": {
+        "type": "Image",
+        "config": { "label": "LogoImage", "constraint": {}, "thumbnails": [] }
       },
-      "uid": {
-        "type": "UID",
+      "logolink": {
+        "type": "Link",
+        "config": { "label": "LogoLink", "placeholder": "", "select": null }
+      },
+      "icons": {
+        "type": "Group",
         "config": {
-          "label": "UID",
-          "placeholder": "Unique ID for the navigation list"
+          "label": "Icons",
+          "fields": {
+            "iconimage": {
+              "type": "Image",
+              "config": {
+                "label": "IconImage",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "icondescription": {
+              "type": "Text",
+              "config": { "label": "IconDescription", "placeholder": "" }
+            },
+            "iconlink": {
+              "type": "Link",
+              "config": {
+                "label": "IconLink",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
         }
       },
       "slices": {
