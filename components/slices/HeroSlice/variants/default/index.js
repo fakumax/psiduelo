@@ -1,13 +1,16 @@
-import { PrismicNextImage } from '@prismicio/next';
-import { SliceFactory } from '../../../../common/Containers/SliceFactory';
+import { Button } from '../default/defaultStyles';
+import { PrismicRichText } from '@prismicio/react';
 
 const Default = (slice) => {
+  console.log('--slice--', slice);
+  const { image } = slice.primary;
   return (
-    <div className='container'>
-      <PrismicNextImage field={slice.primary.image} />
+    <div>
+      <div>
+        <img src={image.url} alt='HeroImg' />
+      </div>
     </div>
   );
 };
 
-// export const Default = SliceFactory(Base);
-export default Default;
+export { Default };

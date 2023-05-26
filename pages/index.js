@@ -6,9 +6,9 @@ import { createClient } from '../prismicio';
 import { components } from '../slices/';
 import { Layout } from '../components/Layout';
 
-const Index = ({ page, navigation, settings }) => {
+const Index = ({ page, navigation }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout navigation={navigation}>
       {/* <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head> */}
@@ -19,18 +19,16 @@ const Index = ({ page, navigation, settings }) => {
 
 export default Index;
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID('page', 'home', { lang: locale });
-  const navigation = await client.getSingle('navigation', { lang: locale });
-  // const settings = await client.getSingle('settings', { lang: locale });
+  const page = await client.getByUID('page', 'home');
+  const navigation = await client.getSingle('navigation');
 
   return {
     props: {
       page,
       navigation,
-      // settings,
     },
   };
 }
