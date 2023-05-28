@@ -1,4 +1,4 @@
-const theme = {
+const Theme = {
   colors: {
     primary: '#0070f3',
     background: '#ffffff',
@@ -15,4 +15,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default Theme;

@@ -42,6 +42,17 @@ interface NavigationDocumentData {
    */
   icons: prismic.GroupField<Simplify<NavigationDocumentDataIconsItem>>;
   /**
+   * BackgroundImage field in *Navigation*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.backgroundimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  backgroundimage: prismic.ImageField<never>;
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone

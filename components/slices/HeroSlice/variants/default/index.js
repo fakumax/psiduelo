@@ -7,7 +7,8 @@ const Default = (slice) => {
   return (
     <div>
       <div>
-        <img src={image.url} alt='HeroImg' />
+        {/* <img src={image.url} alt='HeroImg' /> */}
+        <p>wara</p>
       </div>
     </div>
   );

@@ -41,6 +41,14 @@
           }
         }
       },
+      "backgroundimage": {
+        "type": "Image",
+        "config": {
+          "label": "BackgroundImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

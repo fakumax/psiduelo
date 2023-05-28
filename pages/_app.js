@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
+import { PrismicProvider } from '@prismicio/react';
+import Link from 'next/link';
 import { ThemeProvider } from 'styled-components';
-import { repositoryName, linkResolver } from '../prismicio';
 import { GlobalStyle, Theme } from '../components/styles';
+import { repositoryName } from '../prismicio';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -15,8 +15,8 @@ export default function App({ Component, pageProps }) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
+        <GlobalStyle theme={Theme} />
         <ThemeProvider theme={Theme}>
-          <GlobalStyle theme={Theme} />
           <Component {...pageProps} />
         </ThemeProvider>
       </PrismicPreview>
