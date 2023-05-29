@@ -4,7 +4,7 @@ export const NavBar = styled.nav`
   display: flex;
   background-color: blue;
   height: 100px;
-  justify-content: space-between;
+  justify-content: center;
   ul {
     display: flex;
     list-style: none;
@@ -12,6 +12,7 @@ export const NavBar = styled.nav`
     background-color: yellow;
     height: 100%;
     margin: 0;
+    gap: 1em;
   }
 `;
 
@@ -29,5 +30,27 @@ export const LogoStyle = styled.div`
     width: 100%;
     object-fit: contain;
     background-color: green;
+  }
+`;
+
+export const RightContainer = styled.div`
+  display: flex;
+`;
+
+export const LeftContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  ul {
+    padding: 0 40px;
+    margin: 0 40px;
+  }
+  img {
+    max-height: 20px;
+    width: auto;
   }
 `;

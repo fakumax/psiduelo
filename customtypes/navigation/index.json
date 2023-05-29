@@ -53,7 +53,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": { "navigation_item": { "type": "SharedSlice" } }
+          "choices": {
+            "navigation_item": { "type": "SharedSlice" },
+            "nav_left": { "type": "SharedSlice" },
+            "nav_right": { "type": "SharedSlice" }
+          }
         }
       }
     }

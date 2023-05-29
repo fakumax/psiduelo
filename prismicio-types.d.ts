@@ -104,7 +104,10 @@ export interface NavigationDocumentDataIconsItem {
  * Slice for *Navigation → Slice Zone*
  *
  */
-type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
+type NavigationDocumentDataSlicesSlice =
+  | NavigationItemSlice
+  | NavLeftSlice
+  | NavRightSlice;
 /**
  * Navigation document from Prismic
  *
@@ -217,6 +220,170 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 /**
+ * Primary content in NavLeft → Primary
+ *
+ */
+interface NavLeftSliceDefaultPrimary {
+  /**
+   * Name field in *NavLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_left.primary.name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  name: prismic.RichTextField;
+  /**
+   * Link field in *NavLeft → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_left.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Item in NavLeft → Items
+ *
+ */
+export interface NavLeftSliceDefaultItem {
+  /**
+   * Name field in *NavLeft → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_left.items[].name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  name: prismic.RichTextField;
+  /**
+   * Link field in *NavLeft → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_left.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for NavLeft Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavLeftSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavLeftSliceDefaultPrimary>,
+  Simplify<NavLeftSliceDefaultItem>
+>;
+/**
+ * Slice variation for *NavLeft*
+ *
+ */
+type NavLeftSliceVariation = NavLeftSliceDefault;
+/**
+ * NavLeft Shared Slice
+ *
+ * - **API ID**: `nav_left`
+ * - **Description**: `NavLeft`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavLeftSlice = prismic.SharedSlice<
+  "nav_left",
+  NavLeftSliceVariation
+>;
+/**
+ * Primary content in NavRight → Primary
+ *
+ */
+interface NavRightSliceDefaultPrimary {
+  /**
+   * Name field in *NavRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_right.primary.name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  name: prismic.RichTextField;
+  /**
+   * Link field in *NavRight → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_right.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Item in NavRight → Items
+ *
+ */
+export interface NavRightSliceDefaultItem {
+  /**
+   * Name field in *NavRight → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_right.items[].name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  name: prismic.RichTextField;
+  /**
+   * Link field in *NavRight → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_right.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for NavRight Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavRightSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavRightSliceDefaultPrimary>,
+  Simplify<NavRightSliceDefaultItem>
+>;
+/**
+ * Slice variation for *NavRight*
+ *
+ */
+type NavRightSliceVariation = NavRightSliceDefault;
+/**
+ * NavRight Shared Slice
+ *
+ * - **API ID**: `nav_right`
+ * - **Description**: `NavRight`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavRightSlice = prismic.SharedSlice<
+  "nav_right",
+  NavRightSliceVariation
+>;
+/**
  * Primary content in NavigationItem → Primary
  *
  */
@@ -319,6 +486,16 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
+      NavLeftSliceDefaultPrimary,
+      NavLeftSliceDefaultItem,
+      NavLeftSliceDefault,
+      NavLeftSliceVariation,
+      NavLeftSlice,
+      NavRightSliceDefaultPrimary,
+      NavRightSliceDefaultItem,
+      NavRightSliceDefault,
+      NavRightSliceVariation,
+      NavRightSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,
       NavigationItemSliceDefault,
