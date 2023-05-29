@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 export const NavBar = styled.nav`
   display: flex;
-  background-color: blue;
+  /* background-color: blue; */
   height: 100px;
-  justify-content: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 6px rgba(44, 62, 80, 0.15);
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); */
+
   ul {
     display: flex;
     list-style: none;
     align-items: center;
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 100%;
     margin: 0;
     gap: 1em;
@@ -29,24 +32,26 @@ export const LogoStyle = styled.div`
     height: 100%;
     width: 100%;
     object-fit: contain;
-    background-color: green;
+    /* background-color: green; */
   }
 `;
 
 export const RightContainer = styled.div`
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-around;
   ul {
     margin: 0;
     padding: 0 20px;
-    gap: 2rem;
+    gap: 4rem;
   }
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: 100px;

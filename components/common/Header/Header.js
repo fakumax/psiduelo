@@ -61,7 +61,7 @@ export const Header = ({ navigation }) => {
             <PrismicNextImage field={navigation.data.logoimage} priority={true} />
           </LogoStyle>
           {/* NAVIGATION RIGHT*/}
-          <div>
+          <div style={{ width: 'min-content' }}>
             <ul>
               {navRight.map((item, index) => (
                 <li key={index}>
