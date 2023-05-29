@@ -35,19 +35,24 @@ export const LogoStyle = styled.div`
 
 export const RightContainer = styled.div`
   display: flex;
+  gap: 4rem;
+  ul {
+    margin: 0;
+    padding: 0 20px;
+    gap: 2rem;
+  }
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 10%;
   position: absolute;
   top: 0;
   left: 0;
   height: 100px;
   ul {
     padding: 0 40px;
-    margin: 0 40px;
+    margin: 0 0;
   }
   img {
     max-height: 20px;
