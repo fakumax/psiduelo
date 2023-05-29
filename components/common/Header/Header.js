@@ -28,7 +28,7 @@ export const Header = ({ navigation }) => {
           <PrismicText field={settings.data.siteTitle} />
         </PrismicLink> */}
 
-      <NavBar>
+      <NavBar style={{ backgroundImage: `url(${navigation.data.backgroundimage.url})` }}>
         {/* ICONS */}
         <LeftContainer>
           <ul>

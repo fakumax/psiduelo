@@ -17,6 +17,17 @@ export const NavBar = styled.nav`
     margin: 0;
     gap: 1em;
   }
+  li {
+    font-family: 'Old Standard TT', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  a {
+    color: black;
+  }
 `;
 
 export const IconStyle = styled.div`
