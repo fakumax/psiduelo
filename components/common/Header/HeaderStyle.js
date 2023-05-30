@@ -18,14 +18,14 @@ export const NavBar = styled.nav`
     gap: 1em;
   }
   li {
-    font-family: 'Old Standard TT', serif;
-    font-weight: 700;
-    font-style: italic;
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
   }
   a {
+    font-family: ${(props) => props.theme.typography.fontFamily_old};
+    font-weight: 500;
+    font-style: italic;
     color: black;
   }
 `;

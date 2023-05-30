@@ -7,7 +7,7 @@ const Default = (slice) => {
   const { image } = slice.primary;
   return (
     <div>
-      <BackgroundImage style={{ backgroundImage: `url(${image.url})` }} />
+      <p>wara</p>
     </div>
   );
 };

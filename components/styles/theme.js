@@ -1,5 +1,5 @@
 export const Theme = {
-  name: 'Platform Projects',
+  name: 'Psicoduelo',
   optOutHeight: '64px',
   sectionContainer: {
     padding: {
@@ -17,6 +17,7 @@ export const Theme = {
   typography: {
     fontFamily: "'Inter', sans-serif",
     fontFamily_V2: "'Poppins', sans-serif",
+    fontFamily_old: "'Old Standard TT', sans-serif",
     letterSpacing: '0px',
     h1: {
       desktop: {

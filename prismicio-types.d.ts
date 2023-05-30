@@ -163,7 +163,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | SectionTextSlice;
 /**
  * Page document from Prismic
  *
@@ -465,6 +465,72 @@ export type NavigationItemSlice = prismic.SharedSlice<
   "navigation_item",
   NavigationItemSliceVariation
 >;
+/**
+ * Primary content in SectionText → Primary
+ *
+ */
+interface SectionTextSliceDefaultPrimary {
+  /**
+   * ImageLeft field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageleft: prismic.ImageField<never>;
+  /**
+   * ImageRight field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageright: prismic.ImageField<never>;
+  /**
+   * Text field in *SectionText → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismic.TitleField;
+}
+/**
+ * Default variation for SectionText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionTextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SectionTextSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *SectionText*
+ *
+ */
+type SectionTextSliceVariation = SectionTextSliceDefault;
+/**
+ * SectionText Shared Slice
+ *
+ * - **API ID**: `section_text`
+ * - **Description**: `SectionText`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionTextSlice = prismic.SharedSlice<
+  "section_text",
+  SectionTextSliceVariation
+>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -501,6 +567,10 @@ declare module "@prismicio/client" {
       NavigationItemSliceDefault,
       NavigationItemSliceVariation,
       NavigationItemSlice,
+      SectionTextSliceDefaultPrimary,
+      SectionTextSliceDefault,
+      SectionTextSliceVariation,
+      SectionTextSlice,
     };
   }
 }

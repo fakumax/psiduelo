@@ -1,0 +1,40 @@
+{
+  "id": "section_text",
+  "type": "SharedSlice",
+  "name": "SectionText",
+  "description": "SectionText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageleft": {
+          "type": "Image",
+          "config": { "label": "ImageLeft", "constraint": {}, "thumbnails": [] }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

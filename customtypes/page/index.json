@@ -22,7 +22,12 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": { "hero": { "type": "SharedSlice" } } }
+        "config": {
+          "choices": {
+            "hero": { "type": "SharedSlice" },
+            "section_text": { "type": "SharedSlice" }
+          }
+        }
       }
     }
   }
