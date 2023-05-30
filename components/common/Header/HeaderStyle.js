@@ -56,6 +56,9 @@ export const RightContainer = styled.div`
     margin: 0;
     padding: 0 20px;
     gap: 4rem;
+    @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
+      display: none;
+    }
   }
 `;
 
@@ -66,6 +69,9 @@ export const LeftContainer = styled.div`
   top: 0;
   left: 0;
   height: 100px;
+  @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
+    display: none;
+  }
   ul {
     padding: 0 40px;
     margin: 0 0;

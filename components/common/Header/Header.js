@@ -2,7 +2,8 @@ import { PrismicLink, PrismicText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import { PrismicNextImage } from '@prismicio/next';
 import { LeftContainer, LogoStyle, NavBar, RightContainer } from './HeaderStyle';
-
+import { AiOutlineMenu } from 'react-icons/ai';
+import { Theme } from '@/components/styles';
 // import { Bounded } from './Bounded';
 
 export const Header = ({ navigation }) => {
@@ -21,7 +22,6 @@ export const Header = ({ navigation }) => {
 
   console.log(navLeft);
   console.log(navRight);
-
   return (
     <div>
       {/* <PrismicLink href='/' className='text-xl font-semibold tracking-tight'>
@@ -72,6 +72,7 @@ export const Header = ({ navigation }) => {
               ))}
             </ul>
           </div>
+          <AiOutlineMenu size={25} style={{ alignSelf: 'center' }} />
         </RightContainer>
       </NavBar>
     </div>
