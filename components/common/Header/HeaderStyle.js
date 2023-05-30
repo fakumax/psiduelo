@@ -81,3 +81,10 @@ export const LeftContainer = styled.div`
     width: auto;
   }
 `;
+
+export const IconBurger = styled.div`
+  align-self: center;
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    display: none;
+  }
+`;
