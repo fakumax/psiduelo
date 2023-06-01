@@ -18,8 +18,8 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const FirstContainer = styled(motion.div)`
-  opacity: 1;
+export const Transition = styled(motion.div)`
+  opacity: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,24 +30,13 @@ export const FirstContainer = styled(motion.div)`
   /* animation: ${(props) => (props.isVisible ? 'block' : 'none')} 0.3s ease-in-out; */
 `;
 
-export const SecondContainer = styled(motion.div)`
-  opacity: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
-  flex-direction: row-reverse;
-  gap: 1rem;
-  /* display: ${(props) => (props.isVisible ? 'block' : 'none')}; */
-  /* opacity: ${(props) => (props.isVisible ? 1 : 0)}; */
-  /* animation: ${(props) => (props.isVisible ? 'block' : 'none')} 0.3s ease-in-out; */
-`;
-export const Container = styled(motion.div)`
+export const Container = styled.div`
   h3 {
     font-size: 30px;
     font-weight: 500;
     max-width: 70%;
     line-height: 1.5;
     text-align: center;
+    display: flex;
   }
 `;

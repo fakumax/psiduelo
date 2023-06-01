@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { PrismicNextImage } from '@prismicio/next';
-import {
-  BackgroundImage,
-  Button,
-  Container,
-  FirstContainer,
-  SecondContainer,
-  Wrapper,
-} from './defaultStyles';
 import { PrismicRichText } from '@prismicio/react';
+import { useEffect, useState } from 'react';
+import { Container, Transition, Wrapper } from './defaultStyles';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
   console.log('--slice--', slice);
@@ -19,7 +12,7 @@ const Default = (slice) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(!isVisible);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [isVisible]);
@@ -27,32 +20,30 @@ const Default = (slice) => {
   return (
     <Wrapper>
       <Container>
-        <FirstContainer
-          initial={{ opacity: 1 }}
-          animate={{
-            opacity: isVisible ? 0 : 1,
-            transitionEnd: {
-              display: isVisible ? 'none' : 'flex',
-            },
-          }}
-          transition={{ duration: 2, ease: 'easeInOut' }}
-        >
-          <PrismicNextImage field={imageleft} alt='' />
-          <PrismicRichText field={textfirst} />
-        </FirstContainer>
-        <SecondContainer
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: !isVisible ? 0 : 1,
-            transitionEnd: {
-              display: !isVisible ? 'none' : 'flex',
-            },
-          }}
-          transition={{ duration: 2, ease: 'easeInOut' }}
-        >
-          <PrismicNextImage field={imageright} alt='' />
-          <PrismicRichText field={textsecond} />
-        </SecondContainer>
+        <AnimatePresence>
+          {isVisible && (
+            <Transition
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2 }}
+              exit={{ opacity: 0, display: 'flex' }}
+            >
+              <PrismicNextImage field={imageleft} alt='' />
+              <PrismicRichText field={textfirst} />
+            </Transition>
+          )}
+          {!isVisible && (
+            <Transition
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2 }}
+              exit={{ opacity: 1, display: 'flex' }}
+            >
+              <PrismicNextImage field={imageleft} alt='' />
+              <PrismicRichText field={textsecond} />
+            </Transition>
+          )}
+        </AnimatePresence>
       </Container>
     </Wrapper>
   );
