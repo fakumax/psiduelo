@@ -24,10 +24,19 @@
             "thumbnails": []
           }
         },
-        "text": {
+        "textfirst": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "textsecond": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextSecond",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"

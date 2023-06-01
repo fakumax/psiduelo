@@ -491,15 +491,25 @@ interface SectionTextSliceDefaultPrimary {
    */
   imageright: prismic.ImageField<never>;
   /**
-   * Text field in *SectionText → Primary*
+   * TextFirst field in *SectionText → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.text
+   * - **API ID Path**: section_text.primary.textfirst
    * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
    *
    */
-  text: prismic.TitleField;
+  textfirst: prismic.TitleField;
+  /**
+   * TextSecond field in *SectionText → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.textsecond
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  textsecond: prismic.TitleField;
 }
 /**
  * Default variation for SectionText Slice

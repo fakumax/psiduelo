@@ -4,7 +4,6 @@
 		"variation": "default",
 		"primary": {
 			"imageleft": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -22,10 +21,12 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"imageright": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
@@ -43,15 +44,29 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"text": {
+			"textfirst": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "heading3",
 						"content": {
-							"text": "Charge"
+							"text": "Slide"
+						}
+					}
+				]
+			},
+			"textsecond": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Border"
 						}
 					}
 				]
