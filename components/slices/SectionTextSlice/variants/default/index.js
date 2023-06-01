@@ -38,8 +38,9 @@ const Default = (slice) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 2 }}
               exit={{ opacity: 1, display: 'flex' }}
+              style={{ flexDirection: 'row-reverse' }}
             >
-              <PrismicNextImage field={imageleft} alt='' />
+              <PrismicNextImage field={imageright} alt='' />
               <PrismicRichText field={textsecond} />
             </Transition>
           )}

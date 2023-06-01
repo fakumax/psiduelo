@@ -7,5 +7,6 @@ export const components = {
   nav_left: dynamic(() => import("./NavLeft")),
   nav_right: dynamic(() => import("./NavRight")),
   navigation_item: dynamic(() => import("./NavigationItem")),
+  picture_button: dynamic(() => import("./PictureButton")),
   section_text: dynamic(() => import("./SectionText")),
 };

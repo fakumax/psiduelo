@@ -163,7 +163,10 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | SectionTextSlice;
+type PageDocumentDataSlicesSlice =
+  | HeroSlice
+  | SectionTextSlice
+  | PictureButtonSlice;
 /**
  * Page document from Prismic
  *
@@ -466,6 +469,100 @@ export type NavigationItemSlice = prismic.SharedSlice<
   NavigationItemSliceVariation
 >;
 /**
+ * Primary content in PictureButton → Primary
+ *
+ */
+interface PictureButtonSliceDefaultPrimary {
+  /**
+   * Color field in *PictureButton → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.primary.color
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  color: prismic.ColorField;
+}
+/**
+ * Item in PictureButton → Items
+ *
+ */
+export interface PictureButtonSliceDefaultItem {
+  /**
+   * Image field in *PictureButton → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+  /**
+   * StylesCard field in *PictureButton → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Estilos de tarjeta
+   * - **API ID Path**: picture_button.items[].stylescard
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  stylescard: prismic.SelectField<
+    "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+  >;
+  /**
+   * Text field in *PictureButton → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismic.RichTextField;
+  /**
+   * Link field in *PictureButton → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for PictureButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PictureButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PictureButtonSliceDefaultPrimary>,
+  Simplify<PictureButtonSliceDefaultItem>
+>;
+/**
+ * Slice variation for *PictureButton*
+ *
+ */
+type PictureButtonSliceVariation = PictureButtonSliceDefault;
+/**
+ * PictureButton Shared Slice
+ *
+ * - **API ID**: `picture_button`
+ * - **Description**: `PictureButton`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PictureButtonSlice = prismic.SharedSlice<
+  "picture_button",
+  PictureButtonSliceVariation
+>;
+/**
  * Primary content in SectionText → Primary
  *
  */
@@ -577,6 +674,11 @@ declare module "@prismicio/client" {
       NavigationItemSliceDefault,
       NavigationItemSliceVariation,
       NavigationItemSlice,
+      PictureButtonSliceDefaultPrimary,
+      PictureButtonSliceDefaultItem,
+      PictureButtonSliceDefault,
+      PictureButtonSliceVariation,
+      PictureButtonSlice,
       SectionTextSliceDefaultPrimary,
       SectionTextSliceDefault,
       SectionTextSliceVariation,
