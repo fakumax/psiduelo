@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 70%;
-  height: 300px;
+  background-color: blue;
+  padding: 20px 0;
+`;
+
+export const Container = styled.div`
+  width: fit-content;
   margin: auto;
   object-fit: contain;
   background-position: center;
@@ -12,5 +16,6 @@ export const Wrapper = styled.div`
   display: grid;
   grid-auto-flow: row dense;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  gap: 10px;
+  justify-items: center;
 `;
