@@ -1,6 +1,7 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicLink, PrismicText } from '@prismicio/react';
 import { ContainerCard, WrapperCard } from './CardStyle';
+import { Individual } from './Individual';
 
 const Card = ({ items }) => {
   console.log(items);
@@ -17,9 +18,11 @@ const Card = ({ items }) => {
   return (
     <WrapperCard>
       <PrismicLink field={items.link}>
-        <ContainerCard id={items.stylescard}>
-          <PrismicText field={items.text} />
-          <PrismicNextImage field={items.image} alt='' />
+        <ContainerCard>
+          <Individual id={items.stylescard}>
+            <PrismicText field={items.text} />
+            <PrismicNextImage field={items.image} alt='' />
+          </Individual>
         </ContainerCard>
       </PrismicLink>
     </WrapperCard>
