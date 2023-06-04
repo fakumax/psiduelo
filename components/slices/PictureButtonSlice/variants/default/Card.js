@@ -19,10 +19,7 @@ const Card = ({ items }) => {
     <WrapperCard>
       <PrismicLink field={items.link}>
         <ContainerCard>
-          <Individual id={items.stylescard}>
-            <PrismicText field={items.text} />
-            <PrismicNextImage field={items.image} alt='' />
-          </Individual>
+          <Individual id={items.stylescard} items={items} />
         </ContainerCard>
       </PrismicLink>
     </WrapperCard>

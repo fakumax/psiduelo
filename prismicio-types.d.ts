@@ -514,13 +514,13 @@ export interface PictureButtonSliceDefaultItem {
   /**
    * Text field in *PictureButton → Items*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: picture_button.items[].text
    * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
    *
    */
-  text: prismic.RichTextField;
+  text: prismic.TitleField;
   /**
    * Link field in *PictureButton → Items*
    *

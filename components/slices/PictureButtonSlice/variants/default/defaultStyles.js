@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: blue;
+  /* background-color: blue; */
   padding: 20px 0;
 `;
 
@@ -16,6 +16,6 @@ export const Container = styled.div`
   display: grid;
   grid-auto-flow: row dense;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 30px;
   justify-items: center;
 `;

@@ -105,6 +105,8 @@ export const Theme = {
     bgColorQuaternary: '#3FBB49',
     bgColorCoral: '#F5E9EA',
     bgColorYellow: '#FDE06A',
+    bgColorCream: '#F4F3EF',
+    bgColorWhite: '#FFFFFF',
 
     textPrimary: '#323130',
     textSecondary: '#605E5C',

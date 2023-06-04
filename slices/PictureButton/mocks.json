@@ -45,9 +45,9 @@
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
-									"type": "paragraph",
+									"type": "heading3",
 									"content": {
-										"text": "Excepteur esse incididunt non. Mollit veniam et eu aute proident ex dolor consectetur dolor aliquip dolore qui sunt ea dolore. Nulla amet nostrud consequat ullamco consectetur quis et aliqua sit ex."
+										"text": "Paragraph"
 									}
 								}
 							]

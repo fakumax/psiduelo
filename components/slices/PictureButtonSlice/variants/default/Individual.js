@@ -10,11 +10,27 @@ import {
   Component8,
   Component9,
 } from './IndividualStyle';
+import { PrismicText } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
 
-export const Individual = ({ id, children }) => {
+export const Individual = ({ id, children, items }) => {
   switch (id) {
     case '1':
-      return <Component1>{children}</Component1>;
+      return (
+        <Component1>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+          <div className='container'>
+            <div className='line1' />
+            <div className='line2'>
+              <h3>
+                <PrismicText field={items.text} />
+              </h3>
+            </div>
+          </div>
+        </Component1>
+      );
     case '2':
       return <Component2>{children}</Component2>;
     case '3':
