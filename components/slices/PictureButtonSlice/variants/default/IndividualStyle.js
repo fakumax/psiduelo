@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Container } from '../../../SectionTextSlice/variants/default/defaultStyles';
 
 export const Component1 = styled.div`
   background-color: red;
@@ -55,7 +54,55 @@ export const Component1 = styled.div`
   }
 `;
 export const Component2 = styled.div`
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .container {
+    position: absolute;
+    width: 80%;
+    height: 72%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    h3 {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      justify-content: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      color: #ceae80;
+    }
+  }
+  .line1 {
+    background-color: ${(props) => props.theme.colors.bgColorCream};
+    height: 65%;
+  }
+  .line2 {
+    flex: 1;
+    background-color: white;
+  }
+  .ImageContainer {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
 `;
 export const Component3 = styled.div`
   background-color: red;
