@@ -47,7 +47,27 @@ export const Individual = ({ id, children, items }) => {
         </Component2>
       );
     case '3':
-      return <Component3>{children}</Component3>;
+      return (
+        <Component3>
+          <div className='container'>
+            <div className='lines-1'>
+              <div className='line0' />
+              <div className='line1' />
+            </div>
+            <div className='lines-2'>
+              <div className='line2' />
+              <div className='line3' />
+            </div>
+
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+            {/* <div className='ImageContainer'>
+              <PrismicNextImage field={items.image} alt='' />
+            </div> */}
+          </div>
+        </Component3>
+      );
     case '4':
       return <Component4>{children}</Component4>;
     case '5':
