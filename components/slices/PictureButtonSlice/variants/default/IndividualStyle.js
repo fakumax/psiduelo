@@ -371,4 +371,42 @@ export const Component9 = styled.div`
   background-color: ${(props) => props.theme.colors.bgColorCream};
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .lines-1 {
+    width: 100%;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .line0 {
+    border: 3px solid white;
+    width: 50%;
+    height: 50%;
+  }
+  .line1 {
+    border: 3px solid white;
+    width: 50%;
+    height: 50%;
+    align-self: flex-end;
+  }
+  .ImageContainer {
+    position: absolute;
+    width: 60%;
+    max-height: fit-content;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
 `;
