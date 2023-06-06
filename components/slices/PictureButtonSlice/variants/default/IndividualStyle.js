@@ -56,6 +56,8 @@ export const Component2 = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   .container {
     position: absolute;
     width: 80%;
@@ -172,6 +174,8 @@ export const Component3 = styled.div`
 export const Component4 = styled.div`
   height: 100%;
   display: flex;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   .firstSquare {
     background-color: ${(props) => props.theme.colors.bgColorCream};
     height: 100%;
@@ -214,6 +218,8 @@ export const Component5 = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   .ImageContainer {
     border: 20px solid white;
     width: 60%;
@@ -247,14 +253,91 @@ export const Component5 = styled.div`
   }
 `;
 export const Component6 = styled.div`
-  background-color: red;
+  background-color: ${(props) => props.theme.colors.bgColorCream};
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .ImageContainer {
+    border: 20px solid white;
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    align-content: center;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
+  .lines-1 {
+    position: absolute;
+    height: 30px;
+    background: #ceae80;
+    width: 1px;
+    border: none;
+    display: flex;
+  }
+  .secondSquare {
+    display: flex;
+    justify-content: center;
+    color: #ceae80;
+    margin-bottom: 5px;
+    h3 {
+      margin: 0;
+    }
+  }
 `;
 export const Component7 = styled.div`
-  background-color: red;
+  height: 100%;
+  display: flex;
+  background-color: ${(props) => props.theme.colors.bgColorCream};
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .firstSquare {
+    height: 90%;
+    width: 35%;
+    background-color: ${(props) => props.theme.colors.bgColorWhite};
+    display: flex;
+    align-self: center;
+    h3 {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      justify-content: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      color: #ceae80;
+      padding-right: 20px;
+    }
+  }
+  .ImageContainer {
+    width: 65%;
+    background-color: red;
+    position: absolute;
+    height: 80%;
+    margin: auto;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
 `;
 export const Component8 = styled.div`
   background-color: red;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 export const Component9 = styled.div`
   background-color: red;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
