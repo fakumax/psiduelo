@@ -183,7 +183,7 @@ export const Component4 = styled.div`
   }
   .ImageContainer {
     width: 65%;
-    background-color: red;
+    /* background-color: red; */
     img {
       width: 100%;
       height: 100%;
@@ -316,7 +316,7 @@ export const Component7 = styled.div`
   }
   .ImageContainer {
     width: 65%;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     height: 80%;
     margin: auto;
