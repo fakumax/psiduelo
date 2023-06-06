@@ -5,7 +5,7 @@ import { Container, Transition, Wrapper } from './defaultStyles';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
-  console.log('--slice--', slice);
+  // console.log('--slice--', slice);
   const { imageleft, imageright, textfirst, textsecond } = slice.primary;
   const [isVisible, setIsVisible] = useState(true);
 

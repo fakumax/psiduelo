@@ -4,8 +4,8 @@ import { ContainerCard, WrapperCard } from './CardStyle';
 import { Individual } from './Individual';
 
 const Card = ({ items }) => {
-  console.log(items);
-  console.log(items.stylescard);
+  // console.log(items);
+  // console.log(items.stylescard);
   //   const { title, description, image } = items;
   //   return (
   //     <div className='card'>

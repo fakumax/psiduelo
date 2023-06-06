@@ -19,12 +19,9 @@ export const Component1 = styled.div`
     bottom: 0;
     margin: auto;
     img {
-      color: transparent;
       width: 100%;
       height: 100%;
-      max-width: inherit;
-      margin: 0;
-      padding: 0;
+      object-fit: cover;
       max-height: fit-content;
     }
   }
@@ -173,10 +170,81 @@ export const Component3 = styled.div`
   }
 `;
 export const Component4 = styled.div`
-  background-color: red;
+  height: 100%;
+  display: flex;
+  .firstSquare {
+    background-color: ${(props) => props.theme.colors.bgColorCream};
+    height: 100%;
+    width: 35%;
+  }
+  .ImageContainer {
+    width: 65%;
+    background-color: red;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
+  .secondSquare {
+    position: absolute;
+    background-color: ${(props) => props.theme.colors.bgColorWhite};
+    top: 85px;
+    background-color: #ffffff;
+    left: 20px;
+    height: 45%;
+    width: 45%;
+    h3 {
+      top: 0;
+      display: flex;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: fit-content;
+      height: min-content;
+      color: #ceae80;
+    }
+  }
 `;
 export const Component5 = styled.div`
-  background-color: red;
+  background-color: ${(props) => props.theme.colors.bgColorCream};
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .ImageContainer {
+    border: 20px solid white;
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    align-content: center;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
+  .lines-1 {
+    position: absolute;
+    height: 30px;
+    background: #ceae80;
+    width: 1px;
+    border: none;
+    display: flex;
+  }
+  .secondSquare {
+    display: flex;
+    justify-content: center;
+    color: #ceae80;
+    margin-bottom: 5px;
+    h3 {
+      margin: 0;
+    }
+  }
 `;
 export const Component6 = styled.div`
   background-color: red;
