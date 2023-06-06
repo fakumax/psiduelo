@@ -123,7 +123,18 @@ export const Individual = ({ id, children, items }) => {
         </Component7>
       );
     case '8':
-      return <Component8>{children}</Component8>;
+      return (
+        <Component8>
+          <div className='firstSquare'>
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+          </div>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+        </Component8>
+      );
     case '9':
       return <Component9>{children}</Component9>;
     default:

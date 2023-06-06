@@ -332,12 +332,43 @@ export const Component7 = styled.div`
   }
 `;
 export const Component8 = styled.div`
-  background-color: red;
+  height: 100%;
+  display: flex;
+  background-color: ${(props) => props.theme.colors.bgColorCream};
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .ImageContainer {
+    border: 20px solid white;
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    align-content: center;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
+  .firstSquare {
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    background-color: rgba(255, 255, 255, 0.4);
+    h3 {
+      color: #ceae80;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
 `;
 export const Component9 = styled.div`
-  background-color: red;
+  height: 100%;
+  display: flex;
+  background-color: ${(props) => props.theme.colors.bgColorCream};
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
