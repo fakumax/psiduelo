@@ -27,7 +27,8 @@
           "choices": {
             "hero": { "type": "SharedSlice" },
             "section_text": { "type": "SharedSlice" },
-            "picture_button": { "type": "SharedSlice" }
+            "picture_button": { "type": "SharedSlice" },
+            "section_check": { "type": "SharedSlice" }
           }
         }
       }

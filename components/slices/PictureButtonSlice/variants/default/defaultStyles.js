@@ -14,8 +14,15 @@ export const Container = styled.div`
   background-size: cover;
   background-color: ${(props) => props.color};
   display: grid;
-  grid-auto-flow: row dense;
+  /* grid-auto-flow: row dense; */
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-items: center;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;

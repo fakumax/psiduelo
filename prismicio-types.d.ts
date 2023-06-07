@@ -166,7 +166,8 @@ interface PageDocumentData {
 type PageDocumentDataSlicesSlice =
   | HeroSlice
   | SectionTextSlice
-  | PictureButtonSlice;
+  | PictureButtonSlice
+  | SectionCheckSlice;
 /**
  * Page document from Prismic
  *
@@ -563,6 +564,98 @@ export type PictureButtonSlice = prismic.SharedSlice<
   PictureButtonSliceVariation
 >;
 /**
+ * Primary content in SectionCheck → Primary
+ *
+ */
+interface SectionCheckSliceDefaultPrimary {
+  /**
+   * Image field in *SectionCheck → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+  /**
+   * Color field in *SectionCheck → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.primary.color
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  color: prismic.ColorField;
+  /**
+   * Text field in *SectionCheck → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismic.TitleField;
+}
+/**
+ * Item in SectionCheck → Items
+ *
+ */
+export interface SectionCheckSliceDefaultItem {
+  /**
+   * Description field in *SectionCheck → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.items[].description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+  /**
+   * Icon field in *SectionCheck → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.items[].icon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  icon: prismic.ImageField<never>;
+}
+/**
+ * Default variation for SectionCheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionCheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SectionCheckSliceDefaultPrimary>,
+  Simplify<SectionCheckSliceDefaultItem>
+>;
+/**
+ * Slice variation for *SectionCheck*
+ *
+ */
+type SectionCheckSliceVariation = SectionCheckSliceDefault;
+/**
+ * SectionCheck Shared Slice
+ *
+ * - **API ID**: `section_check`
+ * - **Description**: `SectionCheck`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionCheckSlice = prismic.SharedSlice<
+  "section_check",
+  SectionCheckSliceVariation
+>;
+/**
  * Primary content in SectionText → Primary
  *
  */
@@ -679,6 +772,11 @@ declare module "@prismicio/client" {
       PictureButtonSliceDefault,
       PictureButtonSliceVariation,
       PictureButtonSlice,
+      SectionCheckSliceDefaultPrimary,
+      SectionCheckSliceDefaultItem,
+      SectionCheckSliceDefault,
+      SectionCheckSliceVariation,
+      SectionCheckSlice,
       SectionTextSliceDefaultPrimary,
       SectionTextSliceDefault,
       SectionTextSliceVariation,
