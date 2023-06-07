@@ -167,7 +167,8 @@ type PageDocumentDataSlicesSlice =
   | HeroSlice
   | SectionTextSlice
   | PictureButtonSlice
-  | SectionCheckSlice;
+  | SectionCheckSlice
+  | SectionContentSlice;
 /**
  * Page document from Prismic
  *
@@ -656,6 +657,138 @@ export type SectionCheckSlice = prismic.SharedSlice<
   SectionCheckSliceVariation
 >;
 /**
+ * Primary content in SectionContent → Primary
+ *
+ */
+interface SectionContentSliceDefaultPrimary {
+  /**
+   * BgColor field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.bgcolor
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  bgcolor: prismic.ColorField;
+  /**
+   * BgLeft field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.bgleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  bgleft: prismic.ImageField<never>;
+  /**
+   * TitleLeft field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.titleleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titleleft: prismic.TitleField;
+  /**
+   * TextLeft field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.textleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  textleft: prismic.TitleField;
+  /**
+   * DescripcionLeft field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.descripcionleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcionleft: prismic.RichTextField;
+}
+/**
+ * Item in SectionContent → Items
+ *
+ */
+export interface SectionContentSliceDefaultItem {
+  /**
+   * Title field in *SectionContent → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.items[].title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismic.TitleField;
+  /**
+   * Description field in *SectionContent → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.items[].description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+  /**
+   * TextButton field in *SectionContent → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.items[].textbutton
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textbutton: prismic.KeyTextField;
+  /**
+   * Image field in *SectionContent → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.items[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+}
+/**
+ * Default variation for SectionContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SectionContentSliceDefaultPrimary>,
+  Simplify<SectionContentSliceDefaultItem>
+>;
+/**
+ * Slice variation for *SectionContent*
+ *
+ */
+type SectionContentSliceVariation = SectionContentSliceDefault;
+/**
+ * SectionContent Shared Slice
+ *
+ * - **API ID**: `section_content`
+ * - **Description**: `SectionContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionContentSlice = prismic.SharedSlice<
+  "section_content",
+  SectionContentSliceVariation
+>;
+/**
  * Primary content in SectionText → Primary
  *
  */
@@ -777,6 +910,11 @@ declare module "@prismicio/client" {
       SectionCheckSliceDefault,
       SectionCheckSliceVariation,
       SectionCheckSlice,
+      SectionContentSliceDefaultPrimary,
+      SectionContentSliceDefaultItem,
+      SectionContentSliceDefault,
+      SectionContentSliceVariation,
+      SectionContentSlice,
       SectionTextSliceDefaultPrimary,
       SectionTextSliceDefault,
       SectionTextSliceVariation,

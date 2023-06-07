@@ -13,21 +13,21 @@ import { Theme } from '@/components/styles';
 // import { Bounded } from './Bounded';
 
 export const Header = ({ navigation }) => {
-  console.log(navigation);
-  console.log(navigation.data.slices);
-  console.log(navigation.data.icons.iconimage);
+  //console.log(navigation);
+  //console.log(navigation.data.slices);
+  //console.log(navigation.data.icons.iconimage);
   const { icons, slices } = navigation.data;
 
-  console.log(icons);
-  console.log(slices);
-  console.log(slices.slice_type);
-  console.log(slices[0].primary.link);
-  console.log('fondo', navigation.data.backgroundimage);
+  //console.log(icons);
+  //console.log(slices);
+  //console.log(slices.slice_type);
+  //console.log(slices[0].primary.link);
+  //console.log('fondo', navigation.data.backgroundimage);
   const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
   const navRight = slices.filter((item) => item.slice_type === 'nav_right');
 
-  console.log(navLeft);
-  console.log(navRight);
+  //console.log(navLeft);
+  //console.log(navRight);
   return (
     <div>
       {/* <PrismicLink href='/' className='text-xl font-semibold tracking-tight'>
