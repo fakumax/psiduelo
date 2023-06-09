@@ -1,6 +1,6 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { Wrapper } from './defaultStyles';
+import { ContainerItems, HeadTitle, Wrapper } from './defaultStyles';
 
 const Default = (slice) => {
   console.log('--slice--', slice);
@@ -11,14 +11,19 @@ const Default = (slice) => {
       <div className='rightContainer'>
         {slice.items.map((item, index) => (
           <>
-            <div className='ImageContainer'>
-              <PrismicNextImage field={item.image} />
-            </div>
-            <div className='TextContainer'>
-              <PrismicRichText field={item.title} key={index} />
-              <PrismicRichText field={item.description} />
-              <>{item.textbutton}</>
-            </div>
+            <ContainerItems>
+              <div className='ImageContainer'>
+                <PrismicNextImage field={item.image} />
+              </div>
+              <div className='TextContainer'>
+                <HeadTitle>
+                  <PrismicRichText field={item.title} key={index} />
+                  <div class='new1' />
+                </HeadTitle>
+                <PrismicRichText field={item.description} />
+                <>{item.textbutton}</>
+              </div>
+            </ContainerItems>
           </>
         ))}
       </div>
