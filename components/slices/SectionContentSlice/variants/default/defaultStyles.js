@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 600px;
   display: flex;
   background-color: ${(props) => props.color};
   .leftContainer {
@@ -15,16 +15,14 @@ export const Wrapper = styled.div`
     flex-direction: column;
     width: inherit;
     display: flex;
+    justify-content: center;
     .ImageContainer {
       position: relative;
-      width: 60%;
+
+      width: 100%;
+      max-width: 160px;
       max-height: 200px;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      max-width: 200px;
+      height: 100%;
       img {
         width: 100%;
         height: 100%;
@@ -35,6 +33,7 @@ export const Wrapper = styled.div`
     .TextContainer {
       display: flex;
       flex-direction: column;
+      gap: 30px;
     }
   }
 `;
@@ -46,19 +45,16 @@ export const ContainerItems = styled.div`
   align-items: center;
   gap: 40px;
   padding: 40px;
-
-  hr {
-    border: 1px solid #7c5a19;
-    width: 50%;
-  }
 `;
 
 export const HeadTitle = styled.div`
   h2 {
     font-weight: 700;
     font-size: 20px;
+    margin: 0;
   }
   .new1 {
-    background-color: red;
+    border: 1px solid #7c5a19;
+    width: 50%;
   }
 `;
