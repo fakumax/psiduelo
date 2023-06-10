@@ -1,7 +1,3 @@
-import { Roboto } from '@next/font/google';
-
-const roboto = Roboto({ subsets: ['latin'] });
-
 export const Theme = {
   name: 'Psicoduelo',
   optOutHeight: '64px',
@@ -23,7 +19,6 @@ export const Theme = {
     fontFamily_V2: "'Poppins', sans-serif",
     fontFamily_old: "'Old Standard TT', sans-serif",
     fontFamily_belle: "'La Belle Aurore', sans-serif",
-
     letterSpacing: '0px',
     h1: {
       desktop: {

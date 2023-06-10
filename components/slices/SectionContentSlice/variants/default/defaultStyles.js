@@ -34,6 +34,10 @@ export const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 30px;
+      span {
+        font-family: var(--font-hijrnotes);
+        font-size: 24px;
+      }
     }
   }
 `;

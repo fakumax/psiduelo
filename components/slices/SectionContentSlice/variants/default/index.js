@@ -21,7 +21,7 @@ const Default = (slice) => {
                   <div class='new1' />
                 </HeadTitle>
                 <PrismicRichText field={item.description} />
-                <>{item.textbutton}</>
+                <span>{item.textbutton}</span>
               </div>
             </ContainerItems>
           </>
