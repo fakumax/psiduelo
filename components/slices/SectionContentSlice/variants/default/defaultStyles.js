@@ -5,11 +5,25 @@ export const Wrapper = styled.div`
   height: 600px;
   display: flex;
   background-color: ${(props) => props.color};
+  ///////////////////
   .leftContainer {
     height: 100%;
     width: 20%;
     background-color: red;
   }
+  .ImageLeft {
+    display: flex;
+    height: 100%;
+    justify-content: end;
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      max-height: fit-content;
+    }
+  }
+
+  ///////////////
   .rightContainer {
     height: 100%;
     flex-direction: column;

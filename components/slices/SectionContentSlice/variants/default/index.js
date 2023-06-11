@@ -7,7 +7,11 @@ const Default = (slice) => {
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft } = slice.primary;
   return (
     <Wrapper color={bgcolor}>
-      <div className='leftContainer'></div>
+      <div className='leftContainer'>
+        <div className='ImageLeft'>
+          <PrismicNextImage field={bgleft} />
+        </div>
+      </div>
       <div className='rightContainer'>
         {slice.items.map((item, index) => (
           <>
