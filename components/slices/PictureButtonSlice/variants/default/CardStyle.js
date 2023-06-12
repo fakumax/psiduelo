@@ -11,7 +11,7 @@ export const WrapperCard = styled.div`
 `;
 
 export const ContainerCard = styled.div`
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   width: 100%;
   height: 100%;
 `;
