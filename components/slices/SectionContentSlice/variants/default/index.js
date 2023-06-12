@@ -8,6 +8,7 @@ const Default = (slice) => {
   return (
     <Wrapper color={bgcolor}>
       <div className='leftContainer'>
+        <div className='WhiteContainer' />
         <div className='ImageLeft'>
           <PrismicNextImage field={bgleft} />
         </div>
