@@ -97,13 +97,56 @@ export const Individual = ({ id, children, items }) => {
         </Component5>
       );
     case '6':
-      return <Component6>{children}</Component6>;
+      return (
+        <Component6>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+          <div className='secondSquare'>
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+          </div>
+        </Component6>
+      );
     case '7':
-      return <Component7>{children}</Component7>;
+      return (
+        <Component7>
+          <div className='firstSquare'>
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+          </div>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+        </Component7>
+      );
     case '8':
-      return <Component8>{children}</Component8>;
+      return (
+        <Component8>
+          <div className='firstSquare'>
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+          </div>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+        </Component8>
+      );
     case '9':
-      return <Component9>{children}</Component9>;
+      return (
+        <Component9>
+          <div className='lines-1'>
+            <div className='line0' />
+            <div className='line1' />
+          </div>
+          <div className='ImageContainer'>
+            <PrismicNextImage field={items.image} alt='' />
+          </div>
+        </Component9>
+      );
     default:
       return (
         <div>
