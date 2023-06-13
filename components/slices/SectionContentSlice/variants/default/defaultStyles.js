@@ -69,6 +69,16 @@ export const Wrapper = styled.div`
         font-family: var(--font-hijrnotes);
         font-size: 24px;
       }
+      p {
+        text-align: justify;
+      }
+    }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    flex-direction: column;
+    height: fit-content;
+    .ImageContainer {
+      display: none;
     }
   }
 `;

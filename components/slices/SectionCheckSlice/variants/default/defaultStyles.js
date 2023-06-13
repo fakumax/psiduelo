@@ -2,6 +2,7 @@ import { hexToRGBA } from '@/utils/hexToRGBA';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  margin: 4rem 0;
   width: 100%;
   height: 70vh;
   object-fit: contain;
