@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const WrapperCard = styled.div`
   background-color: #f4f3ef;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   img {
     width: auto;
     max-height: 100px;
