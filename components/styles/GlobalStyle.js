@@ -47,18 +47,17 @@ export const GlobalStyle = createGlobalStyle`
 					}
 				}
 				p {
-					margin: 0;
+					margin: 0; 
 					font-size: ${(props) => props?.theme?.typography?.p?.desktop?.fontSize || '14px'};
 					font-weight: ${(props) => props?.theme?.typography?.p?.desktop?.fontWeight || '400'};
 					line-height: ${(props) => props?.theme?.typography?.p?.desktop?.lineHeight || '24px'};
-					@media(max-width: ${(props) => props?.theme?.breakpoints?.md || '960px'}){
-						font-size: ${(props) => props?.theme?.typography?.p?.mobile?.fontSize || '14px'};
+				 
+					@media(max-width: ${(props) => props?.theme?.breakpoints?.md || '768px'}){
+						font-size: ${(props) => props?.theme?.typography?.p?.mobile?.fontSize || '12px'};
 						font-weight: ${(props) => props?.theme?.typography?.p?.mobile?.fontWeight || '400'};
-						line-height: ${(props) => props?.theme?.typography?.p?.mobile?.lineHeight || '24px'};
+						line-height: ${(props) => props?.theme?.typography?.p?.mobile?.lineHeight || '20px'};
 					}
-					@media(max-width: ${(props) => props?.theme?.breakpoints?.sm || '600px'}){
-						text-align: left;
-					}
+				 
 				}
 				a { 
 					font-family: ${(props) => props?.theme?.typography?.fontFamily || 'Poppins, sans-serif'};
