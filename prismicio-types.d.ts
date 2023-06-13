@@ -672,6 +672,16 @@ interface SectionContentSliceDefaultPrimary {
    */
   bgcolor: prismic.ColorField;
   /**
+   * ImageLeft field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageleft: prismic.ImageField<never>;
+  /**
    * BgLeft field in *SectionContent → Primary*
    *
    * - **Field Type**: Image

@@ -1,18 +1,34 @@
 import { PrismicNextImage } from '@prismicio/next';
-import { PrismicRichText } from '@prismicio/react';
-import { ContainerItems, HeadTitle, Wrapper } from './defaultStyles';
+import { PrismicRichText, PrismicText } from '@prismicio/react';
+import {
+  ContainerItems,
+  HeadTitle,
+  LeftContainer,
+  WhiteContainer,
+  Wrapper,
+} from './defaultStyles';
 
 const Default = (slice) => {
   console.log('--slice--', slice);
-  const { bgcolor, bgleft, titleleft, textleft, descripcionleft } = slice.primary;
+  const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft } =
+    slice.primary;
   return (
     <Wrapper color={bgcolor}>
-      <div className='leftContainer'>
-        <div className='WhiteContainer' />
-        <div className='ImageLeft'>
+      <LeftContainer>
+        <WhiteContainer>
+          <div className='ImageLeft'>
+            <PrismicNextImage field={imageleft} />
+          </div>
+          <div className='TextLeft'>
+            <PrismicRichText field={titleleft} />
+            <PrismicRichText field={textleft} />
+            <PrismicRichText field={descripcionleft} />
+          </div>
+        </WhiteContainer>
+        <div className='ImagePaper'>
           <PrismicNextImage field={bgleft} />
         </div>
-      </div>
+      </LeftContainer>
       <div className='rightContainer'>
         {slice.items.map((item, index) => (
           <>

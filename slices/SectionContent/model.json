@@ -16,6 +16,10 @@
           "type": "Color",
           "config": { "label": "BgColor", "placeholder": "" }
         },
+        "imageleft": {
+          "type": "Image",
+          "config": { "label": "ImageLeft", "constraint": {}, "thumbnails": [] }
+        },
         "bgleft": {
           "type": "Image",
           "config": { "label": "BgLeft", "constraint": {}, "thumbnails": [] }

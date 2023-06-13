@@ -8,13 +8,21 @@ export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   justify-content: center;
-  padding: 20px 0;
   max-height: 200px;
   height: 200px;
   background-color: beige;
+  align-items: center;
   img {
     max-width: 40px;
     height: 100%;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    height: 100px;
+    max-height: 150px;
+    padding: 10px 0;
+    img {
+      max-width: 30px;
+    }
   }
 `;
 
@@ -25,6 +33,10 @@ export const Transition = styled(motion.div)`
   justify-content: center;
   padding: 2rem 0;
   gap: 1rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    padding: 0;
+    align-content: center;
+  }
   /* display: ${(props) => (props.isVisible ? 'block' : 'none')}; */
   /* opacity: ${(props) => (props.isVisible ? 1 : 0)}; */
   /* animation: ${(props) => (props.isVisible ? 'block' : 'none')} 0.3s ease-in-out; */
@@ -38,5 +50,11 @@ export const Container = styled.div`
     line-height: 1.5;
     text-align: center;
     display: flex;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    h3 {
+      font-size: 16px;
+      max-width: 80%;
+    }
   }
 `;
