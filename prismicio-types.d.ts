@@ -168,7 +168,9 @@ type PageDocumentDataSlicesSlice =
   | SectionTextSlice
   | PictureButtonSlice
   | SectionCheckSlice
-  | SectionContentSlice;
+  | SectionContentSlice
+  | FooterSlice
+  | CopyrightSlice;
 /**
  * Page document from Prismic
  *
@@ -181,6 +183,161 @@ type PageDocumentDataSlicesSlice =
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = NavigationDocument | PageDocument;
+/**
+ * Primary content in Copyright → Primary
+ *
+ */
+interface CopyrightSliceDefaultPrimary {
+  /**
+   * Text field in *Copyright → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: copyright.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismic.KeyTextField;
+  /**
+   * Link field in *Copyright → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: copyright.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * Default variation for Copyright Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CopyrightSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CopyrightSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Copyright*
+ *
+ */
+type CopyrightSliceVariation = CopyrightSliceDefault;
+/**
+ * Copyright Shared Slice
+ *
+ * - **API ID**: `copyright`
+ * - **Description**: `Copyright`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CopyrightSlice = prismic.SharedSlice<
+  "copyright",
+  CopyrightSliceVariation
+>;
+/**
+ * Primary content in Footer → Primary
+ *
+ */
+interface FooterSliceDefaultPrimary {
+  /**
+   * Image field in *Footer → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+  /**
+   * Description field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+}
+/**
+ * Item in Footer → Items
+ *
+ */
+export interface FooterSliceDefaultItem {
+  /**
+   * Columns field in *Footer → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Ingrese columna
+   * - **API ID Path**: footer.items[].columns
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  columns: prismic.SelectField<"firstColumn" | "SecondColumn" | "ThirdColumn">;
+  /**
+   * Text field in *Footer → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.items[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismic.KeyTextField;
+  /**
+   * Link field in *Footer → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+  /**
+   * Image field in *Footer → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.items[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+}
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  Simplify<FooterSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Footer*
+ *
+ */
+type FooterSliceVariation = FooterSliceDefault;
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: `Footer`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 /**
  * Primary content in Hero → Primary
  *
@@ -891,6 +1048,15 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       AllDocumentTypes,
+      CopyrightSliceDefaultPrimary,
+      CopyrightSliceDefault,
+      CopyrightSliceVariation,
+      CopyrightSlice,
+      FooterSliceDefaultPrimary,
+      FooterSliceDefaultItem,
+      FooterSliceDefault,
+      FooterSliceVariation,
+      FooterSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefault,
       HeroSliceVariation,
