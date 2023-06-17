@@ -3,6 +3,8 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  copyright: dynamic(() => import("./Copyright")),
+  footer: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
   nav_left: dynamic(() => import("./NavLeft")),
   nav_right: dynamic(() => import("./NavRight")),

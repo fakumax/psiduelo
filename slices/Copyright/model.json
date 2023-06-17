@@ -1,0 +1,27 @@
+{
+  "id": "copyright",
+  "type": "SharedSlice",
+  "name": "Copyright",
+  "description": "Copyright",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "Text",
+          "config": { "label": "Text", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": { "label": "Link", "placeholder": "", "select": null }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
