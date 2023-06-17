@@ -1,19 +1,25 @@
 import { PrismicNextImage } from '@prismicio/next';
-import { BackgroundImage, Button } from './defaultStyles';
 import { PrismicRichText } from '@prismicio/react';
+import { FirstColumn, SecondColumn, Wrapper } from './defaultStyles';
 
 const Default = (slice) => {
   // console.log('--slice--', slice);
+  const { image, description } = slice.primary;
   return (
-    <div>
-      <PrismicNextImage field={slice.primary.image} />
-      <PrismicRichText field={slice.primary.description} />
-
-      {/* <>{item.columns}</>
+    <Wrapper>
+      <FirstColumn>
+        <div className='ImageLeft'>
+          <PrismicNextImage field={image} />
+        </div>
+        <PrismicRichText field={description} />
+      </FirstColumn>
+      <SecondColumn>
+        {/* <>{item.columns}</>
       <>{item.text}</>
       <PrismicLink field={item.link}>Link</PrismicLink>
       <PrismicNextImage field={item.image} /> */}
-    </div>
+      </SecondColumn>
+    </Wrapper>
   );
 };
 
