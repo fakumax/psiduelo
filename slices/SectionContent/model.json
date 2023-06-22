@@ -33,15 +33,6 @@
             "single": "heading2"
           }
         },
-        "textleft": {
-          "type": "StructuredText",
-          "config": {
-            "label": "TextLeft",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2"
-          }
-        },
         "descripcionleft": {
           "type": "StructuredText",
           "config": {
@@ -50,6 +41,14 @@
             "allowTargetBlank": true,
             "single": "paragraph"
           }
+        },
+        "textbutton": {
+          "type": "Text",
+          "config": { "label": "TextButton", "placeholder": "" }
+        },
+        "linkbutton": {
+          "type": "Link",
+          "config": { "label": "LinkButton", "placeholder": "", "select": null }
         }
       },
       "items": {

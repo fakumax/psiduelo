@@ -1,5 +1,5 @@
 import { PrismicNextImage } from '@prismicio/next';
-import { PrismicRichText, PrismicText } from '@prismicio/react';
+import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react';
 import {
   ContainerItems,
   HeadTitle,
@@ -9,8 +9,8 @@ import {
 } from './defaultStyles';
 
 const Default = (slice) => {
-  console.log('--slice--', slice);
-  const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft } =
+  // console.log('--slice--', slice);
+  const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
   return (
     <Wrapper color={bgcolor}>
@@ -21,8 +21,10 @@ const Default = (slice) => {
           </div>
           <div className='TextLeft'>
             <PrismicRichText field={titleleft} />
-            <PrismicRichText field={textleft} />
             <PrismicRichText field={descripcionleft} />
+          </div>
+          <div className='ButtonLeft'>
+            <PrismicLink field={textleft}>{textbutton}</PrismicLink>
           </div>
         </WhiteContainer>
         <div className='ImagePaper'>
