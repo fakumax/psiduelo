@@ -31,17 +31,6 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"textleft": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Surface"
-						}
-					}
-				]
-			},
 			"descripcionleft": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -65,7 +54,6 @@
 				]
 			},
 			"imageleft": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
@@ -83,7 +71,22 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"textbutton": {
+				"__TYPE__": "FieldContent",
+				"value": "spoken",
+				"type": "Text"
+			},
+			"linkbutton": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": [
