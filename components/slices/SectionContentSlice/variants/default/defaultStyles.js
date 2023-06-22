@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   height: 600px;
   display: flex;
   background-color: ${(props) => props.color};
-  padding: 2rem 0;
   ///////////////////
 
   ///////////////
@@ -77,7 +76,7 @@ export const HeadTitle = styled.div`
 
 export const LeftContainer = styled.div`
   height: 100%;
-  width: 20%;
+  width: 30%;
   /* background-color: red; */
   display: flex;
   .ImagePaper {
@@ -114,11 +113,17 @@ export const WhiteContainer = styled.div`
   position: relative;
   height: 100%;
   background-color: white;
-  flex: 1;
   text-align: justify;
-  padding: 0px 20px;
+  padding: 0px 0px 0px 20px;
+  a {
+    font-family: var(--font-hijrnotes);
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0;
+  }
   .ImageLeft {
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
     display: flex;
     margin: 1rem auto;
@@ -136,5 +141,13 @@ export const WhiteContainer = styled.div`
       font-size: 24px;
       line-height: 35px;
     }
+    p {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  .ButtonLeft {
+    display: flex;
+    place-content: center;
   }
 `;

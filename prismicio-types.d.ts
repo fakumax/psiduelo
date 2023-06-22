@@ -859,16 +859,6 @@ interface SectionContentSliceDefaultPrimary {
    */
   titleleft: prismic.TitleField;
   /**
-   * TextLeft field in *SectionContent → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_content.primary.textleft
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  textleft: prismic.TitleField;
-  /**
    * DescripcionLeft field in *SectionContent → Primary*
    *
    * - **Field Type**: Rich Text
@@ -878,6 +868,26 @@ interface SectionContentSliceDefaultPrimary {
    *
    */
   descripcionleft: prismic.RichTextField;
+  /**
+   * TextButton field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.textbutton
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textbutton: prismic.KeyTextField;
+  /**
+   * LinkButton field in *SectionContent → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  linkbutton: prismic.LinkField;
 }
 /**
  * Item in SectionContent → Items
