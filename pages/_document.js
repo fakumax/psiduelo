@@ -25,7 +25,10 @@ export default function Document() {
         href='https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap'
         rel='stylesheet'
       />
-
+      <link
+        href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap'
+        rel='stylesheet'
+      ></link>
       <body>
         <Main />
         <NextScript />
