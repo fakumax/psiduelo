@@ -37,6 +37,7 @@ export const Wrapper = styled.div`
       }
       p {
         text-align: justify;
+        font-family: ${(props) => props.theme.typography.fontFamily_crimson};
       }
     }
   }
@@ -64,9 +65,10 @@ export const ContainerItems = styled.div`
 
 export const HeadTitle = styled.div`
   h2 {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 50px;
     margin: 0;
+    font-family: var(--font-skeptisgraph);
   }
   .new1 {
     border: 1px solid #7c5a19;
@@ -138,12 +140,16 @@ export const WhiteContainer = styled.div`
     h2 {
       width: 100%;
       text-align: center;
-      font-size: 24px;
       line-height: 35px;
+      font-family: var(--font-skeptisgraph);
+      font-size: 40px;
+      font-weight: 400;
     }
     p {
       font-size: 12px;
       line-height: 20px;
+      font-weight: 400;
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     }
   }
   .ButtonLeft {

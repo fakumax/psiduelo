@@ -19,6 +19,7 @@ export const Theme = {
     fontFamily_V2: "'Poppins', sans-serif",
     fontFamily_old: "'Old Standard TT', sans-serif",
     fontFamily_belle: "'La Belle Aurore', sans-serif",
+    fontFamily_crimson: "'Crimson Text', serif",
     letterSpacing: '0px',
     h1: {
       desktop: {
