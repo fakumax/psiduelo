@@ -36,6 +36,9 @@ export const Container = styled.div`
 
   h2 {
     text-align: center;
+    font-family: var(--font-skeptisgraph);
+    font-weight: 400;
+    font-size: 3.5rem;
   }
   .subItem {
     display: flex;
