@@ -34,10 +34,7 @@ const Default = (slice) => {
             icon={faInstagram}
             style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
           />
-          <FontAwesomeIcon
-            icon={faSpotify}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
-          />
+
           <FontAwesomeIcon
             icon={faDiscord}
             style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
@@ -51,6 +48,10 @@ const Default = (slice) => {
             icon={faEnvelope}
             style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
             size={5}
+          />
+          <FontAwesomeIcon
+            icon={faSpotify}
+            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
           />
         </div>
       </SecondColumn>
