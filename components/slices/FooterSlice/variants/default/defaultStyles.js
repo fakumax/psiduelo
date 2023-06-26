@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: #121212;
+  background-color: rgba(219, 184, 179, 1);
   color: white;
   padding: 2rem;
 `;
@@ -27,5 +27,10 @@ export const FirstColumn = styled.div`
 `;
 
 export const SecondColumn = styled.div`
-  width: 33%;
+  width: 100%;
+  div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
 `;
