@@ -11,30 +11,25 @@ import {
 import { AiOutlineMenu } from 'react-icons/ai';
 import { Theme } from '@/components/styles';
 // import { Bounded } from './Bounded';
+import { BackgroundImage } from '../../slices/HeroSlice/variants/default/defaultStyles';
 
 export const Header = ({ navigation }) => {
-  //console.log(navigation);
+  console.log(navigation);
   //console.log(navigation.data.slices);
-  //console.log(navigation.data.icons.iconimage);
-  const { icons, slices } = navigation.data;
+  const { icons, slices, backgroundimage } = navigation.data;
 
-  //console.log(icons);
-  //console.log(slices);
-  //console.log(slices.slice_type);
-  //console.log(slices[0].primary.link);
-  //console.log('fondo', navigation.data.backgroundimage);
   const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
   const navRight = slices.filter((item) => item.slice_type === 'nav_right');
 
-  //console.log(navLeft);
-  //console.log(navRight);
   return (
     <div>
-      {/* <PrismicLink href='/' className='text-xl font-semibold tracking-tight'>
-          <PrismicText field={settings.data.siteTitle} />
-        </PrismicLink> */}
-
-      <NavBar style={{ backgroundImage: `url(${navigation.data.backgroundimage.url})` }}>
+      <NavBar
+        style={
+          backgroundimage.url
+            ? { backgroundImage: `url(${backgroundimage.url})` }
+            : { backgroundColor: '#ffff' }
+        }
+      >
         {/* ICONS */}
         <LeftContainer>
           <ul>
