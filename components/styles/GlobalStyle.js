@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+
     body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+		margin: 0;
+    box-sizing: border-box;
+		min-width: 320px;
+		max-width: 1600px;
+ 		margin: 0 auto;
+		min-height: 100vh;
 		font-family: ${({ theme }) => theme.typography.fontFamily};
 		letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
 				h1 {
@@ -47,19 +51,19 @@ export const GlobalStyle = createGlobalStyle`
 					}
 				}
 				p {
-					margin: 0; 
+					margin: 0;
 					font-size: ${(props) => props?.theme?.typography?.p?.desktop?.fontSize || '14px'};
 					font-weight: ${(props) => props?.theme?.typography?.p?.desktop?.fontWeight || '400'};
 					line-height: ${(props) => props?.theme?.typography?.p?.desktop?.lineHeight || '24px'};
-				 
+
 					@media(max-width: ${(props) => props?.theme?.breakpoints?.md || '768px'}){
 						font-size: ${(props) => props?.theme?.typography?.p?.mobile?.fontSize || '12px'};
 						font-weight: ${(props) => props?.theme?.typography?.p?.mobile?.fontWeight || '400'};
 						line-height: ${(props) => props?.theme?.typography?.p?.mobile?.lineHeight || '20px'};
 					}
-				 
+
 				}
-				a { 
+				a {
 					font-family: ${(props) => props?.theme?.typography?.fontFamily || 'Poppins, sans-serif'};
 					font-weight: 700;
 					text-decoration: none;
@@ -70,6 +74,6 @@ export const GlobalStyle = createGlobalStyle`
 					font-family: ${(props) => props?.theme?.typography?.fontFamily || 'Poppins, sans-serif'};
 				}
     }
-   
- 
+
+
 `;
