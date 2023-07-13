@@ -70,6 +70,16 @@
 						}
 					}
 				]
+			},
+			"bgcolor": {
+				"__TYPE__": "FieldContent",
+				"value": "#564354",
+				"type": "Color"
+			},
+			"colorletter": {
+				"__TYPE__": "FieldContent",
+				"value": "#3d61a5",
+				"type": "Color"
 			}
 		},
 		"items": []

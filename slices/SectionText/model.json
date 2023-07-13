@@ -41,6 +41,14 @@
             "allowTargetBlank": true,
             "single": "heading3"
           }
+        },
+        "bgcolor": {
+          "type": "Color",
+          "config": { "label": "BgColor", "placeholder": "" }
+        },
+        "colorletter": {
+          "type": "Color",
+          "config": { "label": "ColorLetter", "placeholder": "" }
         }
       },
       "items": {}
