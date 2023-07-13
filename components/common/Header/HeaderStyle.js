@@ -17,16 +17,12 @@ export const NavBar = styled.nav`
     margin: 0;
     gap: 1em;
   }
-  li {
+  li a {
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
-  }
-  a {
-    font-family: ${(props) => props.theme.typography.fontFamily_old};
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     font-weight: 500;
-    font-style: italic;
-    color: black;
   }
 `;
 
@@ -38,7 +34,8 @@ export const IconStyle = styled.div`
 
 export const LogoStyle = styled.div`
   position: relative;
-
+  width: 200px;
+  height: auto;
   img {
     height: 100%;
     width: 100%;
@@ -52,6 +49,7 @@ export const RightContainer = styled.div`
   gap: 2rem;
   width: 100%;
   justify-content: space-around;
+
   ul {
     margin: 0;
     padding: 0 20px;

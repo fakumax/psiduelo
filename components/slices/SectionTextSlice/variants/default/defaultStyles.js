@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  color: rgba(219, 184, 179, 1);
+  color: ${(props) => props.colorletter};
+  background-color: ${(props) => props.bgcolor};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;
@@ -10,7 +11,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   max-height: 200px;
   height: 200px;
-  background-color: beige;
   align-items: center;
   img {
     max-width: 40px;

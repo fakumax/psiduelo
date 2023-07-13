@@ -1010,6 +1010,26 @@ interface SectionTextSliceDefaultPrimary {
    *
    */
   textsecond: prismic.TitleField;
+  /**
+   * BgColor field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.bgcolor
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  bgcolor: prismic.ColorField;
+  /**
+   * ColorLetter field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.colorletter
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  colorletter: prismic.ColorField;
 }
 /**
  * Default variation for SectionText Slice

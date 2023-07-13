@@ -5,8 +5,8 @@ import { Container, Transition, Wrapper } from './defaultStyles';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
-  // console.log('--slice--', slice);
-  const { imageleft, imageright, textfirst, textsecond } = slice.primary;
+  //console.log('--slice--', slice);
+  const { imageleft, imageright, textfirst, textsecond, colorletter, bgcolor } = slice.primary;
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Default = (slice) => {
   }, [isVisible]);
 
   return (
-    <Wrapper>
+    <Wrapper colorletter={colorletter} bgcolor={bgcolor}>
       <Container>
         <AnimatePresence>
           {isVisible && (
@@ -28,7 +28,7 @@ const Default = (slice) => {
               transition={{ duration: 2 }}
               exit={{ opacity: 0, display: 'flex' }}
             >
-              <PrismicNextImage field={imageleft} alt='' />
+              <PrismicNextImage field={imageleft} alt="" />
               <PrismicRichText field={textfirst} />
             </Transition>
           )}
@@ -40,7 +40,7 @@ const Default = (slice) => {
               exit={{ opacity: 1, display: 'flex' }}
               style={{ flexDirection: 'row-reverse' }}
             >
-              <PrismicNextImage field={imageright} alt='' />
+              <PrismicNextImage field={imageright} alt="" />
               <PrismicRichText field={textsecond} />
             </Transition>
           )}
