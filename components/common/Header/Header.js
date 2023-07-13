@@ -16,8 +16,8 @@ import { BackgroundImage } from '../../slices/HeroSlice/variants/default/default
 export const Header = ({ navigation }) => {
   console.log(navigation);
   //console.log(navigation.data.slices);
-  const { icons, slices, backgroundimage } = navigation.data;
-
+  const { icons, slices, backgroundimage, colorlink } = navigation.data;
+  console.log(colorlink);
   const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
   const navRight = slices.filter((item) => item.slice_type === 'nav_right');
 
@@ -50,7 +50,10 @@ export const Header = ({ navigation }) => {
             <ul>
               {navLeft.map((item, index) => (
                 <li key={index}>
-                  <PrismicLink field={item.primary.link}>
+                  <PrismicLink
+                    style={{ color: colorlink || 'black' }}
+                    field={item.primary.link}
+                  >
                     <PrismicText field={item.primary.name} />
                   </PrismicLink>
                 </li>
@@ -66,7 +69,10 @@ export const Header = ({ navigation }) => {
             <ul>
               {navRight.map((item, index) => (
                 <li key={index}>
-                  <PrismicLink field={item.primary.link}>
+                  <PrismicLink
+                    style={{ color: colorlink || 'black' }}
+                    field={item.primary.link}
+                  >
                     <PrismicText field={item.primary.name} />
                   </PrismicLink>
                 </li>
