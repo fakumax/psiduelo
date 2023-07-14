@@ -44,6 +44,43 @@
           "config": { "label": "Link", "placeholder": "", "select": null }
         }
       }
+    },
+    {
+      "id": "sameStyle",
+      "name": "SameStyle",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "color": {
+          "type": "Color",
+          "config": { "label": "Color", "placeholder": "" }
+        },
+        "bgimage": {
+          "type": "Image",
+          "config": { "label": "BgImage", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": { "label": "Link", "placeholder": "", "select": null }
+        }
+      }
     }
   ]
 }
