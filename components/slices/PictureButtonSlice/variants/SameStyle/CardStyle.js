@@ -44,6 +44,11 @@ export const HoverText = styled.div`
   place-items: center;
   h3 {
     text-align: center;
-    font-family: 'Crimson Text';
+    font-family: var(--font-skeptisgraph);
+    font-weight: 500;
+    padding: 30px;
+    color: #7c5a19;
+    font-size: 40px;
+    line-height: 40px;
   }
 `;
