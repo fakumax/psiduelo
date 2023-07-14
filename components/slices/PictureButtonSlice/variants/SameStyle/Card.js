@@ -10,13 +10,13 @@ const Card = ({ items }) => {
       <div className="ImageContainer">
         <PrismicLink field={items.link}>
           <PrismicNextImage field={items.image} alt="" />
+          <HoverText>
+            <h3>
+              <PrismicText field={items.text} />
+            </h3>
+          </HoverText>
         </PrismicLink>
       </div>
-      <HoverText>
-        <h3>
-          <PrismicText field={items.text} />
-        </h3>
-      </HoverText>
     </WrapperCard>
   );
 };

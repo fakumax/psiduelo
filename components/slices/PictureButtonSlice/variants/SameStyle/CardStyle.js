@@ -1,14 +1,14 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const WrapperCard = styled.div`
   background-color: #f4f3ef;
   height: 300px;
   width: 300px;
   display: flex;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add the drop shadow effect */
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   .ImageContainer {
-    /* background-color: aquamarine; */
     height: 94%;
     width: 94%;
     margin: auto;
@@ -17,9 +17,16 @@ export const WrapperCard = styled.div`
     width: 100%;
     height: 100%;
     opacity: 1;
-    transition: opacity 1s ease;
+  }
+  a {
+    display: flex;
+    place-content: center;
+    place-items: center;
     &:hover {
-      opacity: 0.3;
+      div {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.5);
+      }
     }
   }
 `;
@@ -27,14 +34,14 @@ export const WrapperCard = styled.div`
 export const HoverText = styled.div`
   position: absolute;
   color: black;
-  transition: opacity 0.3s ease;
   opacity: 0;
-  visibility: hidden;
-  width: inherit;
-  height: inherit;
+  transition: opacity 0.3s ease-in;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
+  place-items: center;
   h3 {
     text-align: center;
     font-family: 'Crimson Text';
