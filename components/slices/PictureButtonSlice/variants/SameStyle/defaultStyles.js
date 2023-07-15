@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   /* background-color: blue; */
-  margin: 4rem;
+  /* margin: 4rem; */
+  padding: 4rem;
 `;
 
 export const Container = styled.div`
