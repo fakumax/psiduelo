@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 600px;
   display: flex;
   background-color: ${(props) => props.color};
+  height: fit-content;
+  /* padding: 4rem 0; */
   ///////////////////
 
   ///////////////
@@ -16,10 +17,8 @@ export const Wrapper = styled.div`
     justify-content: center;
     .ImageContainer {
       position: relative;
-      width: 100%;
-      max-width: 160px;
-      max-height: 200px;
-      height: 100%;
+      width: 160px;
+      height: 200px;
       img {
         width: 100%;
         height: 100%;
@@ -49,6 +48,10 @@ export const Wrapper = styled.div`
       display: none;
     }
   }
+  .WrapperImage {
+    width: 300px;
+    height: 100%;
+  }
 `;
 
 export const ContainerItems = styled.div`
@@ -58,12 +61,19 @@ export const ContainerItems = styled.div`
   align-items: center;
   gap: 40px;
   padding: 40px;
+
   &:last-child {
     flex-direction: row-reverse;
+    text-align: end;
+    h2,
+    .TextContainer p {
+      text-align: end;
+    }
   }
 `;
 
 export const HeadTitle = styled.div`
+  position: relative;
   h2 {
     font-weight: 400;
     font-size: 50px;
@@ -77,7 +87,7 @@ export const HeadTitle = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  height: 100%;
+  /* height: 100%; */
   width: 30%;
   /* background-color: red; */
   display: flex;
@@ -117,6 +127,9 @@ export const WhiteContainer = styled.div`
   background-color: white;
   text-align: justify;
   padding: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
   a {
     font-family: var(--font-hijrnotes);
     display: flex;
@@ -146,8 +159,9 @@ export const WhiteContainer = styled.div`
       font-weight: 400;
     }
     p {
-      font-size: 12px;
+      font-size: 16px;
       line-height: 20px;
+      word-spacing: 2px;
       font-weight: 400;
       font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     }

@@ -16,32 +16,34 @@ const Default = (slice) => {
     <Wrapper color={bgcolor}>
       <LeftContainer>
         <WhiteContainer>
-          <div className='ImageLeft'>
+          <div className="ImageLeft">
             <PrismicNextImage field={imageleft} />
           </div>
-          <div className='TextLeft'>
+          <div className="TextLeft">
             <PrismicRichText field={titleleft} />
             <PrismicRichText field={descripcionleft} />
           </div>
-          <div className='ButtonLeft'>
+          <div className="ButtonLeft">
             <PrismicLink field={textleft}>{textbutton}</PrismicLink>
           </div>
         </WhiteContainer>
-        <div className='ImagePaper'>
+        <div className="ImagePaper">
           <PrismicNextImage field={bgleft} />
         </div>
       </LeftContainer>
-      <div className='rightContainer'>
+      <div className="rightContainer">
         {slice.items.map((item, index) => (
           <>
             <ContainerItems>
-              <div className='ImageContainer'>
-                <PrismicNextImage field={item.image} />
+              <div className="WrapperImage">
+                <div class="ImageContainer">
+                  <PrismicNextImage field={item.image} />
+                </div>
               </div>
-              <div className='TextContainer'>
+              <div className="TextContainer">
                 <HeadTitle>
                   <PrismicRichText field={item.title} key={index} />
-                  <div class='new1' />
+                  <div class="new1" />
                 </HeadTitle>
                 <PrismicRichText field={item.description} />
                 <span>{item.textbutton}</span>
