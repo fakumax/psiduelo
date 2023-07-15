@@ -1,3 +1,2 @@
-import { Default } from './default';
-
-export { Default };
+export * from './SameStyle';
+export * from './default';

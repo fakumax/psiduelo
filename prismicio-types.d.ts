@@ -53,6 +53,17 @@ interface NavigationDocumentData {
    */
   backgroundimage: prismic.ImageField<never>;
   /**
+   * ColorLink field in *Navigation*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.colorlink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  colorlink: prismic.ColorField;
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone
@@ -705,10 +716,87 @@ export type PictureButtonSliceDefault = prismic.SharedSliceVariation<
   Simplify<PictureButtonSliceDefaultItem>
 >;
 /**
+ * Primary content in PictureButton → Primary
+ *
+ */
+interface PictureButtonSliceSameStylePrimary {
+  /**
+   * Color field in *PictureButton → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.primary.color
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  color: prismic.ColorField;
+  /**
+   * BgImage field in *PictureButton → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.primary.bgimage
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  bgimage: prismic.ImageField<never>;
+}
+/**
+ * Item in PictureButton → Items
+ *
+ */
+export interface PictureButtonSliceSameStyleItem {
+  /**
+   * Image field in *PictureButton → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+  /**
+   * Text field in *PictureButton → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismic.TitleField;
+  /**
+   * Link field in *PictureButton → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: picture_button.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField;
+}
+/**
+ * SameStyle variation for PictureButton Slice
+ *
+ * - **API ID**: `sameStyle`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PictureButtonSliceSameStyle = prismic.SharedSliceVariation<
+  "sameStyle",
+  Simplify<PictureButtonSliceSameStylePrimary>,
+  Simplify<PictureButtonSliceSameStyleItem>
+>;
+/**
  * Slice variation for *PictureButton*
  *
  */
-type PictureButtonSliceVariation = PictureButtonSliceDefault;
+type PictureButtonSliceVariation =
+  | PictureButtonSliceDefault
+  | PictureButtonSliceSameStyle;
 /**
  * PictureButton Shared Slice
  *
@@ -1109,6 +1197,9 @@ declare module "@prismicio/client" {
       PictureButtonSliceDefaultPrimary,
       PictureButtonSliceDefaultItem,
       PictureButtonSliceDefault,
+      PictureButtonSliceSameStylePrimary,
+      PictureButtonSliceSameStyleItem,
+      PictureButtonSliceSameStyle,
       PictureButtonSliceVariation,
       PictureButtonSlice,
       SectionCheckSliceDefaultPrimary,
