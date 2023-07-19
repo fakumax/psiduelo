@@ -9,7 +9,7 @@ import {
 } from './defaultStyles';
 
 const Default = (slice) => {
-  // console.log('--slice--', slice);
+  console.log('--slice--', slice);
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
   return (
