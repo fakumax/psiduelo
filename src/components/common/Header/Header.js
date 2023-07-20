@@ -9,15 +9,9 @@ import {
   RightContainer,
 } from './HeaderStyle';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { Theme } from '@/components/styles';
-// import { Bounded } from './Bounded';
-import { BackgroundImage } from '../../slices/HeroSlice/variants/default/defaultStyles';
 
 export const Header = ({ navigation }) => {
-  console.log(navigation);
-  //console.log(navigation.data.slices);
   const { icons, slices, backgroundimage, colorlink } = navigation.data;
-  console.log(colorlink);
   const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
   const navRight = slices.filter((item) => item.slice_type === 'nav_right');
 
