@@ -2,9 +2,9 @@ import Head from 'next/head';
 import { SliceZone } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 
-import { createClient } from '../prismicio';
-import { components } from '../slices/';
-import { Layout } from '../components/common/Layout';
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+import { Layout } from '@/components/common/Layout';
 
 const Index = ({ page, navigation }) => {
   return (

@@ -3,9 +3,9 @@ import { SliceZone } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import * as prismic from '@prismicio/client';
 
-import { createClient } from '../prismicio';
-import { components } from '../slices';
-import { Layout } from '../components/common/Layout';
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+import { Layout } from '@/components/common/Layout';
 import Link from 'next/link';
 
 const Article = ({ page, navigation, settings }) => {
