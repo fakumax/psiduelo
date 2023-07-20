@@ -6,10 +6,9 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
 
-export default function Page({ page, navigation, settings }) {
-  console.log(navigation);
+export default function Page({ page, navigation }) {
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout navigation={navigation}>
       <Head>
         <title>{prismic.asText(page.data.title)}</title>
       </Head>
