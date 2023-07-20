@@ -1,60 +1,60 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { FirstColumn, SecondColumn, Wrapper } from './defaultStyles';
+import { BodyContainer, IconsGroup, Wrapper } from './defaultStyles';
 
 //Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faDiscord,
+  faFacebookF,
   faInstagram,
   faSpotify,
-  faDiscord,
-  faFacebook,
-  faFacebookF,
+  faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Default = (slice) => {
-  // console.log('--slice--', slice);
-  const { image, description } = slice.primary;
+  console.log('--slice--Footer', slice);
+  const { bgimage, description, text, logo } = slice.primary;
   return (
-    <Wrapper>
-      <FirstColumn>
-        <div className='ImageLeft'>
-          <PrismicNextImage field={image} />
+    <Wrapper bgImage={bgimage.url}>
+      <BodyContainer>
+        <PrismicNextImage field={logo} />
+        <div>
+          <PrismicRichText field={text} />
+          <PrismicRichText field={description} />
         </div>
-        <PrismicRichText field={description} />
-      </FirstColumn>
-      <SecondColumn>
-        {/* <>{item.columns}</>
-      <>{item.text}</>
-      <PrismicLink field={item.link}>Link</PrismicLink>
-      <PrismicNextImage field={item.image} /> */}
+      </BodyContainer>
+      <IconsGroup>
         <div>
           <FontAwesomeIcon
-            icon={faInstagram}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
+            icon={faWhatsapp}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
           />
-
           <FontAwesomeIcon
-            icon={faDiscord}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
+            icon={faInstagram}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
           />
           <FontAwesomeIcon
             icon={faFacebookF}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
           />
 
           <FontAwesomeIcon
             icon={faEnvelope}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
             size={5}
           />
           <FontAwesomeIcon
+            icon={faDiscord}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
+          />
+          <FontAwesomeIcon
             icon={faSpotify}
-            style={{ fontSize: 25, color: 'rgba(255, 255, 255, 0.5)' }}
+            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
           />
         </div>
-      </SecondColumn>
+      </IconsGroup>
     </Wrapper>
   );
 };

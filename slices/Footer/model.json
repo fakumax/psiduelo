@@ -12,9 +12,9 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "image": {
+        "bgimage": {
           "type": "Image",
-          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+          "config": { "label": "BgImage", "constraint": {}, "thumbnails": [] }
         },
         "description": {
           "type": "StructuredText",
@@ -24,17 +24,22 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "logo": {
+          "type": "Image",
+          "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading4"
+          }
         }
       },
       "items": {
-        "columns": {
-          "type": "Select",
-          "config": {
-            "label": "Columns",
-            "placeholder": "Ingrese columna",
-            "options": ["firstColumn", "SecondColumn", "ThirdColumn"]
-          }
-        },
         "text": {
           "type": "Text",
           "config": { "label": "Text", "placeholder": "" }
