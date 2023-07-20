@@ -2,7 +2,7 @@ import { hexToRGBA } from '@/utils/hexToRGBA';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin: 4rem 0;
+  /* margin: 4rem 0; */
   width: 100%;
   height: 70vh;
   object-fit: contain;
@@ -27,7 +27,12 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 0 40px;
   justify-content: space-evenly;
-
+  .textContainer {
+    h3 {
+      color: ${(props) => props.theme.colors.titleBrown};
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    }
+  }
   .subContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // Dos columnas

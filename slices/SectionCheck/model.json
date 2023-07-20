@@ -43,6 +43,15 @@
         "icon": {
           "type": "Image",
           "config": { "label": "Icon", "constraint": {}, "thumbnails": [] }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
         }
       }
     }
