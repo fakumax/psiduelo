@@ -1,45 +1,32 @@
 import Head from 'next/head';
 import { SliceZone } from '@prismicio/react';
-import * as prismicH from '@prismicio/helpers';
 import * as prismic from '@prismicio/client';
 
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
-import Link from 'next/link';
 
-const Article = ({ page, navigation, settings }) => {
+export default function Page({ page, navigation, settings }) {
+  console.log(navigation);
   return (
     <Layout navigation={navigation} settings={settings}>
       <Head>
-        <title>
-          {prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}
-        </title>
+        <title>{prismic.asText(page.data.title)}</title>
       </Head>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
-};
-
-export default Article;
+}
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const article = await client.getByUID('article', params.uid);
-  const latestArticles = await client.getAllByType('article', {
-    limit: 3,
-    orderings: [
-      { field: 'my.article.publishDate', direction: 'desc' },
-      { field: 'document.first_publication_date', direction: 'desc' },
-    ],
-  });
+  const page = await client.getByUID('page', params.uid);
   const navigation = await client.getSingle('navigation');
 
   return {
     props: {
-      article,
-      latestArticles,
+      page,
       navigation,
     },
   };
@@ -48,10 +35,10 @@ export async function getStaticProps({ params, previewData }) {
 export async function getStaticPaths() {
   const client = createClient();
 
-  const articles = await client.getAllByType('article');
+  const pages = await client.getAllByType('page');
 
   return {
-    paths: articles.map((article) => prismic.asLink(article)),
+    paths: pages.map((page) => prismic.asLink(page)),
     fallback: false,
   };
 }

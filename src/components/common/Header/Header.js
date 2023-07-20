@@ -11,14 +11,9 @@ import {
 import { AiOutlineMenu } from 'react-icons/ai';
 
 export const Header = ({ navigation }) => {
-  //console.log(navigation);
-  //console.log(navigation.data.slices);
   const { icons, slices, backgroundimage, colorlink } = navigation.data;
-  //console.log(colorlink);
   const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
   const navRight = slices.filter((item) => item.slice_type === 'nav_right');
-  const wara = (props) => props.theme.typography;
-  console.log(wara);
 
   return (
     <div>
