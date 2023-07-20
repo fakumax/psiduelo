@@ -30,6 +30,10 @@ const routes = [
     type: 'navigation',
     path: '/',
   },
+  {
+    type: 'article',
+    path: '/articulo/:uid',
+  },
 ];
 
 /**

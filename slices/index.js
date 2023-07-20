@@ -13,4 +13,5 @@ export const components = {
   section_check: dynamic(() => import("./SectionCheck")),
   section_content: dynamic(() => import("./SectionContent")),
   section_text: dynamic(() => import("./SectionText")),
+  text_block: dynamic(() => import("./TextBlock")),
 };
