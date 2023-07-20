@@ -4,7 +4,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 const Default = (slice) => {
   //console.log('--SectioCheckSlice--', slice);
-  const { image, text, color } = slice.primary;
+  const { image, text, color, title } = slice.primary;
   //console.log(slice.items);
   const { items } = slice;
   //console.log(color);
@@ -15,13 +15,16 @@ const Default = (slice) => {
         <div>
           <PrismicRichText field={text} />
         </div>
-        <div className='subContainer'>
+        <div className="subContainer">
           {items.map((item, index) => (
-            <div key={index} className='subItem'>
-              <div className='iconContainer'>
+            <div key={index} className="subItem">
+              <div className="iconContainer">
                 <PrismicNextImage field={item.icon} />
               </div>
-              <PrismicRichText field={item.description} />
+              <div className="textContainer">
+                <PrismicRichText field={item.title} />
+                <PrismicRichText field={item.description} />
+              </div>
             </div>
           ))}
         </div>

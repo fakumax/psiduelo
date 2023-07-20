@@ -252,14 +252,14 @@ export type CopyrightSlice = prismic.SharedSlice<
  */
 export interface FooterSliceDefaultPrimary {
   /**
-   * Image field in *Footer → Primary*
+   * BgImage field in *Footer → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.image
+   * - **API ID Path**: footer.primary.bgimage
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  bgimage: prismic.ImageField<never>;
 
   /**
    * Description field in *Footer → Primary*
@@ -270,22 +270,32 @@ export interface FooterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Logo field in *Footer → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Text field in *Footer → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.TitleField;
 }
 
 /**
  * Primary content in *Footer → Items*
  */
 export interface FooterSliceDefaultItem {
-  /**
-   * Columns field in *Footer → Items*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Ingrese columna
-   * - **API ID Path**: footer.items[].columns
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  columns: prismic.SelectField<"firstColumn" | "SecondColumn" | "ThirdColumn">;
-
   /**
    * Text field in *Footer → Items*
    *
