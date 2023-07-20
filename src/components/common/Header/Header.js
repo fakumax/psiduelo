@@ -28,13 +28,11 @@ export const Header = ({ navigation }) => {
         <LeftContainer>
           <ul>
             {icons.map((item, index) => (
-              <>
-                <li key={item.iconimage.alt} className={item.iconimage.alt}>
-                  <PrismicLink field={navigation.data.logolink}>
-                    <PrismicNextImage field={item.iconimage} priority={true} />
-                  </PrismicLink>
-                </li>
-              </>
+              <li key={item.iconimage.alt} className={item.iconimage.alt}>
+                <PrismicLink field={navigation.data.logolink}>
+                  <PrismicNextImage field={item.iconimage} priority={true} />
+                </PrismicLink>
+              </li>
             ))}
           </ul>
         </LeftContainer>

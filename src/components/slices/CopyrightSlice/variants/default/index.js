@@ -12,18 +12,31 @@ const Default = (slice) => {
     return palabras.map((palabra, index) => reemplazarPalabras(palabra, index));
   };
 
+  // const separarYReemplazarPalabras = () => {
+  //   const palabras = text.split(/(\{.*?\})/);
+  //   return palabras.map((palabra, index) => {
+  //     return {
+  //       palabra: palabra,
+  //       indice: index,
+  //       resultado: reemplazarPalabras(palabra, index),
+  //     };
+  //   });
+  // };
+
   const reemplazarPalabras = (palabra) => {
     const reemplazos = {
-      '{love}': <FaHeart className='heart-icon' />,
+      '{love}': <FaHeart className="heart-icon" />,
       '{fakumax}': <PrismicLink field={slice.primary.link}>Facundo Vergara</PrismicLink>,
       '{year}': date.getFullYear(),
     };
     return reemplazos[palabra] || palabra;
   };
 
+  const textT = separarYReemplazarPalabras;
+
   return (
     <Wrapper>
-      <p>{separarYReemplazarPalabras()}</p>
+      <p>{textT}</p>
     </Wrapper>
   );
 };

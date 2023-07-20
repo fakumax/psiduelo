@@ -9,7 +9,7 @@ import {
 } from './defaultStyles';
 
 const Default = (slice) => {
-  console.log('--slice--', slice);
+  //console.log('--slice--', slice);
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
   return (
@@ -17,7 +17,7 @@ const Default = (slice) => {
       <LeftContainer>
         <WhiteContainer>
           <div className="ImageLeft">
-            <PrismicNextImage field={imageleft} />
+            <PrismicNextImage field={imageleft} fallbackAlt="" />
           </div>
           <div className="TextLeft">
             <PrismicRichText field={titleleft} />
@@ -28,28 +28,26 @@ const Default = (slice) => {
           </div>
         </WhiteContainer>
         <div className="ImagePaper">
-          <PrismicNextImage field={bgleft} />
+          <PrismicNextImage field={bgleft} fallbackAlt="" />
         </div>
       </LeftContainer>
       <div className="rightContainer">
         {slice.items.map((item, index) => (
-          <>
-            <ContainerItems>
-              <div className="WrapperImage">
-                <div class="ImageContainer">
-                  <PrismicNextImage field={item.image} />
-                </div>
+          <ContainerItems key={index}>
+            <div className="WrapperImage">
+              <div className="ImageContainer">
+                <PrismicNextImage field={item.image} />
               </div>
-              <div className="TextContainer">
-                <HeadTitle>
-                  <PrismicRichText field={item.title} key={index} />
-                  <div class="new1" />
-                </HeadTitle>
-                <PrismicRichText field={item.description} />
-                <span>{item.textbutton}</span>
-              </div>
-            </ContainerItems>
-          </>
+            </div>
+            <div className="TextContainer">
+              <HeadTitle>
+                <PrismicRichText field={item.title} key={index} />
+                <div className="new1" />
+              </HeadTitle>
+              <PrismicRichText field={item.description} />
+              <span>{item.textbutton}</span>
+            </div>
+          </ContainerItems>
         ))}
       </div>
     </Wrapper>
