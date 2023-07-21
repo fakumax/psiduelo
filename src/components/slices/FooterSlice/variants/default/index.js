@@ -14,10 +14,10 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Default = (slice) => {
-  console.log('--slice--Footer', slice);
+  //console.log('--slice--Footer', slice);
   const { bgimage, description, text, logo } = slice.primary;
   return (
-    <Wrapper bgImage={bgimage.url}>
+    <Wrapper bgimage={bgimage.url}>
       <BodyContainer>
         <PrismicNextImage field={logo} />
         <div>
@@ -43,7 +43,6 @@ const Default = (slice) => {
           <FontAwesomeIcon
             icon={faEnvelope}
             style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
-            size={5}
           />
           <FontAwesomeIcon
             icon={faDiscord}
