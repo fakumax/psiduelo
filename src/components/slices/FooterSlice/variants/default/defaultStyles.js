@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-image: ${({ bgImage }) => `url(${bgImage})`};
+  background-image: ${({ bgimage }) => `url(${bgimage})`};
   background-size: cover;
   width: 100%;
   height: 400px;
