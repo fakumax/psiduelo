@@ -9,7 +9,12 @@ const Default = (slice) => {
 
   const separarYReemplazarPalabras = () => {
     const palabras = text.split(/(\{.*?\})/);
-    return palabras.map((palabra, index) => reemplazarPalabras(palabra, index));
+    const palabrotas = palabras.map((palabra, index) =>
+      reemplazarPalabras(palabra, index)
+    );
+    //console.log(palabrotas);
+
+    return palabrotas;
   };
 
   // const separarYReemplazarPalabras = () => {
@@ -26,17 +31,24 @@ const Default = (slice) => {
   const reemplazarPalabras = (palabra) => {
     const reemplazos = {
       '{love}': <FaHeart className="heart-icon" />,
-      '{fakumax}': <PrismicLink field={slice.primary.link}>Facundo Vergara</PrismicLink>,
+      '{fakumax}': (
+        <PrismicLink field={slice.primary.link}> Facundo Vergara </PrismicLink>
+      ),
       '{year}': date.getFullYear(),
     };
+
     return reemplazos[palabra] || palabra;
   };
 
-  const textT = separarYReemplazarPalabras;
+  const testing = separarYReemplazarPalabras();
 
   return (
     <Wrapper>
-      <p>{textT}</p>
+      <p>
+        {testing.map((textT, index) => (
+          <span key={index}>{textT}</span>
+        ))}
+      </p>
     </Wrapper>
   );
 };
