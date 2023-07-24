@@ -12,21 +12,32 @@ export const Container = styled.div`
   margin: 4rem 0;
   gap: 2rem;
   flex-direction: column;
+  h3 {
+    text-align: center;
+  }
+  p,
+  li,
+  h3 {
+    font-family: 'Crimson Text';
+  }
 
   p,
   li {
     font-size: 16px;
-    font-family: 'Crimson Text';
     text-align: justify;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
+    h3,
+    p,
+    li {
+      padding: 0 2rem;
+    }
     p,
     li {
       font-size: 12px;
-      padding: 0 2rem;
     }
   }
 `;

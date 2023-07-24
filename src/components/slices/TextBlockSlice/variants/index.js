@@ -1,3 +1,2 @@
-import { Default } from './default';
-
-export { Default };
+export * from './TitleText';
+export * from './default';
