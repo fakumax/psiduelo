@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ArticleDocumentDataSlicesSlice = TextBlockSlice | ImageBlockSlice;
+type ArticleDocumentDataSlicesSlice =
+  | TextBlockSlice
+  | ImageBlockSlice
+  | FooterSlice
+  | CopyrightSlice;
 
 /**
  * Content for Article documents
@@ -554,11 +558,50 @@ export type ImageBlockSliceImageText = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImageBlock → Primary*
+ */
+export interface ImageBlockSliceImageParagraphPrimary {
+  /**
+   * Subtitle field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * Image field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * ImageParagraph variation for ImageBlock Slice
+ *
+ * - **API ID**: `imageParagraph`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBlockSliceImageParagraph = prismic.SharedSliceVariation<
+  "imageParagraph",
+  Simplify<ImageBlockSliceImageParagraphPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *ImageBlock*
  */
 type ImageBlockSliceVariation =
   | ImageBlockSliceDefault
-  | ImageBlockSliceImageText;
+  | ImageBlockSliceImageText
+  | ImageBlockSliceImageParagraph;
 
 /**
  * ImageBlock Shared Slice
@@ -1437,6 +1480,7 @@ declare module "@prismicio/client" {
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
       ImageBlockSliceImageText,
+      ImageBlockSliceImageParagraph,
       NavLeftSlice,
       NavLeftSliceVariation,
       NavLeftSliceDefault,

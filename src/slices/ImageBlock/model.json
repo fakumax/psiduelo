@@ -42,6 +42,30 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "imageParagraph",
+      "name": "ImageParagraph",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {}
     }
   ]
 }
