@@ -23,7 +23,12 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": { "text_block": { "type": "SharedSlice" } } }
+        "config": {
+          "choices": {
+            "text_block": { "type": "SharedSlice" },
+            "image_block": { "type": "SharedSlice" }
+          }
+        }
       }
     },
     "SEO & Metadata": {

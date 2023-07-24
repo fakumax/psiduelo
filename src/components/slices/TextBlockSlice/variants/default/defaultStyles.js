@@ -13,7 +13,8 @@ export const Container = styled.div`
   gap: 2rem;
   flex-direction: column;
 
-  p {
+  p,
+  li {
     font-size: 16px;
     font-family: 'Crimson Text';
   }
@@ -21,7 +22,8 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
-    p {
+    p,
+    li {
       font-size: 12px;
       text-align: justify;
       padding: 0 2rem;

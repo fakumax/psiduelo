@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ArticleDocumentDataSlicesSlice = TextBlockSlice;
+type ArticleDocumentDataSlicesSlice = TextBlockSlice | ImageBlockSlice;
 
 /**
  * Content for Article documents
@@ -486,6 +486,91 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *ImageBlock → Primary*
+ */
+export interface ImageBlockSliceDefaultPrimary {
+  /**
+   * Image field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ImageBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ImageBlock → Primary*
+ */
+export interface ImageBlockSliceImageTextPrimary {
+  /**
+   * Image field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+}
+
+/**
+ * ImageText variation for ImageBlock Slice
+ *
+ * - **API ID**: `imageText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBlockSliceImageText = prismic.SharedSliceVariation<
+  "imageText",
+  Simplify<ImageBlockSliceImageTextPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageBlock*
+ */
+type ImageBlockSliceVariation =
+  | ImageBlockSliceDefault
+  | ImageBlockSliceImageText;
+
+/**
+ * ImageBlock Shared Slice
+ *
+ * - **API ID**: `image_block`
+ * - **Description**: ImageBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageBlockSlice = prismic.SharedSlice<
+  "image_block",
+  ImageBlockSliceVariation
+>;
 
 /**
  * Primary content in *NavLeft → Primary*
@@ -1268,9 +1353,47 @@ export type TextBlockSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceTitleTextPrimary {
+  /**
+   * Title field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * TitleText variation for TextBlock Slice
+ *
+ * - **API ID**: `titleText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceTitleText = prismic.SharedSliceVariation<
+  "titleText",
+  Simplify<TextBlockSliceTitleTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type TextBlockSliceVariation = TextBlockSliceDefault | TextBlockSliceTitleText;
 
 /**
  * TextBlock Shared Slice
@@ -1310,6 +1433,10 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
+      ImageBlockSlice,
+      ImageBlockSliceVariation,
+      ImageBlockSliceDefault,
+      ImageBlockSliceImageText,
       NavLeftSlice,
       NavLeftSliceVariation,
       NavLeftSliceDefault,
@@ -1335,6 +1462,7 @@ declare module "@prismicio/client" {
       TextBlockSlice,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      TextBlockSliceTitleText,
     };
   }
 }
