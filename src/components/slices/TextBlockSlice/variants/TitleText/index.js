@@ -1,16 +1,18 @@
 import { PrismicRichText } from '@prismicio/react';
 import { Container, Wrapper } from './defaultStyles';
 
-const Default = (slice) => {
+const TitleText = (slice) => {
   //console.log('--slice--TextBlockSlice', slice);
-  const { text } = slice.primary;
+  const { title, text } = slice.primary;
+
   return (
     <Wrapper>
       <Container>
+        <PrismicRichText field={title} />
         <PrismicRichText field={text} />
       </Container>
     </Wrapper>
   );
 };
 
-export { Default };
+export { TitleText };

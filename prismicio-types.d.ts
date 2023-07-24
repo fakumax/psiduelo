@@ -520,16 +520,6 @@ export type ImageBlockSliceDefault = prismic.SharedSliceVariation<
  */
 export interface ImageBlockSliceImageTextPrimary {
   /**
-   * Image field in *ImageBlock → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_block.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
    * Title field in *ImageBlock → Primary*
    *
    * - **Field Type**: Title
@@ -538,6 +528,16 @@ export interface ImageBlockSliceImageTextPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  /**
+   * Image field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
