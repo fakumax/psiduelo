@@ -6,6 +6,7 @@ export const components = {
   copyright: dynamic(() => import("./Copyright")),
   footer: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
+  image_block: dynamic(() => import("./ImageBlock")),
   nav_left: dynamic(() => import("./NavLeft")),
   nav_right: dynamic(() => import("./NavRight")),
   navigation_item: dynamic(() => import("./NavigationItem")),

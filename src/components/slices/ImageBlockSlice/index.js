@@ -1,11 +1,12 @@
-import { Default, TitleText } from './variants';
+import { Default, ImageText, ImageParagraph } from './variants';
 
-export const TextBlockSlice = ({ slice }) => {
+export const ImageBlockSlice = ({ slice }) => {
   const { variation } = slice;
 
   const typeOfComponents = {
     ['default']: Default,
-    ['titleText']: TitleText,
+    ['imageText']: ImageText,
+    ['imageParagraph']: ImageParagraph,
   };
 
   const TypeOfVariants = typeOfComponents[variation] || Default;
