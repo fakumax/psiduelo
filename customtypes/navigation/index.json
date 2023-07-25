@@ -1,0 +1,90 @@
+{
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "format": "custom",
+  "json": {
+    "Main": {
+      "logoimage": {
+        "type": "Image",
+        "config": {
+          "label": "LogoImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logolink": {
+        "type": "Link",
+        "config": {
+          "label": "LogoLink",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "icons": {
+        "type": "Group",
+        "config": {
+          "label": "Icons",
+          "fields": {
+            "iconimage": {
+              "type": "Image",
+              "config": {
+                "label": "IconImage",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "icondescription": {
+              "type": "Text",
+              "config": {
+                "label": "IconDescription",
+                "placeholder": ""
+              }
+            },
+            "iconlink": {
+              "type": "Link",
+              "config": {
+                "label": "IconLink",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "backgroundimage": {
+        "type": "Image",
+        "config": {
+          "label": "BackgroundImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "colorlink": {
+        "type": "Color",
+        "config": {
+          "label": "ColorLink",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "navigation_item": {
+              "type": "SharedSlice"
+            },
+            "nav_left": {
+              "type": "SharedSlice"
+            },
+            "nav_right": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
