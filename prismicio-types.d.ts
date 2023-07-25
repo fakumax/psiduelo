@@ -7,8 +7,7 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice =
   | TextBlockSlice
   | ImageBlockSlice
-  | FooterSlice
-  | CopyrightSlice;
+  | FooterSlice;
 
 /**
  * Content for Article documents
@@ -93,6 +92,49 @@ export type ArticleDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<ArticleDocumentData>,
     "article",
+    Lang
+  >;
+
+/**
+ * Content for Copyright documents
+ */
+interface CopyrightDocumentData {
+  /**
+   * Text field in *Copyright*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: copyright.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Link field in *Copyright*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: copyright.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Copyright document from Prismic
+ *
+ * - **API ID**: `copyright`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CopyrightDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CopyrightDocumentData>,
+    "copyright",
     Lang
   >;
 
@@ -229,8 +271,7 @@ type PageDocumentDataSlicesSlice =
   | PictureButtonSlice
   | SectionCheckSlice
   | SectionContentSlice
-  | FooterSlice
-  | CopyrightSlice;
+  | FooterSlice;
 
 /**
  * Content for Page documents
@@ -284,63 +325,9 @@ export type PageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | ArticleDocument
+  | CopyrightDocument
   | NavigationDocument
   | PageDocument;
-
-/**
- * Primary content in *Copyright → Primary*
- */
-export interface CopyrightSliceDefaultPrimary {
-  /**
-   * Text field in *Copyright → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: copyright.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-
-  /**
-   * Link field in *Copyright → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: copyright.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for Copyright Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CopyrightSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<CopyrightSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Copyright*
- */
-type CopyrightSliceVariation = CopyrightSliceDefault;
-
-/**
- * Copyright Shared Slice
- *
- * - **API ID**: `copyright`
- * - **Description**: Copyright
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CopyrightSlice = prismic.SharedSlice<
-  "copyright",
-  CopyrightSliceVariation
->;
 
 /**
  * Primary content in *Footer → Primary*
@@ -1462,14 +1449,13 @@ declare module "@prismicio/client" {
     export type {
       ArticleDocument,
       ArticleDocumentData,
+      CopyrightDocument,
+      CopyrightDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       PageDocument,
       PageDocumentData,
       AllDocumentTypes,
-      CopyrightSlice,
-      CopyrightSliceVariation,
-      CopyrightSliceDefault,
       FooterSlice,
       FooterSliceVariation,
       FooterSliceDefault,

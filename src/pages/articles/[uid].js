@@ -34,9 +34,14 @@ function LatestArticle({ article }) {
   );
 }
 
-export default function Article({ article, latestArticles, navigation }) {
+export default function Article({ article, latestArticles, navigation, copyright }) {
   return (
-    <Layout withHeaderDivider={false} withProfile={false} navigation={navigation}>
+    <Layout
+      withHeaderDivider={false}
+      withProfile={false}
+      navigation={navigation}
+      copyright={copyright}
+    >
       <Head>
         <title>{prismic.asText(article.data.title)}</title>
       </Head>
@@ -89,12 +94,14 @@ export async function getStaticProps({ params, previewData }) {
     ],
   });
   const navigation = await client.getSingle('navigation');
+  const copyright = await client.getSingle('copyright');
 
   return {
     props: {
       article,
       latestArticles,
       navigation,
+      copyright,
     },
   };
 }
