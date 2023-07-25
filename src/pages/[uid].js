@@ -6,9 +6,9 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
 
-export default function Page({ page, navigation }) {
+export default function Page({ page, navigation, copyright }) {
   return (
-    <Layout navigation={navigation}>
+    <Layout navigation={navigation} copyright={copyright}>
       <Head>
         <title>{prismic.asText(page.data.title)}</title>
       </Head>
@@ -22,11 +22,13 @@ export async function getStaticProps({ params, previewData }) {
 
   const page = await client.getByUID('page', params.uid);
   const navigation = await client.getSingle('navigation');
+  const copyright = await client.getSingle('copyright');
 
   return {
     props: {
       page,
       navigation,
+      copyright,
     },
   };
 }

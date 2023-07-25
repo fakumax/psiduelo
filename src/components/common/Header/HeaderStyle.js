@@ -78,6 +78,10 @@ export const LeftContainer = styled.div`
     max-height: 20px;
     width: auto;
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    display: none;
+  }
 `;
 
 export const IconBurger = styled.div`

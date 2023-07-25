@@ -23,16 +23,20 @@ const routes = [
   //   path: '/',
   // },
   {
-    type: 'navigation',
-    path: '/',
-  },
-  {
     type: 'page',
     path: '/:uid',
   },
   {
     type: 'article',
     path: '/articles/:uid',
+  },
+  {
+    type: 'navigation',
+    path: '/',
+  },
+  {
+    type: 'copyright',
+    path: '/',
   },
 ];
 
