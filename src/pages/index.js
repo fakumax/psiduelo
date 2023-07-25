@@ -6,11 +6,12 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
 
-const Index = ({ page, navigation }) => {
+const Index = ({ page, navigation, copyright }) => {
   //console.log(navigation);
+  //console.log(copyright);
 
   return (
-    <Layout navigation={navigation}>
+    <Layout navigation={navigation} copyright={copyright}>
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
@@ -26,11 +27,13 @@ export async function getStaticProps({ previewData }) {
 
   const page = await client.getByUID('page', 'home');
   const navigation = await client.getSingle('navigation');
+  const copyright = await client.getSingle('copyright');
 
   return {
     props: {
       page,
       navigation,
+      copyright,
     },
   };
 }

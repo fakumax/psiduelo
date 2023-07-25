@@ -1,4 +1,4 @@
-import { Header } from './Header';
+import { Header, Copyright as Copr } from '@/components/common';
 
 import localFont from 'next/font/local';
 
@@ -28,13 +28,18 @@ const skeptisgraph = localFont({
   variable: '--font-skeptisgraph',
 });
 
-export const Layout = ({ navigation, children }) => {
+export const Layout = ({ navigation, copyright, children }) => {
+  //console.log(navigation);
+  //console.log(copyright);
+
   return (
     <div
       className={`${inter.variable} ${roboto_mono.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
     >
       <Header navigation={navigation} />
       <main>{children}</main>
+      <Copr copyright={copyright} />
     </div>
   );
 };
+// Copr
