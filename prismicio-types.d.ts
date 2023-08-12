@@ -1014,14 +1014,14 @@ export type PictureButtonSlice = prismic.SharedSlice<
  */
 export interface SectionCheckSliceDefaultPrimary {
   /**
-   * Image field in *SectionCheck → Primary*
+   * Text field in *SectionCheck → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: section_check.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: section_check.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  image: prismic.ImageField<never>;
+  text: prismic.TitleField;
 
   /**
    * Color field in *SectionCheck → Primary*
@@ -1034,20 +1034,30 @@ export interface SectionCheckSliceDefaultPrimary {
   color: prismic.ColorField;
 
   /**
-   * Text field in *SectionCheck → Primary*
+   * Image field in *SectionCheck → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: section_check.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: section_check.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  text: prismic.TitleField;
+  image: prismic.ImageField<never>;
 }
 
 /**
  * Primary content in *SectionCheck → Items*
  */
 export interface SectionCheckSliceDefaultItem {
+  /**
+   * Title field in *SectionCheck → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
   /**
    * Description field in *SectionCheck → Items*
    *
@@ -1067,16 +1077,6 @@ export interface SectionCheckSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   icon: prismic.ImageField<never>;
-
-  /**
-   * Title field in *SectionCheck → Items*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_check.items[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
 }
 
 /**

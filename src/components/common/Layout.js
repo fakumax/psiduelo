@@ -2,7 +2,7 @@ import { Header, Copyright as Copr } from '@/components/common';
 
 import localFont from 'next/font/local';
 
-import { Inter, Roboto_Mono } from 'next/font/google';
+import { Inter, Marcellus } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,10 +10,11 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const roboto_mono = Roboto_Mono({
+const marcellus = Marcellus({
   subsets: ['latin'],
+  weight: ['400'],
   display: 'swap',
-  variable: '--font-roboto-mono',
+  variable: '--font-marcellus',
 });
 
 //////////// LOCAL //////////////////
@@ -34,7 +35,7 @@ export const Layout = ({ navigation, copyright, children }) => {
 
   return (
     <div
-      className={`${inter.variable} ${roboto_mono.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
+      className={`${inter.variable} ${marcellus.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
     >
       <Header navigation={navigation} />
       <main>{children}</main>
