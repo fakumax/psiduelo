@@ -19,12 +19,12 @@ const roboto_mono = Roboto_Mono({
 //////////// LOCAL //////////////////
 // Font files can be colocated inside of `pages`
 const hijrnotes = localFont({
-  src: '../fonts/Hijrnotes.ttf',
+  src: '../../assets/fonts/Hijrnotes.ttf',
   variable: '--font-hijrnotes',
 });
 
 const skeptisgraph = localFont({
-  src: '../fonts/Skeptisgraph.ttf',
+  src: '../../assets/fonts/Skeptisgraph.ttf',
   variable: '--font-skeptisgraph',
 });
 
