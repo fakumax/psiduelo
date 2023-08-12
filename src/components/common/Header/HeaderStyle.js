@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Marcellus } from 'next/font/google';
 
 export const NavBar = styled.nav`
   display: flex;
   /* background-color: blue; */
-  height: 100px;
+  height: 150px;
   justify-content: space-between;
   box-shadow: 0px 2px 6px rgba(44, 62, 80, 0.15);
   /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); */
@@ -17,12 +18,33 @@ export const NavBar = styled.nav`
     margin: 0;
     gap: 1em;
   }
+  li {
+    text-align: center;
+  }
   li a {
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     text-align: center;
-    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
-    font-weight: 500;
+    font-family: var(--font-marcellus);
+    font-weight: 400;
+  }
+  li a:hover {
+    background: -webkit-linear-gradient(
+      left,
+      #fbf8cc,
+      #fde4cf,
+      #ffcfd2,
+      #f1c0e8,
+      #cfbaf0,
+      #a3c4f3,
+      #90dbf4,
+      #8eecf5,
+      #98f5e1,
+      #b9fbc0
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
 
