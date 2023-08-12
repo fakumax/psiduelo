@@ -25,7 +25,7 @@ export const Header = ({ navigation }) => {
         }
       >
         {/* ICONS */}
-        <LeftContainer>
+        {/* <LeftContainer>
           <ul>
             {icons.map((item, index) => (
               <li key={item.iconimage.alt} className={item.iconimage.alt}>
@@ -35,7 +35,8 @@ export const Header = ({ navigation }) => {
               </li>
             ))}
           </ul>
-        </LeftContainer>
+        </LeftContainer> */}
+
         <RightContainer>
           {/* NAVIGATION LEFT*/}
           <div>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   /* margin: 4rem 0; */
   width: 100%;
-  height: 70vh;
+  height: 700px;
   object-fit: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,13 +23,18 @@ export const Container = styled.div`
   align-content: center;
   align-self: center;
   margin: auto;
-  height: 60vh;
+  height: 80%;
   flex-direction: column;
   padding: 0 40px;
   justify-content: space-evenly;
   .textContainer {
     h3 {
       color: ${(props) => props.theme.colors.titleBrown};
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    }
+    p {
+      line-height: 1.5;
+      font-size: 14px;
       font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     }
   }
