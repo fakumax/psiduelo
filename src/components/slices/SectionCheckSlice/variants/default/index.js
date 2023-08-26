@@ -5,7 +5,6 @@ import { PrismicRichText } from '@prismicio/react';
 const Default = (slice) => {
   //console.log('--SectioCheckSlice--', slice);
   const { image, text, color, title } = slice.primary;
-  //console.log(slice.items);
   const { items } = slice;
   //console.log(color);
   // console.log('--SectioCheckSlice--', JSON.stringify(description.items));
