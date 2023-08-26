@@ -27,31 +27,19 @@ const Default = (slice) => {
       </BodyContainer>
       <IconsGroup>
         <div>
-          <FontAwesomeIcon
-            icon={faWhatsapp}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
-          />
+          <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: 30, color: '#7C5A19' }} />
           <FontAwesomeIcon
             icon={faInstagram}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
+            style={{ fontSize: 30, color: '#7C5A19' }}
           />
           <FontAwesomeIcon
             icon={faFacebookF}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
+            style={{ fontSize: 30, color: '#7C5A19' }}
           />
 
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
-          />
-          <FontAwesomeIcon
-            icon={faDiscord}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
-          />
-          <FontAwesomeIcon
-            icon={faSpotify}
-            style={{ fontSize: 30, color: 'rgba(255, 255, 255, 1)' }}
-          />
+          <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: 30, color: '#7C5A19' }} />
+          <FontAwesomeIcon icon={faDiscord} style={{ fontSize: 30, color: '#7C5A19' }} />
+          <FontAwesomeIcon icon={faSpotify} style={{ fontSize: 30, color: '#7C5A19' }} />
         </div>
       </IconsGroup>
     </Wrapper>
