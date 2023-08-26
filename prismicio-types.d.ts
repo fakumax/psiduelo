@@ -1460,12 +1460,12 @@ export interface TextBlockSliceTitleTextPrimary {
   /**
    * Title field in *TextBlock → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: text_block.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.TitleField;
+  title: prismic.RichTextField;
 
   /**
    * Text field in *TextBlock → Primary*
