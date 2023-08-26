@@ -14,7 +14,11 @@
       "primary": {
         "imageleft": {
           "type": "Image",
-          "config": { "label": "ImageLeft", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
         "imageright": {
           "type": "Image",
@@ -44,11 +48,67 @@
         },
         "bgcolor": {
           "type": "Color",
-          "config": { "label": "BgColor", "placeholder": "" }
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
         },
         "colorletter": {
           "type": "Color",
-          "config": { "label": "ColorLetter", "placeholder": "" }
+          "config": {
+            "label": "ColorLetter",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "static",
+      "name": "Static",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageleft": {
+          "type": "Image",
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "textfirst": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "bgcolor": {
+          "type": "Color",
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
+        },
+        "colorletter": {
+          "type": "Color",
+          "config": {
+            "label": "ColorLetter",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

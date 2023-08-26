@@ -7,7 +7,8 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice =
   | TextBlockSlice
   | ImageBlockSlice
-  | FooterSlice;
+  | FooterSlice
+  | SectionTextSlice;
 
 /**
  * Content for Article documents
@@ -1338,9 +1339,79 @@ export type SectionTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SectionText → Primary*
+ */
+export interface SectionTextSliceStaticPrimary {
+  /**
+   * ImageLeft field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageright: prismic.ImageField<never>;
+
+  /**
+   * TextFirst field in *SectionText → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.textfirst
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textfirst: prismic.TitleField;
+
+  /**
+   * BgColor field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.bgcolor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bgcolor: prismic.ColorField;
+
+  /**
+   * ColorLetter field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.colorletter
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  colorletter: prismic.ColorField;
+}
+
+/**
+ * Static variation for SectionText Slice
+ *
+ * - **API ID**: `static`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionTextSliceStatic = prismic.SharedSliceVariation<
+  "static",
+  Simplify<SectionTextSliceStaticPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SectionText*
  */
-type SectionTextSliceVariation = SectionTextSliceDefault;
+type SectionTextSliceVariation =
+  | SectionTextSliceDefault
+  | SectionTextSliceStatic;
 
 /**
  * SectionText Shared Slice
@@ -1449,12 +1520,15 @@ declare module "@prismicio/client" {
     export type {
       ArticleDocument,
       ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
       CopyrightDocument,
       CopyrightDocumentData,
       NavigationDocument,
       NavigationDocumentData,
+      NavigationDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       FooterSlice,
       FooterSliceVariation,
@@ -1489,6 +1563,7 @@ declare module "@prismicio/client" {
       SectionTextSlice,
       SectionTextSliceVariation,
       SectionTextSliceDefault,
+      SectionTextSliceStatic,
       TextBlockSlice,
       TextBlockSliceVariation,
       TextBlockSliceDefault,

@@ -12,7 +12,10 @@ export const Container = styled.div`
   margin: 4rem 0;
   gap: 2rem;
   flex-direction: column;
-
+  h2 {
+    font-family: 'Crimson Text';
+    text-align: center;
+  }
   p,
   li {
     font-size: 16px;

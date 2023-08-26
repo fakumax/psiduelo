@@ -1,3 +1,2 @@
-import { Default } from './default';
-
-export { Default };
+export * from './Static';
+export * from './default';
