@@ -42,6 +42,9 @@
             },
             "footer": {
               "type": "SharedSlice"
+            },
+            "section_text": {
+              "type": "SharedSlice"
             }
           }
         }
