@@ -12,7 +12,11 @@ export const Container = styled.div`
   margin: 4rem 0;
   gap: 2rem;
   flex-direction: column;
-  h2 {
+  h1 {
+    font-size: 30px;
+  }
+  h2,
+  h1 {
     font-family: 'Crimson Text';
     text-align: center;
   }
@@ -26,6 +30,9 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
+    h1 {
+      font-size: 20px;
+    }
     p,
     li {
       font-size: 12px;

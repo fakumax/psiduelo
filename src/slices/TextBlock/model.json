@@ -38,7 +38,7 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading3"
+            "multi": "heading3,heading2,heading1"
           }
         },
         "text": {
