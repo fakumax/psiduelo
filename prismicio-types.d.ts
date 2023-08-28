@@ -1492,9 +1492,60 @@ export type TextBlockSliceTitleText = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceAuthorTitleTextPrimary {
+  /**
+   * Author field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Title field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * AuthorTitleText variation for TextBlock Slice
+ *
+ * - **API ID**: `authorTitleText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceAuthorTitleText = prismic.SharedSliceVariation<
+  "authorTitleText",
+  Simplify<TextBlockSliceAuthorTitleTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault | TextBlockSliceTitleText;
+type TextBlockSliceVariation =
+  | TextBlockSliceDefault
+  | TextBlockSliceTitleText
+  | TextBlockSliceAuthorTitleText;
 
 /**
  * TextBlock Shared Slice
@@ -1568,6 +1619,7 @@ declare module "@prismicio/client" {
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
+      TextBlockSliceAuthorTitleText,
     };
   }
 }

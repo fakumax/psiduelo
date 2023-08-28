@@ -1,6 +1,6 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { BodyContainer, IconsGroup, Wrapper } from './defaultStyles';
+import { BodyContainer, IconsGroup, Wrapper, Icon } from './defaultStyles';
 
 //Icons
 import {
@@ -11,7 +11,6 @@ import {
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Default = (slice) => {
   //console.log('--slice--Footer', slice);
@@ -27,19 +26,12 @@ const Default = (slice) => {
       </BodyContainer>
       <IconsGroup>
         <div>
-          <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: 30, color: '#7C5A19' }} />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            style={{ fontSize: 30, color: '#7C5A19' }}
-          />
-          <FontAwesomeIcon
-            icon={faFacebookF}
-            style={{ fontSize: 30, color: '#7C5A19' }}
-          />
-
-          <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: 30, color: '#7C5A19' }} />
-          <FontAwesomeIcon icon={faDiscord} style={{ fontSize: 30, color: '#7C5A19' }} />
-          <FontAwesomeIcon icon={faSpotify} style={{ fontSize: 30, color: '#7C5A19' }} />
+          <Icon icon={faWhatsapp} />
+          <Icon icon={faInstagram} />
+          <Icon icon={faFacebookF} />
+          <Icon icon={faEnvelope} />
+          <Icon icon={faDiscord} />
+          <Icon icon={faSpotify} />
         </div>
       </IconsGroup>
     </Wrapper>
