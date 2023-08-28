@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 		max-width: 1600px;
  		margin: 0 auto;
 		min-height: 100vh;
-		font-family: ${({ theme }) => theme.typography.fontFamily};
+		font-family: ${({ theme }) => theme.typography.fontFamily_crimson};
 		letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
 				h1 {
 					font-size: ${(props) => props?.theme?.typography?.h1?.desktop?.fontSize || '55px'};
