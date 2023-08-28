@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export const Wrapper = styled.div`
   background-image: ${({ bgimage }) => `url(${bgimage})`};
   background-size: cover;
@@ -33,7 +35,11 @@ export const BodyContainer = styled.div`
   flex-direction: column;
   padding: 30px 0;
   gap: 40px;
-
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   img {
     width: 200px;
     height: auto;
@@ -49,5 +55,19 @@ export const IconsGroup = styled.div`
     gap: 40px;
     justify-content: center;
     padding: 1rem 0;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    div {
+      gap: 20px;
+    }
+  }
+`;
+
+export const Icon = styled(FontAwesomeIcon)`
+  font-size: 30px;
+  color: #7c5a19;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    font-size: 20px;
   }
 `;

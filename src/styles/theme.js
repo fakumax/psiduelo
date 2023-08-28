@@ -15,8 +15,7 @@ export const Theme = {
     maxWidth: '1136px',
   },
   typography: {
-    fontFamily: "'Inter', sans-serif",
-    fontFamily_V2: "'Poppins', sans-serif",
+    fontFamily_poppins: "'Poppins', sans-serif",
     fontFamily_old: "'Old Standard TT', sans-serif",
     fontFamily_belle: "'La Belle Aurore', sans-serif",
     fontFamily_crimson: "'Crimson Text', serif",

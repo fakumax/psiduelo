@@ -2,13 +2,7 @@ import { Header, Copyright as Copr } from '@/components/common';
 
 import localFont from 'next/font/local';
 
-import { Inter, Marcellus } from 'next/font/google';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
+import { Marcellus } from 'next/font/google';
 
 const marcellus = Marcellus({
   subsets: ['latin'],
@@ -35,7 +29,7 @@ export const Layout = ({ navigation, copyright, children }) => {
 
   return (
     <div
-      className={`${inter.variable} ${marcellus.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
+      className={` ${marcellus.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
     >
       <Header navigation={navigation} />
       <main>{children}</main>
