@@ -10,7 +10,7 @@ export const Container = styled.div`
   margin: auto;
   object-fit: contain;
   background-color: ${(props) => props.color};
-  gap: 30px;
+  gap: 2rem;
   justify-items: center;
   grid-template-columns: 1fr;
 
