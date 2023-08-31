@@ -6,9 +6,23 @@ export const Wrapper = styled.div`
   place-content: center;
   height: fit-content;
   padding: 1rem 0;
-  p {
-    font-size: 12px;
+  p,
+  a {
+    font-size: 8px;
+    color: ${(props) => props.theme.colors.textPrimary};
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+  a {
+    color: ${(props) => props.theme.colors.titleBrown};
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    p,
+    a {
+      font-size: 12px;
+    }
+  }
+
   .heart-icon {
     /* Pulse Heart */
     color: #ef1b55;
