@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   color: ${(props) => props.colorletter};
   background-color: ${(props) => props.bgcolor};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
@@ -9,20 +9,14 @@ export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   justify-content: center;
-  max-height: 200px;
-  height: 200px;
+  height: 150px;
   align-items: center;
   img {
     max-width: 40px;
     height: 100%;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 100px;
-    max-height: 150px;
-    padding: 10px 0;
-    img {
-      max-width: 30px;
-    }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    height: 200px;
   }
 `;
 
@@ -37,24 +31,48 @@ export const Transition = styled(motion.div)`
     padding: 0;
     align-content: center;
   }
-  /* display: ${(props) => (props.isVisible ? 'block' : 'none')}; */
-  /* opacity: ${(props) => (props.isVisible ? 1 : 0)}; */
-  /* animation: ${(props) => (props.isVisible ? 'block' : 'none')} 0.3s ease-in-out; */
 `;
 
 export const Container = styled.div`
   h3 {
-    font-size: 30px;
+    font-size: 16px;
     font-weight: 500;
-    max-width: 70%;
+    padding: 0rem 2rem;
     line-height: 1.5;
     text-align: center;
     display: flex;
+    margin: 0;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  img {
+    position: absolute;
+    width: 30px;
+    height: auto;
+  }
+  .imageleft {
+    left: 0px;
+    top: 5px;
+  }
+  .imageright {
+    right: 10px;
+    bottom: 0;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
-      font-size: 16px;
-      max-width: 80%;
+      font-size: 24px;
+    }
+    img {
+      position: relative;
+      width: 30px;
+      height: auto;
+      object-fit: contain;
+    }
+    .imageleft {
+      left: 0px;
+      top: 15px;
+    }
+    .imageright {
+      right: 20px;
+      bottom: 0;
     }
   }
 `;
