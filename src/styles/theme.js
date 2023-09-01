@@ -112,11 +112,8 @@ export const Theme = {
 
     textPrimary: '#323130',
     textSecondary: '#605E5C',
-    textTertiary: '#A19F9D',
+    textTertiary: '#9e9ea0', // text color
     textTertiaryBtn: '#323130',
-    textLightPrimary: '#323130',
-    textLightSecondary: '#323130',
-    textLightTertiary: '#323130',
     lightGray: '#323130',
     lightGray2: '#666666',
     lighterGray: '#605E5C',

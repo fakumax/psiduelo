@@ -25,14 +25,12 @@ const Default = (slice) => {
         </div>
       </BodyContainer>
       <IconsGroup>
-        <div>
-          <Icon icon={faWhatsapp} />
-          <Icon icon={faInstagram} />
-          <Icon icon={faFacebookF} />
-          <Icon icon={faEnvelope} />
-          <Icon icon={faDiscord} />
-          <Icon icon={faSpotify} />
-        </div>
+        <Icon icon={faWhatsapp} />
+        <Icon icon={faInstagram} />
+        <Icon icon={faFacebookF} />
+        <Icon icon={faEnvelope} />
+        <Icon icon={faDiscord} />
+        <Icon icon={faSpotify} />
       </IconsGroup>
     </Wrapper>
   );
