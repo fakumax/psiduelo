@@ -1,79 +1,49 @@
 import { hexToRGBA } from '@/utils/hexToRGBA';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  /* margin: 4rem 0; */
-  width: 100%;
-  height: 700px;
+export const Wrapper = styled.section`
   object-fit: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    height: fit-content;
-    padding: 40px 0px;
-  }
 `;
 
 export const Container = styled.div`
   background-color: ${(props) => hexToRGBA(props.color, 0.6)};
   width: 80%;
   display: flex;
-  align-content: center;
-  align-self: center;
-  margin: auto;
-  height: 80%;
+  margin: 40px auto;
   flex-direction: column;
-  padding: 0 40px;
-  justify-content: space-evenly;
-  .textContainer {
-    h3 {
-      color: ${(props) => props.theme.colors.titleBrown};
-      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
-    }
-    p {
-      line-height: 1.5;
-      font-size: 14px;
-      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
-    }
-  }
-  .subContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); // Dos columnas
-    gap: 10px;
-  }
-
+  gap: 20px;
+  padding: 25px;
   h2 {
     text-align: center;
     font-family: var(--font-skeptisgraph);
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 40px;
+    margin: 0;
   }
+
+  .subContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .subItem {
     display: flex;
     gap: 20px;
   }
-  .iconContainer {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    max-width: 50px;
-    img {
-      width: auto;
-      max-height: 40px;
-    }
-  }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  /* @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
     height: fit-content;
     padding: 40px 20px;
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  } */
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     .subContainer {
-      grid-template-columns: 1fr; /* Una columna en dispositivos móviles */
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr); // Dos columnas
     }
     .subItem {
       display: flex;
@@ -83,6 +53,32 @@ export const Container = styled.div`
       img {
         max-height: 20px;
       }
+    }
+  }
+`;
+
+export const SubItem = styled.article`
+  h3 {
+    color: ${(props) => props.theme.colors.titleBrown};
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+  }
+  p {
+    line-height: 1.5;
+    font-size: 12px;
+    text-align: justify;
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+  }
+  .titleItems {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    img {
+      width: auto;
+      max-height: 15px;
+    }
+    h3 {
+      margin: 0;
     }
   }
 `;
