@@ -1220,6 +1220,16 @@ export interface SectionContentSliceDefaultItem {
   textbutton: prismic.KeyTextField;
 
   /**
+   * LinkButton field in *SectionContent → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_content.items[].linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
    * Image field in *SectionContent → Items*
    *
    * - **Field Type**: Image
