@@ -14,15 +14,26 @@
       "primary": {
         "bgcolor": {
           "type": "Color",
-          "config": { "label": "BgColor", "placeholder": "" }
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
         },
         "imageleft": {
           "type": "Image",
-          "config": { "label": "ImageLeft", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
         "bgleft": {
           "type": "Image",
-          "config": { "label": "BgLeft", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "BgLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
         "titleleft": {
           "type": "StructuredText",
@@ -44,11 +55,18 @@
         },
         "textbutton": {
           "type": "Text",
-          "config": { "label": "TextButton", "placeholder": "" }
+          "config": {
+            "label": "TextButton",
+            "placeholder": ""
+          }
         },
         "linkbutton": {
           "type": "Link",
-          "config": { "label": "LinkButton", "placeholder": "", "select": null }
+          "config": {
+            "label": "LinkButton",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {
@@ -72,11 +90,26 @@
         },
         "textbutton": {
           "type": "Text",
-          "config": { "label": "TextButton", "placeholder": "" }
+          "config": {
+            "label": "TextButton",
+            "placeholder": ""
+          }
+        },
+        "linkbutton": {
+          "type": "Link",
+          "config": {
+            "label": "LinkButton",
+            "placeholder": "",
+            "select": null
+          }
         },
         "image": {
           "type": "Image",
-          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       }
     }

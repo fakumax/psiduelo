@@ -8,65 +8,9 @@ export const Wrapper = styled.section`
   flex-direction: column;
   height: fit-content;
   padding: 0;
-  .ImageContainer {
-    display: none;
-  }
-  .WrapperImage {
-    width: 300px;
-    height: 100%;
-  }
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
-    .rightContainer {
-      height: 100%;
-      flex-direction: column;
-      width: inherit;
-      display: flex;
-      justify-content: center;
-      .ImageContainer {
-        position: relative;
-        width: 160px;
-        height: 200px;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          max-height: fit-content;
-        }
-      }
-      .TextContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        span {
-          font-family: var(--font-hijrnotes);
-          font-size: 24px;
-        }
-        p {
-          text-align: justify;
-          font-family: ${(props) => props.theme.typography.fontFamily_crimson};
-        }
-      }
-    }
-  }
-`;
-
-export const ContainerItems = styled.div`
-  display: flex;
-  align-items: center;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 40px;
-
-  &:last-child {
-    flex-direction: row-reverse;
-    text-align: end;
-    h2,
-    .TextContainer p {
-      text-align: end;
-    }
   }
 `;
 
@@ -175,11 +119,101 @@ export const WhiteContainer = styled.article`
         font-size: 50px;
       }
       p {
-        line-height: 35px;
+        line-height: 30px;
       }
     }
     a {
       font-size: 20px;
+    }
+  }
+`;
+
+export const RightContainer = styled.div`
+  height: fit-content;
+  flex-direction: column;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  gap: 40px;
+
+  .TextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    span {
+      font-family: var(--font-hijrnotes);
+      font-size: 24px;
+    }
+    p {
+      text-align: justify;
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: column;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    gap: 40px;
+  }
+`;
+
+export const ContainerItems = styled.article`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 40px;
+  .WrapperImage {
+    display: none;
+  }
+  a {
+    display: flex;
+    justify-content: start;
+    color: #7c5a19;
+    font-family: var(--font-hijrnotes);
+  }
+  &:last-child {
+    flex-direction: row-reverse;
+    text-align: end;
+    a {
+      justify-content: end;
+    }
+    h2 {
+      text-align: end;
+    }
+    p {
+      text-align: justify;
+    }
+    .new1 {
+      right: 0;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0 55px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    gap: 70px;
+    .WrapperImage {
+      width: 300px;
+      display: inherit;
+    }
+    .ImageContainer {
+      position: relative;
+      width: 160px;
+      height: 200px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: fit-content;
+      }
     }
   }
 `;

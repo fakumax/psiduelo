@@ -1,9 +1,10 @@
-import { PrismicNextImage } from '@prismicio/next';
-import { PrismicRichText, PrismicText, PrismicLink } from '@prismicio/react';
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import { PrismicRichText, PrismicText } from '@prismicio/react';
 import {
   ContainerItems,
   HeadTitle,
   LeftContainer,
+  RightContainer,
   WhiteContainer,
   Wrapper,
 } from './defaultStyles';
@@ -23,17 +24,14 @@ const Default = (slice) => {
             <PrismicRichText field={titleleft} />
             <PrismicRichText field={descripcionleft} />
           </div>
-          {/* <div className="ButtonLeft">
-            <PrismicLink field={textleft}>{textbutton}</PrismicLink>
-          </div> */}
-          <PrismicLink field={textleft}>{textbutton}</PrismicLink>
+          <PrismicNextLink field={textleft}>{textbutton}</PrismicNextLink>
         </WhiteContainer>
         <div className="ImagePaper">
           <PrismicNextImage field={bgleft} fallbackAlt="" />
         </div>
       </LeftContainer>
 
-      <div className="rightContainer">
+      <RightContainer>
         {slice.items.map((item, index) => (
           <ContainerItems key={index}>
             <div className="WrapperImage">
@@ -47,11 +45,11 @@ const Default = (slice) => {
                 <div className="new1" />
               </HeadTitle>
               <PrismicRichText field={item.description} />
-              <span>{item.textbutton}</span>
+              <PrismicNextLink field={item.linkbutton}>{item.textbutton}</PrismicNextLink>
             </div>
           </ContainerItems>
         ))}
-      </div>
+      </RightContainer>
     </Wrapper>
   );
 };
