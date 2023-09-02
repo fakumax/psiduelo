@@ -31,28 +31,9 @@ export const Container = styled.div`
     gap: 20px;
   }
 
-  .subItem {
-    display: flex;
-    gap: 20px;
-  }
-
-  /* @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    width: 100%;
-    height: fit-content;
-    padding: 40px 20px;
-  } */
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     .subContainer {
       grid-template-columns: repeat(2, 1fr); // Dos columnas
-    }
-    .subItem {
-      display: flex;
-      gap: 10px;
-    }
-    .iconContainer {
-      img {
-        max-height: 20px;
-      }
     }
   }
 `;
@@ -79,6 +60,7 @@ export const SubItem = styled.article`
     }
     h3 {
       margin: 0;
+      font-size: 16px;
     }
   }
 `;
