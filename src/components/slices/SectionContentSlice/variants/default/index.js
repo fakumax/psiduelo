@@ -23,14 +23,16 @@ const Default = (slice) => {
             <PrismicRichText field={titleleft} />
             <PrismicRichText field={descripcionleft} />
           </div>
-          <div className="ButtonLeft">
+          {/* <div className="ButtonLeft">
             <PrismicLink field={textleft}>{textbutton}</PrismicLink>
-          </div>
+          </div> */}
+          <PrismicLink field={textleft}>{textbutton}</PrismicLink>
         </WhiteContainer>
         <div className="ImagePaper">
           <PrismicNextImage field={bgleft} fallbackAlt="" />
         </div>
       </LeftContainer>
+
       <div className="rightContainer">
         {slice.items.map((item, index) => (
           <ContainerItems key={index}>

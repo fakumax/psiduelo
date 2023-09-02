@@ -1,56 +1,54 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   background-color: ${(props) => props.color};
   height: fit-content;
-  /* padding: 4rem 0; */
-  ///////////////////
-
-  ///////////////
-  .rightContainer {
-    height: 100%;
-    flex-direction: column;
-    width: inherit;
-    display: flex;
-    justify-content: center;
-    .ImageContainer {
-      position: relative;
-      width: 160px;
-      height: 200px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        max-height: fit-content;
-      }
-    }
-    .TextContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      span {
-        font-family: var(--font-hijrnotes);
-        font-size: 24px;
-      }
-      p {
-        text-align: justify;
-        font-family: ${(props) => props.theme.typography.fontFamily_crimson};
-      }
-    }
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    flex-direction: column;
-    height: fit-content;
-    padding: 0;
-    .ImageContainer {
-      display: none;
-    }
+  flex-direction: column;
+  height: fit-content;
+  padding: 0;
+  .ImageContainer {
+    display: none;
   }
   .WrapperImage {
     width: 300px;
     height: 100%;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: row;
+    .rightContainer {
+      height: 100%;
+      flex-direction: column;
+      width: inherit;
+      display: flex;
+      justify-content: center;
+      .ImageContainer {
+        position: relative;
+        width: 160px;
+        height: 200px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-height: fit-content;
+        }
+      }
+      .TextContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        span {
+          font-family: var(--font-hijrnotes);
+          font-size: 24px;
+        }
+        p {
+          text-align: justify;
+          font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+        }
+      }
+    }
   }
 `;
 
@@ -86,62 +84,61 @@ export const HeadTitle = styled.div`
   }
 `;
 
-export const LeftContainer = styled.div`
-  /* height: 100%; */
-  width: 30%;
-  /* background-color: red; */
-  display: flex;
+export const LeftContainer = styled.aside`
+  width: 100%;
+  padding: 20px 0;
+  background: white;
   .ImagePaper {
+    display: none;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0;
+    width: 45%;
     display: flex;
-    height: 100%;
-    justify-content: end;
     position: relative;
-    width: inherit;
-    img {
-      width: auto;
+    .ImagePaper {
+      display: flex;
       height: 100%;
-      object-fit: cover;
-      max-height: fit-content;
-      background: linear-gradient(
-        to right,
-        white 0%,
-        white 50%,
-        transparent 50%,
-        transparent 100%
-      );
+      position: absolute;
+      right: -50px;
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        max-height: fit-content;
+        background: linear-gradient(
+          to right,
+          white 0%,
+          white 50%,
+          transparent 50%,
+          transparent 100%
+        );
+      }
     }
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    width: 100%;
-    padding: 20px 0;
-    background: white;
-    .ImagePaper {
-      display: none;
-    }
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    width: 30%;
   }
 `;
 
-export const WhiteContainer = styled.div`
-  position: relative;
-  height: 100%;
-  background-color: white;
-  text-align: justify;
-  padding: 0px 0px 0px 20px;
+export const WhiteContainer = styled.article`
   display: flex;
   flex-direction: column;
   place-content: center;
+  background-color: white;
+  text-align: justify;
+  gap: 20px;
   a {
-    font-family: var(--font-hijrnotes);
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
-    padding: 0;
+    color: ${(props) => props.theme.colors.titleBrown};
+    font-family: var(--font-hijrnotes);
   }
   .ImageLeft {
     max-width: 150px;
     height: auto;
     display: flex;
-    margin: 1rem auto;
+    margin: 0 auto;
   }
   img {
     width: 100%;
@@ -150,8 +147,8 @@ export const WhiteContainer = styled.div`
     max-height: fit-content;
   }
   .TextLeft {
+    padding: 0 20px;
     h2 {
-      width: 100%;
       text-align: center;
       line-height: 35px;
       font-family: var(--font-skeptisgraph);
@@ -166,8 +163,23 @@ export const WhiteContainer = styled.div`
       font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     }
   }
-  .ButtonLeft {
-    display: flex;
-    place-content: center;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    .TextLeft {
+      z-index: 1;
+      gap: 25px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px;
+      h2 {
+        margin: 0;
+        font-size: 50px;
+      }
+      p {
+        line-height: 35px;
+      }
+    }
+    a {
+      font-size: 20px;
+    }
   }
 `;
