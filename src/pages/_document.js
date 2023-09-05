@@ -4,6 +4,16 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head />
+      <meta
+        name="description"
+        content="Psicóloga Diplomada y Especialista en Duelo.
+Atención Psicológica Online a Adolescentes y Adultos hispanohablantes."
+      />
+      <meta
+        name="keywords"
+        content="duelo,psicóloga,psicología,atención online,especialista"
+      />
+      <meta name="author" content="Facundo Vergara" />
       <link
         rel="icon"
         type="image/png"
