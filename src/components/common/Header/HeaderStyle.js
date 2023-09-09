@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Marcellus } from 'next/font/google';
 
 export const NavBar = styled.nav`
   display: flex;
@@ -27,6 +26,7 @@ export const NavBar = styled.nav`
     text-align: center;
     font-family: var(--font-marcellus);
     font-weight: 400;
+    color: ${(props) => props.theme.colors.textTertiary};
   }
   li a:hover {
     background: -webkit-linear-gradient(

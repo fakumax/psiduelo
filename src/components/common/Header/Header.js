@@ -1,53 +1,22 @@
-import { PrismicLink, PrismicText } from '@prismicio/react';
-import * as prismicH from '@prismicio/helpers';
 import { PrismicNextImage } from '@prismicio/next';
-import {
-  IconBurger,
-  LeftContainer,
-  LogoStyle,
-  NavBar,
-  RightContainer,
-} from './HeaderStyle';
+import { PrismicLink, PrismicText } from '@prismicio/react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { IconBurger, LogoStyle, NavBar, RightContainer } from './HeaderStyle';
 
 export const Header = ({ navigation }) => {
-  const { icons, slices, backgroundimage, colorlink } = navigation.data;
-  const navLeft = slices.filter((item) => item.slice_type === 'nav_left');
-  const navRight = slices.filter((item) => item.slice_type === 'nav_right');
+  const { logoimage, navleft, navright, logolink } = navigation.data;
 
   return (
     <div>
-      <NavBar
-        style={
-          backgroundimage.url
-            ? { backgroundImage: `url(${backgroundimage.url})` }
-            : { backgroundColor: '#ffff' }
-        }
-      >
-        {/* ICONS */}
-        {/* <LeftContainer>
-          <ul>
-            {icons.map((item, index) => (
-              <li key={item.iconimage.alt} className={item.iconimage.alt}>
-                <PrismicLink field={navigation.data.logolink}>
-                  <PrismicNextImage field={item.iconimage} priority={true} />
-                </PrismicLink>
-              </li>
-            ))}
-          </ul>
-        </LeftContainer> */}
-
+      <NavBar>
         <RightContainer>
           {/* NAVIGATION LEFT*/}
           <div>
             <ul>
-              {navLeft.map((item, index) => (
+              {navleft.map((item, index) => (
                 <li key={index}>
-                  <PrismicLink
-                    style={{ color: colorlink || 'black' }}
-                    field={item.primary.link}
-                  >
-                    <PrismicText field={item.primary.name} />
+                  <PrismicLink field={item.link}>
+                    <PrismicText field={item.name} />
                   </PrismicLink>
                 </li>
               ))}
@@ -55,18 +24,17 @@ export const Header = ({ navigation }) => {
           </div>
           {/* LOGO */}
           <LogoStyle>
-            <PrismicNextImage field={navigation.data.logoimage} priority={true} />
+            <PrismicLink field={logolink}>
+              <PrismicNextImage field={logoimage} priority={true} />
+            </PrismicLink>
           </LogoStyle>
           {/* NAVIGATION RIGHT*/}
           <div style={{ width: 'min-content' }}>
             <ul>
-              {navRight.map((item, index) => (
+              {navright.map((item, index) => (
                 <li key={index}>
-                  <PrismicLink
-                    style={{ color: colorlink || 'black' }}
-                    field={item.primary.link}
-                  >
-                    <PrismicText field={item.primary.name} />
+                  <PrismicLink field={item.link}>
+                    <PrismicText field={item.name} />
                   </PrismicLink>
                 </li>
               ))}

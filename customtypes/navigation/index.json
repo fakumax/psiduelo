@@ -22,30 +22,24 @@
           "select": null
         }
       },
-      "icons": {
+      "navleft": {
         "type": "Group",
         "config": {
-          "label": "Icons",
+          "label": "NavLeft",
           "fields": {
-            "iconimage": {
-              "type": "Image",
+            "name": {
+              "type": "StructuredText",
               "config": {
-                "label": "IconImage",
-                "constraint": {},
-                "thumbnails": []
+                "label": "Name",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
               }
             },
-            "icondescription": {
-              "type": "Text",
-              "config": {
-                "label": "IconDescription",
-                "placeholder": ""
-              }
-            },
-            "iconlink": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "IconLink",
+                "label": "Link",
                 "placeholder": "",
                 "select": null
               }
@@ -53,36 +47,36 @@
           }
         }
       },
-      "backgroundimage": {
-        "type": "Image",
+      "navright": {
+        "type": "Group",
         "config": {
-          "label": "BackgroundImage",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "colorlink": {
-        "type": "Color",
-        "config": {
-          "label": "ColorLink",
-          "placeholder": ""
+          "label": "NavRight",
+          "fields": {
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Name",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "navigation_item": {
-              "type": "SharedSlice"
-            },
-            "nav_left": {
-              "type": "SharedSlice"
-            },
-            "nav_right": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }
