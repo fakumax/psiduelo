@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.8",
-    "@slicemachine/adapter-next": "^0.3.12",
+    "@slicemachine/adapter-next": "^0.3.14",
     "concurrently": "^8.2.1",
     "eslint": "8.48.0",
     "eslint-config-next": "^13.4.19",
-    "slice-machine-ui": "^1.10.0"
+    "slice-machine-ui": "^1.12.0"
   }
 }
