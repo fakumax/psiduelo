@@ -140,44 +140,56 @@ export type CopyrightDocument<Lang extends string = string> =
   >;
 
 /**
- * Item in *Navigation → Icons*
+ * Item in *Navigation → NavLeft*
  */
-export interface NavigationDocumentDataIconsItem {
+export interface NavigationDocumentDataNavleftItem {
   /**
-   * IconImage field in *Navigation → Icons*
+   * Name field in *Navigation → NavLeft*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.icons[].iconimage
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: navigation.navleft[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  iconimage: prismic.ImageField<never>;
+  name: prismic.RichTextField;
 
   /**
-   * IconDescription field in *Navigation → Icons*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.icons[].icondescription
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  icondescription: prismic.KeyTextField;
-
-  /**
-   * IconLink field in *Navigation → Icons*
+   * Link field in *Navigation → NavLeft*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.icons[].iconlink
+   * - **API ID Path**: navigation.navleft[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  iconlink: prismic.LinkField;
+  link: prismic.LinkField;
 }
 
-type NavigationDocumentDataSlicesSlice =
-  | NavigationItemSlice
-  | NavLeftSlice
-  | NavRightSlice;
+/**
+ * Item in *Navigation → NavRight*
+ */
+export interface NavigationDocumentDataNavrightItem {
+  /**
+   * Name field in *Navigation → NavRight*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.navright[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Link field in *Navigation → NavRight*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.navright[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+type NavigationDocumentDataSlicesSlice = never;
 
 /**
  * Content for Navigation documents
@@ -206,37 +218,26 @@ interface NavigationDocumentData {
   logolink: prismic.LinkField;
 
   /**
-   * Icons field in *Navigation*
+   * NavLeft field in *Navigation*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.icons[]
+   * - **API ID Path**: navigation.navleft[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  icons: prismic.GroupField<Simplify<NavigationDocumentDataIconsItem>>;
+  navleft: prismic.GroupField<Simplify<NavigationDocumentDataNavleftItem>>;
 
   /**
-   * BackgroundImage field in *Navigation*
+   * NavRight field in *Navigation*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.backgroundimage
+   * - **API ID Path**: navigation.navright[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  backgroundimage: prismic.ImageField<never>;
-
-  /**
-   * ColorLink field in *Navigation*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.colorlink
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  colorlink: prismic.ColorField;
+  navright: prismic.GroupField<Simplify<NavigationDocumentDataNavrightItem>>;
 
   /**
    * Slice Zone field in *Navigation*
@@ -601,166 +602,6 @@ type ImageBlockSliceVariation =
 export type ImageBlockSlice = prismic.SharedSlice<
   "image_block",
   ImageBlockSliceVariation
->;
-
-/**
- * Primary content in *NavLeft → Primary*
- */
-export interface NavLeftSliceDefaultPrimary {
-  /**
-   * Name field in *NavLeft → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_left.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
-   * Link field in *NavLeft → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_left.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Primary content in *NavLeft → Items*
- */
-export interface NavLeftSliceDefaultItem {
-  /**
-   * Name field in *NavLeft → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_left.items[].name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
-   * Link field in *NavLeft → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_left.items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for NavLeft Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavLeftSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<NavLeftSliceDefaultPrimary>,
-  Simplify<NavLeftSliceDefaultItem>
->;
-
-/**
- * Slice variation for *NavLeft*
- */
-type NavLeftSliceVariation = NavLeftSliceDefault;
-
-/**
- * NavLeft Shared Slice
- *
- * - **API ID**: `nav_left`
- * - **Description**: NavLeft
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavLeftSlice = prismic.SharedSlice<
-  "nav_left",
-  NavLeftSliceVariation
->;
-
-/**
- * Primary content in *NavRight → Primary*
- */
-export interface NavRightSliceDefaultPrimary {
-  /**
-   * Name field in *NavRight → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_right.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
-   * Link field in *NavRight → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_right.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Primary content in *NavRight → Items*
- */
-export interface NavRightSliceDefaultItem {
-  /**
-   * Name field in *NavRight → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_right.items[].name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
-   * Link field in *NavRight → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: nav_right.items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for NavRight Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavRightSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<NavRightSliceDefaultPrimary>,
-  Simplify<NavRightSliceDefaultItem>
->;
-
-/**
- * Slice variation for *NavRight*
- */
-type NavRightSliceVariation = NavRightSliceDefault;
-
-/**
- * NavRight Shared Slice
- *
- * - **API ID**: `nav_right`
- * - **Description**: NavRight
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavRightSlice = prismic.SharedSlice<
-  "nav_right",
-  NavRightSliceVariation
 >;
 
 /**
@@ -1586,46 +1427,63 @@ declare module "@prismicio/client" {
       CopyrightDocumentData,
       NavigationDocument,
       NavigationDocumentData,
+      NavigationDocumentDataNavleftItem,
+      NavigationDocumentDataNavrightItem,
       NavigationDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       FooterSlice,
+      FooterSliceDefaultPrimary,
+      FooterSliceDefaultItem,
       FooterSliceVariation,
       FooterSliceDefault,
       HeroSlice,
+      HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       ImageBlockSlice,
+      ImageBlockSliceDefaultPrimary,
+      ImageBlockSliceImageTextPrimary,
+      ImageBlockSliceImageParagraphPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
       ImageBlockSliceImageText,
       ImageBlockSliceImageParagraph,
-      NavLeftSlice,
-      NavLeftSliceVariation,
-      NavLeftSliceDefault,
-      NavRightSlice,
-      NavRightSliceVariation,
-      NavRightSliceDefault,
       NavigationItemSlice,
+      NavigationItemSliceDefaultPrimary,
+      NavigationItemSliceDefaultItem,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
       PictureButtonSlice,
+      PictureButtonSliceDefaultPrimary,
+      PictureButtonSliceDefaultItem,
+      PictureButtonSliceSameStylePrimary,
+      PictureButtonSliceSameStyleItem,
       PictureButtonSliceVariation,
       PictureButtonSliceDefault,
       PictureButtonSliceSameStyle,
       SectionCheckSlice,
+      SectionCheckSliceDefaultPrimary,
+      SectionCheckSliceDefaultItem,
       SectionCheckSliceVariation,
       SectionCheckSliceDefault,
       SectionContentSlice,
+      SectionContentSliceDefaultPrimary,
+      SectionContentSliceDefaultItem,
       SectionContentSliceVariation,
       SectionContentSliceDefault,
       SectionTextSlice,
+      SectionTextSliceDefaultPrimary,
+      SectionTextSliceStaticPrimary,
       SectionTextSliceVariation,
       SectionTextSliceDefault,
       SectionTextSliceStatic,
       TextBlockSlice,
+      TextBlockSliceDefaultPrimary,
+      TextBlockSliceTitleTextPrimary,
+      TextBlockSliceAuthorTitleTextPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
