@@ -16,6 +16,7 @@ export const Header = ({ navigation }) => {
 
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
+    console.log('evento click');
     setClicked(!clicked);
   };
 
@@ -51,7 +52,7 @@ export const Header = ({ navigation }) => {
           ))}
         </ul>
       </LeftContainer>
-      <IconBurger clicked={clicked} handleClick={handleClick}>
+      <IconBurger clicked={clicked} onClick={handleClick}>
         <AiOutlineMenu size={25} />
       </IconBurger>
       <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
