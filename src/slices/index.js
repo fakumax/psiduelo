@@ -6,7 +6,6 @@ export const components = {
   footer: dynamic(() => import("./Footer")),
   hero: dynamic(() => import("./Hero")),
   image_block: dynamic(() => import("./ImageBlock")),
-  navigation_item: dynamic(() => import("./NavigationItem")),
   picture_button: dynamic(() => import("./PictureButton")),
   section_check: dynamic(() => import("./SectionCheck")),
   section_content: dynamic(() => import("./SectionContent")),

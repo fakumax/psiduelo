@@ -605,86 +605,6 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *NavigationItem → Primary*
- */
-export interface NavigationItemSliceDefaultPrimary {
-  /**
-   * Name field in *NavigationItem → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Name of the link
-   * - **API ID Path**: navigation_item.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.TitleField;
-
-  /**
-   * Link field in *NavigationItem → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for the item
-   * - **API ID Path**: navigation_item.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Primary content in *NavigationItem → Items*
- */
-export interface NavigationItemSliceDefaultItem {
-  /**
-   * Name field in *NavigationItem → Items*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Name of the child link
-   * - **API ID Path**: navigation_item.items[].name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.TitleField;
-
-  /**
-   * Link field in *NavigationItem → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for the child item
-   * - **API ID Path**: navigation_item.items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for NavigationItem Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<NavigationItemSliceDefaultPrimary>,
-  Simplify<NavigationItemSliceDefaultItem>
->;
-
-/**
- * Slice variation for *NavigationItem*
- */
-type NavigationItemSliceVariation = NavigationItemSliceDefault;
-
-/**
- * NavigationItem Shared Slice
- *
- * - **API ID**: `navigation_item`
- * - **Description**: NavigationItem
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type NavigationItemSlice = prismic.SharedSlice<
-  "navigation_item",
-  NavigationItemSliceVariation
->;
-
-/**
  * Primary content in *PictureButton → Primary*
  */
 export interface PictureButtonSliceDefaultPrimary {
@@ -1451,11 +1371,6 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefault,
       ImageBlockSliceImageText,
       ImageBlockSliceImageParagraph,
-      NavigationItemSlice,
-      NavigationItemSliceDefaultPrimary,
-      NavigationItemSliceDefaultItem,
-      NavigationItemSliceVariation,
-      NavigationItemSliceDefault,
       PictureButtonSlice,
       PictureButtonSliceDefaultPrimary,
       PictureButtonSliceDefaultItem,
