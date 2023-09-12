@@ -55,7 +55,7 @@ export const Header = ({ navigation }) => {
       <IconBurger clicked={clicked} onClick={handleClick}>
         <AiOutlineMenu size={25} />
       </IconBurger>
-      <BgDiv className={`initial ${clicked ? ' active' : ''}`}>
+      <BgDiv className={`initial ${clicked ? 'active' : ''}`}>
         {/* className={`links ${clicked ? 'active' : ''}`} */}
         <ul>
           {navleft.map((item, index) => (
