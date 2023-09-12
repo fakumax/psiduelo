@@ -16,18 +16,18 @@ export const Header = ({ navigation }) => {
 
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
-    console.log('evento click');
+    console.log('clicked');
     setClicked(!clicked);
   };
 
   return (
     <NavBar>
       {/* NAVIGATION RIGHT*/}
-      <RightContainer className={`links ${clicked ? 'active' : ''}`}>
+      <RightContainer className={`links`}>
         <ul>
           {navleft.map((item, index) => (
             <li key={index}>
-              <PrismicLink onClick={handleClick} field={item.link}>
+              <PrismicLink field={item.link}>
                 <PrismicText field={item.name} />
               </PrismicLink>
             </li>
@@ -41,11 +41,11 @@ export const Header = ({ navigation }) => {
         </PrismicLink>
       </LogoStyle>
       {/* NAVIGATION LEFT*/}
-      <LeftContainer className={`links ${clicked ? 'active' : ''}`}>
+      <LeftContainer className={`links`}>
         <ul>
           {navright.map((item, index) => (
             <li key={index}>
-              <PrismicLink onClick={handleClick} field={item.link}>
+              <PrismicLink field={item.link}>
                 <PrismicText field={item.name} />
               </PrismicLink>
             </li>
@@ -55,7 +55,27 @@ export const Header = ({ navigation }) => {
       <IconBurger clicked={clicked} onClick={handleClick}>
         <AiOutlineMenu size={25} />
       </IconBurger>
-      <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
+      <BgDiv className={`initial ${clicked ? ' active' : ''}`}>
+        {/* className={`links ${clicked ? 'active' : ''}`} */}
+        <ul>
+          {navleft.map((item, index) => (
+            <li key={index}>
+              <PrismicLink onClick={handleClick} field={item.link}>
+                <PrismicText field={item.name} />
+              </PrismicLink>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {navright.map((item, index) => (
+            <li key={index}>
+              <PrismicLink onClick={handleClick} field={item.link}>
+                <PrismicText field={item.name} />
+              </PrismicLink>
+            </li>
+          ))}
+        </ul>
+      </BgDiv>
     </NavBar>
   );
 };
