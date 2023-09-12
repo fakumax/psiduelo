@@ -88,26 +88,62 @@ export const LeftContainer = styled.div`
 
 export const IconBurger = styled.div`
   align-self: center;
+  z-index: 2;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   }
 `;
 
 export const BgDiv = styled.div`
-  background-color: #222;
-  position: absolute;
-  top: -1000px;
-  left: -1000px;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  transition: all 0.6s ease;
-
+  display: none;
   &.active {
-    border-radius: 0 0 80% 0;
-    top: 0;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
     left: 0;
-    width: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
     height: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  li a {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--font-marcellus);
+    font-weight: 400;
+    color: ${(props) => props.theme.colors.textTertiary};
+  }
+  li a:hover {
+    background: -webkit-linear-gradient(
+      left,
+      #fbf8cc,
+      #fde4cf,
+      #ffcfd2,
+      #f1c0e8,
+      #cfbaf0,
+      #a3c4f3,
+      #90dbf4,
+      #8eecf5,
+      #98f5e1,
+      #b9fbc0
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: none;
   }
 `;
