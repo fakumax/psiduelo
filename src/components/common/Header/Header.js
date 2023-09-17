@@ -9,20 +9,16 @@ import {
   NavBar,
   RightContainer,
 } from './HeaderStyle';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export const Header = ({ navigation }) => {
+export const Header = ({ navigation, show, setShow }) => {
   const { logoimage, navleft, navright, logolink } = navigation.data;
-
-  const [clicked, setClicked] = useState(false);
   const handleClick = () => {
-    console.log('clicked');
-    setClicked(!clicked);
+    setShow(!show);
   };
 
   return (
     <NavBar>
-      {/* NAVIGATION RIGHT*/}
       <RightContainer className={`links`}>
         <ul>
           {navleft.map((item, index) => (
@@ -34,13 +30,11 @@ export const Header = ({ navigation }) => {
           ))}
         </ul>
       </RightContainer>
-      {/* LOGO */}
       <LogoStyle>
         <PrismicLink field={logolink}>
           <PrismicNextImage field={logoimage} priority={true} />
         </PrismicLink>
       </LogoStyle>
-      {/* NAVIGATION LEFT*/}
       <LeftContainer className={`links`}>
         <ul>
           {navright.map((item, index) => (
@@ -52,11 +46,11 @@ export const Header = ({ navigation }) => {
           ))}
         </ul>
       </LeftContainer>
-      <IconBurger clicked={clicked} onClick={handleClick}>
+      <IconBurger show={show} onClick={handleClick}>
         <AiOutlineMenu size={25} />
       </IconBurger>
-      <BgDiv className={`initial ${clicked ? 'active' : ''}`}>
-        {/* className={`links ${clicked ? 'active' : ''}`} */}
+
+      <BgDiv className={`initial ${show ? 'active' : ''}`}>
         <ul>
           {navleft.map((item, index) => (
             <li key={index}>
