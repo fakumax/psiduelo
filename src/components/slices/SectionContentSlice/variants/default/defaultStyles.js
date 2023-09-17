@@ -74,7 +74,7 @@ export const WhiteContainer = styled.article`
   gap: 20px;
   a {
     display: flex;
-    justify-content: center;
+    place-self: center;
     color: ${(props) => props.theme.colors.titleBrown};
     font-family: var(--font-hijrnotes);
   }
@@ -173,7 +173,7 @@ export const ContainerItems = styled.article`
   }
   a {
     display: flex;
-    justify-content: start;
+    place-self: start;
     color: #7c5a19;
     font-family: var(--font-hijrnotes);
   }
@@ -181,7 +181,7 @@ export const ContainerItems = styled.article`
     flex-direction: row-reverse;
     text-align: end;
     a {
-      justify-content: end;
+      place-self: end;
     }
     h2 {
       text-align: end;
