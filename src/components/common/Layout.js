@@ -3,6 +3,7 @@ import { Header, Copyright as Copr } from '@/components/common';
 import localFont from 'next/font/local';
 
 import { Marcellus } from 'next/font/google';
+import { useState } from 'react';
 
 const marcellus = Marcellus({
   subsets: ['latin'],
@@ -24,15 +25,14 @@ const skeptisgraph = localFont({
 });
 
 export const Layout = ({ navigation, copyright, children }) => {
-  //console.log(navigation);
-  //console.log(copyright);
+  const [show, setShow] = useState(false);
 
   return (
     <div
       className={` ${marcellus.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
     >
-      <Header navigation={navigation} />
-      <main>{children}</main>
+      <Header navigation={navigation} show={show} setShow={setShow} />
+      {!show && <main>{children}</main>}
       <Copr copyright={copyright} />
     </div>
   );
