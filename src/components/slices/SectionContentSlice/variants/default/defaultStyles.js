@@ -109,7 +109,7 @@ export const WhiteContainer = styled.article`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     .TextLeft {
-      z-index: 1;
+      //z-index: 1;
       gap: 25px;
       display: flex;
       flex-direction: column;

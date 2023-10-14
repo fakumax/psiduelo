@@ -1,5 +1,29 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { MdClose } from 'react-icons/md';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    height: '80%',
+    width: '60%',
+    position: 'relative', // Añadir para permitir posicionamiento absoluto de hijos
+  },
+  closeButton: {
+    // Estilo para el botón de cerrar
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '1.5rem',
+  },
+};
 
 const CustomModal = ({ isOpen, onRequestClose, content }) => {
   return (
@@ -7,9 +31,12 @@ const CustomModal = ({ isOpen, onRequestClose, content }) => {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Example Modal"
+      style={customStyles}
       // Puedes personalizar el estilo del modal aquí si lo deseas
     >
-      <button onClick={onRequestClose}>Cerrar</button>
+      <button style={customStyles.closeButton} onClick={onRequestClose}>
+        <MdClose />
+      </button>
       <div>{content}</div>
     </Modal>
   );
