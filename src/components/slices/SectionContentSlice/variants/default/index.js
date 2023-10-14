@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import {
@@ -8,11 +9,21 @@ import {
   WhiteContainer,
   Wrapper,
 } from './defaultStyles';
+import { CustomModal } from '@/components/common/Modal';
 
 const Default = (slice) => {
-  //console.log('--slice--', slice);
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la apertura/cierre del modal
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <Wrapper color={bgcolor}>
       <LeftContainer>
@@ -45,7 +56,20 @@ const Default = (slice) => {
                 <div className="new1" />
               </HeadTitle>
               <PrismicRichText field={item.description} />
-              <PrismicNextLink field={item.linkbutton}>{item.textbutton}</PrismicNextLink>
+              {/* <PrismicNextLink field={item.linkbutton}>{item.textbutton}</PrismicNextLink> */}
+
+              <button onClick={openModal}>{item.textbutton}</button>
+
+              <CustomModal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                content={
+                  <div>
+                    <PrismicRichText field={item.description} />
+                    <h2>{item.textbutton}</h2>
+                  </div>
+                }
+              />
             </div>
           </ContainerItems>
         ))}
