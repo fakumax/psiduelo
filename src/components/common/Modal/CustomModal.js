@@ -11,10 +11,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     height: '80%',
     width: '60%',
-    position: 'relative', // Añadir para permitir posicionamiento absoluto de hijos
+    position: 'relative',
   },
   closeButton: {
-    // Estilo para el botón de cerrar
     position: 'absolute',
     top: '10px',
     right: '10px',
@@ -32,7 +31,6 @@ const CustomModal = ({ isOpen, onRequestClose, content }) => {
       onRequestClose={onRequestClose}
       contentLabel="Example Modal"
       style={customStyles}
-      // Puedes personalizar el estilo del modal aquí si lo deseas
     >
       <button style={customStyles.closeButton} onClick={onRequestClose}>
         <MdClose />

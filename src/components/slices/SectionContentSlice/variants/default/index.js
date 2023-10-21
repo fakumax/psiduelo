@@ -11,11 +11,15 @@ import {
 } from './defaultStyles';
 import { CustomModal } from '@/components/common/Modal';
 
-const Default = (slice) => {
+const Default = (slice, articles) => {
+  console.log(slice);
+  console.log(articles);
+
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
 
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la apertura/cierre del modal
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -23,6 +27,7 @@ const Default = (slice) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setSelectedItem(null);
   };
   return (
     <Wrapper color={bgcolor}>
@@ -65,8 +70,12 @@ const Default = (slice) => {
                 onRequestClose={closeModal}
                 content={
                   <div>
-                    <PrismicRichText field={item.description} />
-                    <h2>{item.textbutton}</h2>
+                    {selectedItem && (
+                      <>
+                        <PrismicRichText field={selectedItem.description} />
+                        <h2>{selectedItem.textbutton}</h2>
+                      </>
+                    )}
                   </div>
                 }
               />

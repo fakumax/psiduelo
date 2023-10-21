@@ -6,16 +6,15 @@ import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
 
-const Index = ({ page, navigation, copyright }) => {
-  //console.log(navigation);
-  //console.log(copyright);
+const Index = ({ articles, page, navigation, copyright }) => {
+  console.log(articles);
 
   return (
     <Layout navigation={navigation} copyright={copyright}>
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone slices={page.data.slices} components={components} articles={articles} />
     </Layout>
   );
 };
@@ -29,8 +28,20 @@ export async function getStaticProps({ previewData }) {
   const navigation = await client.getSingle('navigation');
   const copyright = await client.getSingle('copyright');
 
+  const articleIds = [
+    'el-duelo-duele',
+    'en-alicia-en-el-pais-de-las-maravillas-alicia-le-pregunta',
+    'por-que-es-importante-el-apoyo-psicologico-en-el-duelo',
+  ];
+  const articlesResponse = await client.getByUIDs('article', articleIds);
+  const articles = articlesResponse.results;
+
+  //Si necesito traer un solor articulo.
+  //const article = await client.getByUID('article', 'el-duelo-duele');
+
   return {
     props: {
+      articles,
       page,
       navigation,
       copyright,

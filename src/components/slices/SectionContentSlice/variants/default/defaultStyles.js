@@ -171,11 +171,17 @@ export const ContainerItems = styled.article`
   .WrapperImage {
     display: none;
   }
-  a {
+  button {
     display: flex;
     place-self: start;
     color: #7c5a19;
     font-family: var(--font-hijrnotes);
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
   }
   &:last-child {
     flex-direction: row-reverse;
