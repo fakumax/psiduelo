@@ -35,7 +35,7 @@ const CustomModal = ({ isOpen, onRequestClose, content }) => {
       <button style={customStyles.closeButton} onClick={onRequestClose}>
         <MdClose />
       </button>
-      <div>{content}</div>
+      <>{content}</>
     </Modal>
   );
 };

@@ -72,11 +72,18 @@ export const WhiteContainer = styled.article`
   background-color: white;
   text-align: justify;
   gap: 20px;
-  a {
+
+  button {
     display: flex;
     place-self: center;
-    color: ${(props) => props.theme.colors.titleBrown};
+    color: #7c5a19;
     font-family: var(--font-hijrnotes);
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
   }
   .ImageLeft {
     max-width: 150px;
