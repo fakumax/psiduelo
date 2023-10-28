@@ -1,0 +1,117 @@
+{
+  "id": "section_text",
+  "type": "SharedSlice",
+  "name": "SectionText",
+  "description": "SectionText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageleft": {
+          "type": "Image",
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "textfirst": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "textsecond": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextSecond",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "bgcolor": {
+          "type": "Color",
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
+        },
+        "colorletter": {
+          "type": "Color",
+          "config": {
+            "label": "ColorLetter",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "static",
+      "name": "Static",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageleft": {
+          "type": "Image",
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "textfirst": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "bgcolor": {
+          "type": "Color",
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
+        },
+        "colorletter": {
+          "type": "Color",
+          "config": {
+            "label": "ColorLetter",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
