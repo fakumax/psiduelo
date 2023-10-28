@@ -5,14 +5,6 @@ const nextConfig = async () => {
     compiler: {
       styledComponents: true,
     },
-    // async rewrites() {
-    //   return [
-    //     {
-    //       source: '/articles',
-    //       destination: '/',
-    //     },
-    //   ];
-    // },
   };
 };
 

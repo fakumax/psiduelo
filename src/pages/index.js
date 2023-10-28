@@ -7,9 +7,6 @@ import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
 
 const Index = ({ page, navigation, copyright }) => {
-  //console.log(navigation);
-  //console.log(copyright);
-
   return (
     <Layout navigation={navigation} copyright={copyright}>
       <Head>
@@ -24,7 +21,6 @@ export default Index;
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
-
   const page = await client.getByUID('page', 'home');
   const navigation = await client.getSingle('navigation');
   const copyright = await client.getSingle('copyright');
