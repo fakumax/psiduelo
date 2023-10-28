@@ -72,11 +72,18 @@ export const WhiteContainer = styled.article`
   background-color: white;
   text-align: justify;
   gap: 20px;
-  a {
+
+  button {
     display: flex;
-    justify-content: center;
-    color: ${(props) => props.theme.colors.titleBrown};
+    place-self: center;
+    color: #7c5a19;
     font-family: var(--font-hijrnotes);
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
   }
   .ImageLeft {
     max-width: 150px;
@@ -109,7 +116,7 @@ export const WhiteContainer = styled.article`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     .TextLeft {
-      z-index: 1;
+      //z-index: 1;
       gap: 25px;
       display: flex;
       flex-direction: column;
@@ -171,17 +178,23 @@ export const ContainerItems = styled.article`
   .WrapperImage {
     display: none;
   }
-  a {
+  button {
     display: flex;
-    justify-content: start;
+    place-self: start;
     color: #7c5a19;
     font-family: var(--font-hijrnotes);
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
   }
   &:last-child {
     flex-direction: row-reverse;
     text-align: end;
     a {
-      justify-content: end;
+      place-self: end;
     }
     h2 {
       text-align: end;
