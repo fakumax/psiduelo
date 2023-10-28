@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import {
@@ -10,10 +10,10 @@ import {
   Wrapper,
 } from './defaultStyles';
 import { CustomModal } from '@/components/common/Modal';
+import { fetchArticles } from '@/utils/fetchArticles';
 
-const Default = (slice, articles) => {
-  console.log(slice);
-  console.log(articles);
+const Default = (slice) => {
+  const [articles, setArticles] = useState(null);
 
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
@@ -29,6 +29,17 @@ const Default = (slice, articles) => {
     setIsModalOpen(false);
     setSelectedItem(null);
   };
+
+  useEffect(() => {
+    const fetchAndSetArticles = async () => {
+      const fetchedArticles = await fetchArticles();
+      setArticles(fetchedArticles);
+      console.log(fetchedArticles);
+    };
+
+    fetchAndSetArticles();
+  }, []);
+
   return (
     <Wrapper color={bgcolor}>
       <LeftContainer>
