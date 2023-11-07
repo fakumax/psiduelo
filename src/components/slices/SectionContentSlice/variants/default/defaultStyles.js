@@ -73,7 +73,7 @@ export const WhiteContainer = styled.article`
   text-align: justify;
   gap: 20px;
 
-  button {
+  button,a {
     display: flex;
     place-self: center;
     color: #7c5a19;
@@ -178,7 +178,7 @@ export const ContainerItems = styled.article`
   .WrapperImage {
     display: none;
   }
-  button {
+  button,a {
     display: flex;
     place-self: start;
     color: #7c5a19;
