@@ -25,19 +25,19 @@
     "@prismicio/slice-simulator-react": "^0.2.3",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
-    "next": "^14.0.1",
+    "next": "^14.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-modal": "^3.16.1",
-    "styled-components": "^6.1.0"
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.8",
-    "@slicemachine/adapter-next": "^0.3.23",
+    "@slicemachine/adapter-next": "^0.3.24",
     "concurrently": "^8.2.2",
     "eslint": "8.53.0",
-    "eslint-config-next": "^14.0.1",
-    "slice-machine-ui": "^1.19.1"
+    "eslint-config-next": "^14.0.2",
+    "slice-machine-ui": "^1.19.2"
   }
 }
