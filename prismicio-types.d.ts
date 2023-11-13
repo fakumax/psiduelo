@@ -45,8 +45,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
    * Meta Description field in *Article*
    *
    * - **Field Type**: Text
@@ -1311,12 +1310,41 @@ export type TextBlockSliceAuthorTitleText = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceFirmaPrimary {
+  /**
+   * Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Firma variation for TextBlock Slice
+ *
+ * - **API ID**: `firma`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceFirma = prismic.SharedSliceVariation<
+  "firma",
+  Simplify<TextBlockSliceFirmaPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
 type TextBlockSliceVariation =
   | TextBlockSliceDefault
   | TextBlockSliceTitleText
-  | TextBlockSliceAuthorTitleText;
+  | TextBlockSliceAuthorTitleText
+  | TextBlockSliceFirma;
 
 /**
  * TextBlock Shared Slice
@@ -1334,7 +1362,7 @@ declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
@@ -1399,10 +1427,12 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceTitleTextPrimary,
       TextBlockSliceAuthorTitleTextPrimary,
+      TextBlockSliceFirmaPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
       TextBlockSliceAuthorTitleText,
+      TextBlockSliceFirma,
     };
   }
 }
