@@ -1,4 +1,4 @@
-## A Project Build with NextJS 13, Prismic, Styled-Components and MUI
+## A Project Build with NextJS 14, Prismic, Styled-Components and MUI
 
 ## Getting Started
 
