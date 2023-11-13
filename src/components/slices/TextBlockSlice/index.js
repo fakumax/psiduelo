@@ -1,4 +1,4 @@
-import { Default, TitleText, AuthorTitleText } from './variants';
+import { Default, TitleText, AuthorTitleText, Firma } from './variants';
 
 export const TextBlockSlice = ({ slice }) => {
   const { variation } = slice;
@@ -7,6 +7,7 @@ export const TextBlockSlice = ({ slice }) => {
     ['default']: Default,
     ['titleText']: TitleText,
     ['authorTitleText']: AuthorTitleText,
+    ['firma']: Firma,
   };
 
   const TypeOfVariants = typeOfComponents[variation] || Default;
