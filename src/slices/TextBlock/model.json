@@ -88,6 +88,24 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "firma",
+      "name": "Firma",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "Text",
+          "config": {
+            "label": "Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

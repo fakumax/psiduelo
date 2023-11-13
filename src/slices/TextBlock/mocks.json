@@ -89,5 +89,22 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "firma",
+		"primary": {
+			"text": {
+				"__TYPE__": "FieldContent",
+				"value": "moon",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
