@@ -14,7 +14,7 @@ import { fetchArticles } from '@/utils/fetchArticles';
 
 const Default = (slice) => {
   const [articles, setArticles] = useState(null);
-  //console.log(slice.items);
+  console.log(slice.items);
   const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
 
@@ -88,7 +88,7 @@ const Default = (slice) => {
                     openModal(
                       titleText === 'El Duelo Duele'
                         ? 'el-duelo-duele'
-                        : 'por-que-es-importante-el-apoyo-psicologico-en-el-duelo'
+                        : 'por-que-es-importante-el-apoyo-psicologico-en-el-duelo',
                     )
                   }
                 >

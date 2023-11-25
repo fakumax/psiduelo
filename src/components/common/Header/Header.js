@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react';
 
 export const Header = ({ navigation, show, setShow }) => {
   const { logoimage, navleft, navright, logolink } = navigation.data;
+  console.log('LEFT---->', navleft);
+  //console.log('RIGHT---->', navright);
   const handleClick = () => {
     setShow(!show);
   };
