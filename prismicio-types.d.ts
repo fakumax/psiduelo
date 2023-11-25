@@ -37,6 +37,17 @@ interface ArticleDocumentData {
   image: prismic.ImageField<never>;
 
   /**
+   * Options field in *Article*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Seleccione tipo de articulo para su visualización
+   * - **API ID Path**: article.options
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  options: prismic.SelectField<"articuloComun" | "articuloDiario">;
+
+  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
