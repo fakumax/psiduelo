@@ -29,6 +29,14 @@
           "thumbnails": []
         }
       },
+      "options": {
+        "type": "Select",
+        "config": {
+          "label": "Options",
+          "placeholder": "Seleccione tipo de articulo para su visualización",
+          "options": ["articuloComun", "articuloDiario"]
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
