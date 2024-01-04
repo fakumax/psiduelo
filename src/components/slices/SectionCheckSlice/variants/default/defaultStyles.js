@@ -41,9 +41,9 @@ export const Container = styled.div`
 
 export const SubItem = styled.article`
   align-content: flex-start;
-  margin: 20px;
+  margin: 20px 0;
   padding: 20px;
-  width: 500px;
+  width: auto;
   min-height: 200px;
   display: grid;
   border-radius: 10px;
@@ -67,6 +67,15 @@ export const SubItem = styled.article`
     text-align: justify;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
   }
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    width: 450px;
+    margin: 20px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: auto;
+    margin: 20px;
+  }
+
   .titleItems {
     align-items: center;
     display: flex;
