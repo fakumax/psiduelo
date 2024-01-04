@@ -7,7 +7,7 @@ export const NavBar = styled.nav`
   padding: 0 20px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 150px;
+    height: 120px;
     place-content: center;
     box-shadow: 0px 2px 6px rgba(44, 62, 80, 0.15);
     .links {
