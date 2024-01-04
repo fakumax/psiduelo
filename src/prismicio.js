@@ -5,8 +5,7 @@ import config from '../slicemachine.config.json';
 /**
  * The project's Prismic repository name.
  */
-export const { repositoryName } = config;
-
+export const { repositoryName } = process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || config;
 /**
  * A list of Route Resolver objects that define how a document's `url` field
  * is resolved.

@@ -1,13 +1,9 @@
-import { PrismicNextImage } from '@prismicio/next';
-import { Container, SubItem, Wrapper } from './defaultStyles';
 import { PrismicRichText } from '@prismicio/react';
+import { Container, SubItem, Wrapper } from './defaultStyles';
 
 const Default = (slice) => {
-  //console.log('--SectioCheckSlice--', slice);
-  const { image, text, color, title } = slice.primary;
+  const { image, text, color } = slice.primary;
   const { items } = slice;
-  //console.log(color);
-  // console.log('--SectioCheckSlice--', JSON.stringify(description.items));
   return (
     <Wrapper style={{ backgroundImage: `url(${image.url})` }}>
       <Container color={color}>
@@ -16,7 +12,6 @@ const Default = (slice) => {
           {items.map((item, index) => (
             <SubItem key={index}>
               <div className="titleItems">
-                <PrismicNextImage field={item.icon} />
                 <PrismicRichText field={item.title} />
               </div>
               <PrismicRichText field={item.description} />
