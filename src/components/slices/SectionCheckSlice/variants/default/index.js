@@ -16,11 +16,11 @@ const Default = (slice) => {
           {items.map((item, index) => (
             <SubItem key={index}>
               <div className="titleItems">
-                <PrismicNextImage field={item.icon} />
+                {/* <PrismicNextImage field={item.icon} /> */}
                 <PrismicRichText field={item.title} />
               </div>
               <PrismicRichText field={item.description} />
-            </SubItem>
+                 </SubItem>
           ))}
         </div>
       </Container>

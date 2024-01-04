@@ -9,15 +9,13 @@ import {
   NavBar,
   RightContainer,
 } from './HeaderStyle';
-import { useEffect, useState } from 'react';
 
 export const Header = ({ navigation, show, setShow }) => {
-  const { logoimage, navleft, navright, logolink } = navigation.data;
-  console.log('LEFT---->', navleft);
-  //console.log('RIGHT---->', navright);
+  const { logoimage, navleft, navright, logolink } = navigation.data; 
   const handleClick = () => {
     setShow(!show);
   };
+  console.log("navleft",navleft)
 
   return (
     <NavBar>
@@ -25,7 +23,7 @@ export const Header = ({ navigation, show, setShow }) => {
         <ul>
           {navleft.map((item, index) => (
             <li key={index}>
-              <PrismicLink field={item.link}>
+              <PrismicLink field={item.link} className={item.name[0].text}>
                 <PrismicText field={item.name} />
               </PrismicLink>
             </li>
@@ -41,7 +39,7 @@ export const Header = ({ navigation, show, setShow }) => {
         <ul>
           {navright.map((item, index) => (
             <li key={index}>
-              <PrismicLink field={item.link}>
+              <PrismicLink field={item.link} className={item.name[0].text}>
                 <PrismicText field={item.name} />
               </PrismicLink>
             </li>
@@ -65,7 +63,7 @@ export const Header = ({ navigation, show, setShow }) => {
         <ul>
           {navright.map((item, index) => (
             <li key={index}>
-              <PrismicLink onClick={handleClick} field={item.link}>
+              <PrismicLink onClick={handleClick} field={item.link} className={item.name}>
                 <PrismicText field={item.name} />
               </PrismicLink>
             </li>
