@@ -30,6 +30,12 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
+    /* button {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+    } */
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
@@ -39,7 +45,7 @@ export const Container = styled.div`
   }
 `;
 
-export const SubItem = styled.article`
+export const SubItem = styled.button`
   align-content: flex-start;
   margin: 20px 0;
   padding: 20px;
@@ -49,6 +55,7 @@ export const SubItem = styled.article`
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
+  border: none;
 
   &:hover {
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
