@@ -11,7 +11,7 @@ const Copyright = ({ copyright }) => {
     const palabras = text.split(/(\{.*?\})/);
     //console.log('palabras', palabras);
     const palabrotas = palabras.map((palabra, index) =>
-      reemplazarPalabras(palabra, index)
+      reemplazarPalabras(palabra, index),
     );
     //console.log(palabrotas);
 

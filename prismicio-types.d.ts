@@ -278,6 +278,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TextBlockSlice
   | HeroSlice
   | SectionTextSlice
   | PictureButtonSlice
@@ -1349,13 +1350,131 @@ export type TextBlockSliceFirma = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceShortTextDiarioPrimary {
+  /**
+   * Title field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * ShortTextDiario variation for TextBlock Slice
+ *
+ * - **API ID**: `shortTextDiario`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceShortTextDiario = prismic.SharedSliceVariation<
+  "shortTextDiario",
+  Simplify<TextBlockSliceShortTextDiarioPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceContactTextPrimary {
+  /**
+   * Image field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Name field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Email field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Phone field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Message field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message: prismic.KeyTextField;
+
+  /**
+   * TextLeft field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.contact
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact: prismic.KeyTextField;
+}
+
+/**
+ * contactText variation for TextBlock Slice
+ *
+ * - **API ID**: `contactText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceContactText = prismic.SharedSliceVariation<
+  "contactText",
+  Simplify<TextBlockSliceContactTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
 type TextBlockSliceVariation =
   | TextBlockSliceDefault
   | TextBlockSliceTitleText
   | TextBlockSliceAuthorTitleText
-  | TextBlockSliceFirma;
+  | TextBlockSliceFirma
+  | TextBlockSliceShortTextDiario
+  | TextBlockSliceContactText;
 
 /**
  * TextBlock Shared Slice
@@ -1439,11 +1558,15 @@ declare module "@prismicio/client" {
       TextBlockSliceTitleTextPrimary,
       TextBlockSliceAuthorTitleTextPrimary,
       TextBlockSliceFirmaPrimary,
+      TextBlockSliceShortTextDiarioPrimary,
+      TextBlockSliceContactTextPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
       TextBlockSliceAuthorTitleText,
       TextBlockSliceFirma,
+      TextBlockSliceShortTextDiario,
+      TextBlockSliceContactText,
     };
   }
 }

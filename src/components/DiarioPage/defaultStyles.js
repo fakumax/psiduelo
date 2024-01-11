@@ -1,24 +1,36 @@
 import styled from 'styled-components';
 
-export const ArticlesList = styled.div`
+export const SectionList = styled.section`
   display: flex;
-  flex-direction: column;
   gap: 20px;
-`;
-
-export const ArticleCard = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  flex-direction: column;
+`;
+
+export const ArticleCard = styled.article`
+  display: grid;
+  grid-template-columns: 30% 50%;
   margin: 2rem 0;
+  height: 300px;
+  place-content: center;
+`;
+
+export const ContainerRight = styled.div`
+  overflow: hidden;
+  padding: 0 2rem;
+  text-align: justify;
 `;
 
 export const ContainerImage = styled.div`
+  display: flex;
+  width: auto;
+  height: 300px;
   img {
-    aspect-ratio: 16/9;
-    max-width: 400px;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
