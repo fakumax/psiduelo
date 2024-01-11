@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   width: 100%;
   display: flex;
   place-content: center;
@@ -10,8 +10,18 @@ export const Wrapper = styled.div`
   a {
     font-size: 8px;
     color: ${(props) => props.theme.colors.textPrimary};
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Open Sans',
+      'Helvetica Neue',
+      sans-serif;
   }
   a {
     color: ${(props) => props.theme.colors.titleBrown};
