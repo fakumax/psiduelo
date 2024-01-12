@@ -25,9 +25,9 @@ const ContactText = (slice) => {
       <Container>
         <div>
           <p>{contact}</p>
-          <ImageContainer>
+          {/* <ImageContainer>
             <PrismicNextImage field={image} height={350} />
-          </ImageContainer>
+          </ImageContainer> */}
         </div>
         <div>
           <StyledLabel>
