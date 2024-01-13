@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { toast } from 'sonner';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
@@ -24,21 +25,44 @@ import {
 } from './defaultStyles.js';
 
 import { PrismicNextImage } from '@prismicio/next';
+import { ResendEmail } from '@/pages/api/ResendEmail.js';
 
 const ContactText = (slice) => {
   console.log('--slice--TextBlockSlice', slice);
-  const { name, email, phone, message, contact, image } = slice.primary;
+  //const { name, email, phone, message, contact, image } = slice.primary;
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    try {
+      // Llamar a la función ResendEmail para enviar el correo electrónico
+      const response = await ResendEmail({
+        name: data.nombre,
+        email: data.email,
+        phone: data.telefono,
+        message: data.mensaje,
+      });
+      if (response?.success) {
+        console.log({ data: response.data });
+        toast.success('Email sent!');
+        reset();
+        return;
+      }
+
+      // toast error
+      console.log(response?.error);
+      toast.error('Something went wrong!');
+    } catch (error) {
+      console.error('Error al enviar el correo electrónico', error);
+    }
   };
 
   return (
@@ -46,29 +70,32 @@ const ContactText = (slice) => {
       <Container>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <label>{name}</label>
+            <label>name</label>
             <input {...register('nombre')} />
             <p>{errors.nombre?.message}</p>
           </div>
 
           <div>
-            <label>{email}</label>
+            <label> email </label>
             <input {...register('email')} />
             <p>{errors.email?.message}</p>
           </div>
 
           <div>
-            <label>{phone}</label>
+            <label> phone</label>
             <input {...register('telefono')} />
             <p>{errors.telefono?.message}</p>
           </div>
 
           <div>
-            <label>{message}</label>
+            <label>message</label>
             <textarea {...register('mensaje')} />
             <p>{errors.mensaje?.message}</p>
           </div>
-          <button type="submit">Enviar</button>
+
+          <button disabled={isSubmitting}>
+            {isSubmitting ? 'Enviando...' : 'Enviar'}
+          </button>
         </form>
       </Container>
     </Wrapper>
