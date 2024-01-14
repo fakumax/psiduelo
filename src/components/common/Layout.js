@@ -29,10 +29,15 @@ export const Layout = ({ navigation, copyright, children }) => {
 
   return (
     <div
+      style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
       className={` ${marcellus.variable} ${hijrnotes.variable} ${skeptisgraph.variable}`}
     >
       <Header navigation={navigation} show={show} setShow={setShow} />
-      {!show && <main>{children}</main>}
+      {!show && (
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          {children}
+        </main>
+      )}
       <Copr copyright={copyright} />
     </div>
   );
