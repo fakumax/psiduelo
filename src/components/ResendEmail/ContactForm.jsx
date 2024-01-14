@@ -6,6 +6,7 @@ import { PrismicNextImage } from '@prismicio/next';
 //import { ResendEmail } from '@/pages/api/ResendEmail.js';
 import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
 import { z } from 'zod';
+import { ContainerField, StyleSpan, StyledButton } from './ContactStyle';
 
 const ContactForm = ({ text }) => {
   const [data, setData] = useState();
@@ -40,14 +41,14 @@ const ContactForm = ({ text }) => {
 
       if (responseData.success) {
         console.log({ data: responseData.data });
-        toast.success('Email sent!');
+        toast.success('Mensaje enviado. ¡Muchas gracias!');
         reset();
         return;
       }
 
       // toast error
       console.log(responseData.error);
-      toast.error('Something went wrong!');
+      toast.error('Ha sucedido un error!');
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);
     }
@@ -81,34 +82,44 @@ const ContactForm = ({ text }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        style={{ gap: '1.5rem', display: 'flex', flexDirection: 'column' }}
+      >
+        <ContainerField>
           <label>{text.name}</label>
-          <input {...register('nombre')} />
-          <p>{errors.nombre?.message}</p>
-        </div>
+          <div>
+            <input {...register('nombre')} />
+            {errors.nombre && <StyleSpan>{errors.nombre.message}</StyleSpan>}
+          </div>
+        </ContainerField>
 
-        <div>
+        <ContainerField>
           <label> {text.email} </label>
-          <input {...register('email')} />
-          <p>{errors.email?.message}</p>
-        </div>
+          <div>
+            <input {...register('email')} />
+            {errors.email && <StyleSpan>{errors.email.message}</StyleSpan>}
+          </div>
+        </ContainerField>
 
-        <div>
+        <ContainerField>
           <label> {text.phone}</label>
-          <input {...register('telefono')} />
-          <p>{errors.telefono?.message}</p>
-        </div>
+          <div>
+            <input {...register('telefono')} />
+            {errors.telefono && <StyleSpan>{errors.telefono.message}</StyleSpan>}
+          </div>
+        </ContainerField>
 
-        <div>
+        <ContainerField>
           <label>{text.message}</label>
-          <textarea {...register('mensaje')} />
-          <p>{errors.mensaje?.message}</p>
-        </div>
+          <div>
+            <textarea {...register('mensaje')} />
+            {errors.mensaje && <StyleSpan>{errors.mensaje.message}</StyleSpan>}
+          </div>
+        </ContainerField>
 
-        <button>Enviar</button>
+        <StyledButton>Enviar</StyledButton>
       </form>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   );
 };
