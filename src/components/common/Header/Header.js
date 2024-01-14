@@ -11,11 +11,10 @@ import {
 } from './HeaderStyle';
 
 export const Header = ({ navigation, show, setShow }) => {
-  const { logoimage, navleft, navright, logolink } = navigation.data; 
+  const { logoimage, navleft, navright, logolink } = navigation.data;
   const handleClick = () => {
     setShow(!show);
   };
-  console.log("navleft",navleft)
 
   return (
     <NavBar>
