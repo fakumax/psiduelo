@@ -35,6 +35,16 @@ function LatestArticle({ article }) {
 }
 
 export default function Article({ article, latestArticles, navigation, copyright }) {
+  let filterArticle;
+  if (article) {
+    article.data.slices = article.data.slices.filter(
+      (item) => item.variation !== 'shortTextDiario',
+    );
+    //console.log('filterArticle------>', filterArticle);
+  }
+
+  //console.log('article------>', article);
+
   return (
     <Layout
       withHeaderDivider={false}
@@ -86,6 +96,8 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
   const article = await client.getByUID('article', params.uid);
+  console.log('ARTICLE------->', article);
+
   const latestArticles = await client.getAllByType('article', {
     limit: 3,
     orderings: [

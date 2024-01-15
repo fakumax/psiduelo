@@ -1,55 +1,23 @@
-import {
-  Container,
-  Wrapper,
-  ImageContainer,
-  FormContainer,
-  StyledLabel,
-  StyledInput,
-  StyledTextarea,
-  StyledSubmitButton,
-} from './defaultStyles.js';
+import React from 'react';
+
+import { Container, ContainerImage, Wrapper } from './defaultStyles.js';
+import { ContactForm } from '@/components/ResendEmail/ContactForm.jsx';
 import { PrismicNextImage } from '@prismicio/next';
 
 const ContactText = (slice) => {
-  console.log('--slice--TextBlockSlice', slice);
-  const { name, email, phone, message, contact, image } = slice.primary;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Formulario enviado!');
-    // Agrega aquí la lógica adicional para manejar el envío del formulario si es necesario
-  };
-
+  console.log('image', slice.primary);
   return (
     <Wrapper>
       <Container>
-        <div>
-          <p>{contact}</p>
-          <ImageContainer>
-            <PrismicNextImage field={image} height={350} />
-          </ImageContainer>
-        </div>
-        <div>
-          <StyledLabel>
-            {name}:
-            <StyledInput type="text" name="name" />
-          </StyledLabel>
-          <StyledLabel>
-            {email}:
-            <StyledInput type="text" name="email" />
-          </StyledLabel>
-          <StyledLabel>
-            {phone}:
-            <StyledInput type="text" name="phone" />
-          </StyledLabel>
-          <StyledLabel>
-            {message}:
-            <StyledTextarea name="message" />
-          </StyledLabel>
-          <FormContainer>
-            <StyledSubmitButton type="submit" value="Enviar" onClick={handleSubmit} />
-          </FormContainer>
-        </div>
+        <ContainerImage>
+          <PrismicNextImage
+            field={slice.primary.image}
+            alt={slice.primary.image.alt || 'Imagen de contacto'}
+            width={slice.primary.image.dimensions.width}
+            height={slice.primary.image.dimensions.height}
+          />
+        </ContainerImage>
+        <ContactForm text={slice.primary} />
       </Container>
     </Wrapper>
   );
