@@ -3,24 +3,26 @@ import styled from 'styled-components';
 export const ContainerField = styled.div`
   display: flex;
   align-items: center;
-  margin: 0rem 1rem;
+  flex-direction: column;
 
   label {
-    width: 30%;
-    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    font-family: var(--font-skeptisgraph);
   }
   input,
   textarea {
     flex: 1;
-    border-color: rgba(25, 25, 26, 1);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: inherit;
+    border: none;
+    border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
+    transition: border-color 0.3s;
     height: 40px;
     width: 100%;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     font-size: 14px;
     padding: 0 12px;
+    background-color: inherit;
   }
   textarea {
     height: 80px;
@@ -28,13 +30,15 @@ export const ContainerField = styled.div`
   }
   input:focus,
   textarea:focus {
-    outline-color: ${(props) => props.theme.colors.titleBrown};
+    outline: none;
+    border-bottom-color: ${(props) => props.theme.colors.titleBrown};
   }
   div {
     position: relative;
     color: red;
     display: flex;
     flex: 1;
+    width: 100%;
   }
 `;
 
@@ -56,4 +60,5 @@ export const StyledButton = styled.button`
   margin: 2rem auto;
   background-color: ${(props) => props.theme.colors.titleBrown};
   color: ${(props) => props.theme.colors.bgColorWhite};
+  font-family: ${(props) => props.theme.typography.fontFamily_crimson};
 `;
