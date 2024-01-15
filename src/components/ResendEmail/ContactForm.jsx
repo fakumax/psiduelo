@@ -14,8 +14,7 @@ const ContactForm = ({ text }) => {
     register,
     handleSubmit,
     reset,
-    //formState: { errors, isSubmitting },
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(FormSchema),
   });
@@ -23,7 +22,6 @@ const ContactForm = ({ text }) => {
   const onSubmit = async (data) => {
     console.log(data);
     try {
-      // Hacer una solicitud HTTP al endpoint de la API
       const response = await fetch('/api/ResendEmail', {
         method: 'POST',
         headers: {
@@ -53,32 +51,6 @@ const ContactForm = ({ text }) => {
       console.error('Error al enviar el correo electrónico', error);
     }
   };
-
-  //   const onSubmit = async (data) => {
-  //     console.log(data);
-  //     setData(data);
-  //     try {
-  //       // Llamar a la función ResendEmail para enviar el correo electrónico
-  //       const response = await ResendEmail({
-  //         name: data.nombre,
-  //         email: data.email,
-  //         phone: data.telefono,
-  //         message: data.mensaje,
-  //       });
-  //       if (response?.success) {
-  //         console.log({ data: response.data });
-  //         toast.success('Email sent!');
-  //         reset();
-  //         return;
-  //       }
-
-  //       // toast error
-  //       console.log(response?.error);
-  //       toast.error('Something went wrong!');
-  //     } catch (error) {
-  //       console.error('Error al enviar el correo electrónico', error);
-  //     }
-  //   };
 
   return (
     <>
@@ -118,7 +90,9 @@ const ContactForm = ({ text }) => {
           </div>
         </ContainerField>
 
-        <StyledButton>Enviar</StyledButton>
+        <StyledButton disabled={isSubmitting}>
+          {isSubmitting ? 'enviando' : 'Enviar'}
+        </StyledButton>
       </form>
     </>
   );
