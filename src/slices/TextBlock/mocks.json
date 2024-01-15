@@ -146,7 +146,6 @@
 		"variation": "contactText",
 		"primary": {
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -164,6 +163,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"name": {
@@ -186,9 +188,63 @@
 				"value": "heart",
 				"type": "Text"
 			},
-			"contact": {
+			"subtitle": {
 				"__TYPE__": "FieldContent",
-				"value": "related",
+				"value": "place",
+				"type": "Text"
+			},
+			"frase": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur laborum quis id eu irure anim aliquip Lorem amet fugiat fugiat eiusmod occaecat ea. Nisi ullamco exercitation Lorem magna excepteur labore occaecat excepteur pariatur do anim et."
+						}
+					}
+				]
+			},
+			"titleturno": {
+				"__TYPE__": "FieldContent",
+				"value": "hole",
+				"type": "Text"
+			},
+			"subtitleturno": {
+				"__TYPE__": "FieldContent",
+				"value": "fireplace",
+				"type": "Text"
+			},
+			"buttonturno": {
+				"__TYPE__": "FieldContent",
+				"value": "alive",
+				"type": "Text"
+			},
+			"imageborder": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+					"width": 4000,
+					"height": 6000
+				},
+				"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+				"width": 4000,
+				"height": 6000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"residence": {
+				"__TYPE__": "FieldContent",
+				"value": "your",
 				"type": "Text"
 			}
 		},

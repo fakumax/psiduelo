@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const ResendEmailTemplate = ({ name, email, phone, message }) => (
+const ResendEmailTemplate = ({ name, email, phone, message, residence }) => (
   <div
     style={{
       fontFamily: 'Montserrat, sans-serif',
@@ -21,6 +21,9 @@ const ResendEmailTemplate = ({ name, email, phone, message }) => (
     </h4>
     <h4 style={{ color: '#1a1a1a' }}>
       <strong>Teléfono:</strong> {phone}
+    </h4>
+    <h4 style={{ color: '#1a1a1a' }}>
+      <strong>País/Lugar de residencia:</strong> {residence}
     </h4>
     <h4 style={{ color: '#1a1a1a' }}>
       <strong>Mensaje:</strong> <p style={{ color: '#1a1a1a' }}>{message}</p>

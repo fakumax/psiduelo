@@ -7,11 +7,16 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   place-content: center;
+  background-color: ${(props) => props.theme.colors.bgjubilee};
 `;
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
+  background-color: white;
+  padding: 4rem 0;
+  margin: 4rem 0;
+
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-columns: 40% 50%;
   }
