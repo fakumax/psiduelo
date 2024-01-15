@@ -7,6 +7,7 @@ const FormSchema = z.object({
   email: z.string().email({ message: 'Correo electrónico no válido' }),
   telefono: z.string().regex(phoneRegex, 'Número inválido.'),
   mensaje: z.string().min(10, { message: 'Mensaje obligatorio.' }),
+  residencia: z.string().min(10, { message: 'Mensaje obligatorio.' }),
 });
 
 export { FormSchema };

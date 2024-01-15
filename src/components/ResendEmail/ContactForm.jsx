@@ -31,6 +31,7 @@ const ContactForm = ({ text }) => {
           name: data.nombre,
           email: data.email,
           phone: data.telefono,
+          residence: data.residence,
           message: data.mensaje,
         }),
       });
@@ -56,7 +57,12 @@ const ContactForm = ({ text }) => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ gap: '1.5rem', display: 'flex', flexDirection: 'column' }}
+        style={{
+          gap: '2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          margin: '0 1rem',
+        }}
       >
         <ContainerField>
           <label>{text.name}</label>
@@ -79,6 +85,14 @@ const ContactForm = ({ text }) => {
           <div>
             <input {...register('telefono')} />
             {errors.telefono && <StyleSpan>{errors.telefono.message}</StyleSpan>}
+          </div>
+        </ContainerField>
+
+        <ContainerField>
+          <label> {text.residence}</label>
+          <div>
+            <input {...register('residencia')} />
+            {errors.residencia && <StyleSpan>{errors.residencia.message}</StyleSpan>}
           </div>
         </ContainerField>
 
