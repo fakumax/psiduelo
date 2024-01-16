@@ -1392,36 +1392,6 @@ export type TextBlockSliceShortTextDiario = prismic.SharedSliceVariation<
  */
 export interface TextBlockSliceContactTextPrimary {
   /**
-   * Subtitle field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitle: prismic.KeyTextField;
-
-  /**
-   * Frase field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.frase
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  frase: prismic.RichTextField;
-
-  /**
-   * Image field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
    * Name field in *TextBlock → Primary*
    *
    * - **Field Type**: Text
@@ -1470,36 +1440,6 @@ export interface TextBlockSliceContactTextPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   message: prismic.KeyTextField;
-
-  /**
-   * TitleTurno field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.titleturno
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  titleturno: prismic.KeyTextField;
-
-  /**
-   * SubtitleTurno field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.subtitleturno
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitleturno: prismic.KeyTextField;
-
-  /**
-   * ButtonTurno field in *TextBlock → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.buttonturno
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  buttonturno: prismic.KeyTextField;
 
   /**
    * ImageBorder field in *TextBlock → Primary*

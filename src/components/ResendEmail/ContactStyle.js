@@ -7,12 +7,13 @@ export const ContainerField = styled.div`
 
   label {
     font-size: 24px;
-    letter-spacing: 4px;
-    font-weight: 600;
+    color: ${(props) => props.theme.colors.bgColorSecondary};
+
     font-family: var(--font-skeptisgraph);
   }
   input,
   textarea {
+    color: ${(props) => props.theme.colors.bgColorSecondary};
     flex: 1;
     border: none;
     border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
