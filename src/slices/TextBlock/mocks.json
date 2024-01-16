@@ -145,29 +145,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "contactText",
 		"primary": {
-			"image": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-					"width": 3935,
-					"height": 5894
-				},
-				"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-				"width": 3935,
-				"height": 5894,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
 			"name": {
 				"__TYPE__": "FieldContent",
 				"value": "pink",
@@ -186,37 +163,6 @@
 			"message": {
 				"__TYPE__": "FieldContent",
 				"value": "heart",
-				"type": "Text"
-			},
-			"subtitle": {
-				"__TYPE__": "FieldContent",
-				"value": "place",
-				"type": "Text"
-			},
-			"frase": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Excepteur laborum quis id eu irure anim aliquip Lorem amet fugiat fugiat eiusmod occaecat ea. Nisi ullamco exercitation Lorem magna excepteur labore occaecat excepteur pariatur do anim et."
-						}
-					}
-				]
-			},
-			"titleturno": {
-				"__TYPE__": "FieldContent",
-				"value": "hole",
-				"type": "Text"
-			},
-			"subtitleturno": {
-				"__TYPE__": "FieldContent",
-				"value": "fireplace",
-				"type": "Text"
-			},
-			"buttonturno": {
-				"__TYPE__": "FieldContent",
-				"value": "alive",
 				"type": "Text"
 			},
 			"imageborder": {
