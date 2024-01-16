@@ -14,9 +14,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
   background-color: white;
-  padding: 4rem 0;
   margin: 4rem 0;
-
+  gap: 4rem;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-columns: 40% 50%;
   }
@@ -34,5 +33,22 @@ export const ContainerImage = styled.div`
       height: 100%;
       object-fit: cover;
     }
+  }
+`;
+
+export const ContainerImageBorder = styled.div`
+  width: 100%;
+  position: relative;
+  height: 25px;
+  top: -17px;
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    display: flex;
+    width: auto;
+    height: 300px;
   }
 `;

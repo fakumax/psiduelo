@@ -31,7 +31,7 @@ const ContactForm = ({ text }) => {
           name: data.nombre,
           email: data.email,
           phone: data.telefono,
-          residence: data.residence,
+          residence: data.residencia,
           message: data.mensaje,
         }),
       });
