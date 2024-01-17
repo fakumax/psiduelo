@@ -1189,11 +1189,100 @@ export type SectionTextSliceStatic = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SectionText → Primary*
+ */
+export interface SectionTextSliceImageWithFrasePrimary {
+  /**
+   * Title field in *SectionText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * ImageCentral field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imagecentral
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagecentral: prismic.ImageField<never>;
+
+  /**
+   * ImageLeft field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageright: prismic.ImageField<never>;
+
+  /**
+   * TextFirst field in *SectionText → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.textfirst
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textfirst: prismic.TitleField;
+
+  /**
+   * BgColor field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.bgcolor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bgcolor: prismic.ColorField;
+
+  /**
+   * ColorLetter field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.colorletter
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  colorletter: prismic.ColorField;
+}
+
+/**
+ * ImageWithFrase variation for SectionText Slice
+ *
+ * - **API ID**: `imageWithFrase`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionTextSliceImageWithFrase = prismic.SharedSliceVariation<
+  "imageWithFrase",
+  Simplify<SectionTextSliceImageWithFrasePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SectionText*
  */
 type SectionTextSliceVariation =
   | SectionTextSliceDefault
-  | SectionTextSliceStatic;
+  | SectionTextSliceStatic
+  | SectionTextSliceImageWithFrase;
 
 /**
  * SectionText Shared Slice
@@ -1550,9 +1639,11 @@ declare module "@prismicio/client" {
       SectionTextSlice,
       SectionTextSliceDefaultPrimary,
       SectionTextSliceStaticPrimary,
+      SectionTextSliceImageWithFrasePrimary,
       SectionTextSliceVariation,
       SectionTextSliceDefault,
       SectionTextSliceStatic,
+      SectionTextSliceImageWithFrase,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceTitleTextPrimary,

@@ -112,6 +112,71 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "imageWithFrase",
+      "name": "ImageWithFrase",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "imagecentral": {
+          "type": "Image",
+          "config": {
+            "label": "ImageCentral",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageleft": {
+          "type": "Image",
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "textfirst": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "bgcolor": {
+          "type": "Color",
+          "config": {
+            "label": "BgColor",
+            "placeholder": ""
+          }
+        },
+        "colorletter": {
+          "type": "Color",
+          "config": {
+            "label": "ColorLetter",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
