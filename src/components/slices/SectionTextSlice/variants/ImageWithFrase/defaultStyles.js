@@ -19,13 +19,29 @@ export const ContainerTitle = styled(motion.div)`
     font-weight: 400;
     text-align: center;
   }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 50% 50%; /* Crea dos columnas, cada una con el 50% del ancho */
+    grid-gap: 10px;
+    h3 {
+      order: 2;
+    }
+  }
 `;
 export const ContainerImage = styled(motion.div)`
-  width: 100%;
   height: auto;
+  order: 1;
+
+  width: 100%;
   img {
     width: 100%;
     height: auto;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: flex;
+    place-self: flex-end;
+    max-width: 250px;
   }
 `;
 
