@@ -3,7 +3,7 @@ import { z } from 'zod';
 const FormSchema = z.object({
   email: z.string().email({ message: 'Correo electrónico no válido' }),
   nombre: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
-  age: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
+  edad: z.string().min(2, { message: 'Debe tener 2 caracteres' }),
   perdida: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
   howtime: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
   feeling: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
