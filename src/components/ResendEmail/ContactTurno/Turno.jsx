@@ -1,13 +1,10 @@
+import { FormSchema } from '@/components/ResendEmail/ContactTurno/FormSchema.js';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
 import { ContainerField, StyleSpan, StyledButton } from './ContactStyle';
 
 const Turno = ({ text }) => {
-  console.log('Slice-->', text);
-  const [data, setData] = useState();
   const {
     register,
     handleSubmit,
@@ -18,7 +15,6 @@ const Turno = ({ text }) => {
   });
 
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       const response = await fetch('/api/ResendEmailTurno', {
         method: 'POST',
@@ -26,15 +22,15 @@ const Turno = ({ text }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: data.email,
           name: data.nombre,
+          email: data.email,
           age: data.edad,
           perdida: data.perdida,
           howtime: data.howtime,
           feeling: data.feeling,
           toldanyone: data.toldanyone,
           receivedtherapy: data.receivedtherapy,
-          message: data.message,
+          message: data.mensaje,
         }),
       });
 
