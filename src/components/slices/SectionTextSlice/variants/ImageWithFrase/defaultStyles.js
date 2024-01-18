@@ -32,11 +32,12 @@ export const ContainerTitle = styled(motion.div)`
 export const ContainerImage = styled(motion.div)`
   height: auto;
   order: 1;
-
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: flex;

@@ -1,4 +1,11 @@
-import { Default, TitleText, AuthorTitleText, Firma, ContactText } from './variants';
+import {
+  Default,
+  TitleText,
+  AuthorTitleText,
+  Firma,
+  ContactText,
+  ContactTurno,
+} from './variants';
 
 export const TextBlockSlice = ({ slice }) => {
   const { variation } = slice;
@@ -8,6 +15,7 @@ export const TextBlockSlice = ({ slice }) => {
     ['titleText']: TitleText,
     ['authorTitleText']: AuthorTitleText,
     ['contactText']: ContactText,
+    ['contactTurno']: ContactTurno,
     ['firma']: Firma,
   };
 
