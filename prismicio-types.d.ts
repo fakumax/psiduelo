@@ -1555,6 +1555,134 @@ export type TextBlockSliceContactText = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextBlock → Primary*
+ */
+export interface TextBlockSliceContactTurnoPrimary {
+  /**
+   * Titulo field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * Email field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Name field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Age field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.age
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  age: prismic.KeyTextField;
+
+  /**
+   * Perdida field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.perdida
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  perdida: prismic.KeyTextField;
+
+  /**
+   * HowTime field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.howtime
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  howtime: prismic.KeyTextField;
+
+  /**
+   * Feeling field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.feeling
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  feeling: prismic.KeyTextField;
+
+  /**
+   * ToldAnyone field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.toldanyone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  toldanyone: prismic.KeyTextField;
+
+  /**
+   * ReceivedTherapy field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.receivedtherapy
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  receivedtherapy: prismic.KeyTextField;
+
+  /**
+   * Message field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message: prismic.KeyTextField;
+
+  /**
+   * ButtonSend field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.buttonsend
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonsend: prismic.KeyTextField;
+}
+
+/**
+ * ContactTurno variation for TextBlock Slice
+ *
+ * - **API ID**: `contactTurno`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceContactTurno = prismic.SharedSliceVariation<
+  "contactTurno",
+  Simplify<TextBlockSliceContactTurnoPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextBlock*
  */
 type TextBlockSliceVariation =
@@ -1563,7 +1691,8 @@ type TextBlockSliceVariation =
   | TextBlockSliceAuthorTitleText
   | TextBlockSliceFirma
   | TextBlockSliceShortTextDiario
-  | TextBlockSliceContactText;
+  | TextBlockSliceContactText
+  | TextBlockSliceContactTurno;
 
 /**
  * TextBlock Shared Slice
@@ -1651,6 +1780,7 @@ declare module "@prismicio/client" {
       TextBlockSliceFirmaPrimary,
       TextBlockSliceShortTextDiarioPrimary,
       TextBlockSliceContactTextPrimary,
+      TextBlockSliceContactTurnoPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
@@ -1658,6 +1788,7 @@ declare module "@prismicio/client" {
       TextBlockSliceFirma,
       TextBlockSliceShortTextDiario,
       TextBlockSliceContactText,
+      TextBlockSliceContactTurno,
     };
   }
 }
