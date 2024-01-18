@@ -1,17 +1,9 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { useEffect, useState } from 'react';
-import {
-  ContainerTitle,
-  ContainerText,
-  ContainerImage,
-  Transition,
-  Wrapper,
-} from './defaultStyles';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ContainerImage, ContainerText, ContainerTitle, Wrapper } from './defaultStyles';
 
 const ImageWithFrase = (slice) => {
-  console.log('--slice--', slice);
+  //console.log('--slice--', slice);
   const { title, imagecentral, imageleft, imageright, textfirst } = slice.primary;
 
   return (
