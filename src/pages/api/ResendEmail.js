@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_EMAIL);
 
 const ResendEmail = async (req, res) => {
   console.log('REQUEST----->', req.body);
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, message, residence } = req.body;
   const { data, error } = await resend.emails.send({
     from: 'Web PSIDUELO <onboarding@resend.dev>',
     to: ['fakumax@gmail.com'],
@@ -14,6 +14,7 @@ const ResendEmail = async (req, res) => {
       name,
       email,
       phone,
+      residence,
       message,
     }),
   });

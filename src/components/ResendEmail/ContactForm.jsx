@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { toast } from 'sonner';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { PrismicNextImage } from '@prismicio/next';
-//import { ResendEmail } from '@/pages/api/ResendEmail.js';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
-import { z } from 'zod';
 import { ContainerField, StyleSpan, StyledButton } from './ContactStyle';
 
 const ContactForm = ({ text }) => {
-  const [data, setData] = useState();
   const {
     register,
     handleSubmit,
@@ -20,7 +15,7 @@ const ContactForm = ({ text }) => {
   });
 
   const onSubmit = async (data) => {
-    console.log(data);
+    console.log('contactFORM----->', data);
     try {
       const response = await fetch('/api/ResendEmail', {
         method: 'POST',
