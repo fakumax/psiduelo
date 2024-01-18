@@ -2,7 +2,7 @@ import { PrismicRichText } from '@prismicio/react';
 import { Container, Wrapper } from './defaultStyles';
 
 const TitleText = (slice) => {
-  //console.log('--slice--TextBlockSlice', slice);
+  console.log('--slice--TextBlockSlice', slice);
   const { title, text } = slice.primary;
 
   return (
