@@ -2,16 +2,27 @@ import { FormSchema } from '@/components/ResendEmail/ContactTurno/FormSchema.js'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { ContainerField, StyleSpan, StyledButton } from './ContactStyle';
+import {
+  ContainerField,
+  RadioButton,
+  StyleSpan,
+  StyledButton,
+  FormStyle,
+} from './ContactStyle';
 
 const Turno = ({ text }) => {
   const {
     register,
     handleSubmit,
     reset,
+
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(FormSchema),
+    defaultValues: {
+      receivedtherapy: '',
+      toldanyone: '',
+    },
   });
 
   const onSubmit = async (data) => {
@@ -52,15 +63,7 @@ const Turno = ({ text }) => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{
-          gap: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '0 1rem',
-        }}
-      >
+      <FormStyle onSubmit={handleSubmit(onSubmit)}>
         <ContainerField>
           <label> {text.email} </label>
           <div>
@@ -108,19 +111,36 @@ const Turno = ({ text }) => {
         </ContainerField>
         <ContainerField>
           <label>{text.toldanyone}</label>
-          <div>
-            <input {...register('toldanyone')} />
-            {errors.toldanyone && <StyleSpan>{errors.toldanyone.message}</StyleSpan>}
-          </div>
+          <RadioButton>
+            <label>
+              Sí
+              <input type="radio" value="Si" {...register('toldanyone')} />
+            </label>
+            <label>
+              No
+              <input type="radio" value="No" {...register('toldanyone')} />
+            </label>
+
+            {errors.toldanyone && (
+              <StyleSpan style={{ left: 0 }}>{errors.toldanyone.message}</StyleSpan>
+            )}
+          </RadioButton>
         </ContainerField>
         <ContainerField>
           <label>{text.receivedtherapy}</label>
-          <div>
-            <input {...register('receivedtherapy')} />
+          <RadioButton>
+            <label>
+              Sí
+              <input type="radio" value="Si" {...register('receivedtherapy')} />
+            </label>
+            <label>
+              No
+              <input type="radio" value="No" {...register('receivedtherapy')} />
+            </label>
             {errors.receivedtherapy && (
-              <StyleSpan>{errors.receivedtherapy.message}</StyleSpan>
+              <StyleSpan style={{ left: 0 }}>{errors.receivedtherapy.message}</StyleSpan>
             )}
-          </div>
+          </RadioButton>
         </ContainerField>
         <ContainerField>
           <label>{text.message}</label>
@@ -133,7 +153,7 @@ const Turno = ({ text }) => {
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : `${text.buttonsend}`}
         </StyledButton>
-      </form>
+      </FormStyle>
     </>
   );
 };
