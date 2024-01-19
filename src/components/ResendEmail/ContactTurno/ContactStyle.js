@@ -64,3 +64,23 @@ export const StyledButton = styled.button`
   color: ${(props) => props.theme.colors.bgColorWhite};
   font-family: ${(props) => props.theme.typography.fontFamily_crimson};
 `;
+
+export const RadioButton = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  border: none;
+  background: none;
+  label {
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
+  input {
+    transform: scale(1);
+  }
+`;

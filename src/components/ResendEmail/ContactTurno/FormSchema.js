@@ -7,8 +7,8 @@ const FormSchema = z.object({
   perdida: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
   howtime: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
   feeling: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
-  toldanyone: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
-  receivedtherapy: z.string().min(4, { message: 'Mínimo 4 caracteres' }),
+  toldanyone: z.string().min(1, { message: 'Debe seleccionar una opción' }),
+  receivedtherapy: z.string().min(1, { message: 'Debe seleccionar una opción' }),
   mensaje: z.string().min(10, { message: 'Mensaje obligatorio.' }),
 });
 
