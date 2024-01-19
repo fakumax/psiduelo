@@ -12,6 +12,7 @@ export const ContainerField = styled.div`
     padding: 0 10px;
     font-family: var(--font-skeptisgraph);
   }
+
   input,
   textarea {
     color: ${(props) => props.theme.colors.bgColorSecondary};
@@ -41,6 +42,15 @@ export const ContainerField = styled.div`
     display: flex;
     flex: 1;
     width: 100%;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    label {
+      font-size: 40px;
+    }
+    input,
+    textarea {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -82,5 +92,19 @@ export const RadioButton = styled.div`
   }
   input {
     transform: scale(1);
+  }
+`;
+
+export const FormStyle = styled.form`
+  gap: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10rem;
+    align-items: end;
   }
 `;

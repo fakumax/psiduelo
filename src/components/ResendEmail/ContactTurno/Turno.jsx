@@ -2,7 +2,13 @@ import { FormSchema } from '@/components/ResendEmail/ContactTurno/FormSchema.js'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { ContainerField, RadioButton, StyleSpan, StyledButton } from './ContactStyle';
+import {
+  ContainerField,
+  RadioButton,
+  StyleSpan,
+  StyledButton,
+  FormStyle,
+} from './ContactStyle';
 
 const Turno = ({ text }) => {
   const {
@@ -57,15 +63,7 @@ const Turno = ({ text }) => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{
-          gap: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '0 1rem',
-        }}
-      >
+      <FormStyle onSubmit={handleSubmit(onSubmit)}>
         <ContainerField>
           <label> {text.email} </label>
           <div>
@@ -155,7 +153,7 @@ const Turno = ({ text }) => {
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : `${text.buttonsend}`}
         </StyledButton>
-      </form>
+      </FormStyle>
     </>
   );
 };

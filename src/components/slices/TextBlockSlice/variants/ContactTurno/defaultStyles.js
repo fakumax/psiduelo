@@ -23,8 +23,12 @@ export const Container = styled.div`
     margin-bottom: -25px;
     padding: 0;
   }
+
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    grid-template-columns: 40% 50%;
+    h3 {
+      font-size: 32px;
+      margin: 0;
+    }
   }
 `;
 
