@@ -2,7 +2,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
-import { ContainerField, StyleSpan, StyledButton } from './ContactStyle';
+import {
+  ContainerField,
+  StyleSpan,
+  StyledButton,
+  FormContact,
+  ContainerFieldMessage,
+} from './ContactStyle';
 
 const ContactForm = ({ text }) => {
   const {
@@ -50,15 +56,7 @@ const ContactForm = ({ text }) => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{
-          gap: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '0 1rem',
-        }}
-      >
+      <FormContact onSubmit={handleSubmit(onSubmit)}>
         <ContainerField>
           <label>{text.name}</label>
           <div>
@@ -91,18 +89,18 @@ const ContactForm = ({ text }) => {
           </div>
         </ContainerField>
 
-        <ContainerField>
+        <ContainerFieldMessage>
           <label>{text.message}</label>
           <div>
             <textarea {...register('mensaje')} />
             {errors.mensaje && <StyleSpan>{errors.mensaje.message}</StyleSpan>}
           </div>
-        </ContainerField>
+        </ContainerFieldMessage>
 
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : 'Enviar'}
         </StyledButton>
-      </form>
+      </FormContact>
     </>
   );
 };

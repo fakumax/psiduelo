@@ -54,6 +54,63 @@ export const ContainerField = styled.div`
   }
 `;
 
+export const ContainerFieldMessage = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  label {
+    font-size: 24px;
+    color: ${(props) => props.theme.colors.bgColorSecondary};
+    text-align: center;
+    padding: 0 10px;
+    font-family: var(--font-skeptisgraph);
+  }
+
+  input,
+  textarea {
+    color: ${(props) => props.theme.colors.bgColorSecondary};
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
+    transition: border-color 0.3s;
+    height: 40px;
+    width: 100%;
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 14px;
+    padding: 0 12px;
+    background-color: inherit;
+  }
+  textarea {
+    height: 80px;
+    padding: 10px 10px;
+  }
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-bottom-color: ${(props) => props.theme.colors.titleBrown};
+  }
+  div {
+    position: relative;
+    color: red;
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    grid-column: 1 / span 2;
+    width: 50%;
+    margin: 0 auto;
+    label {
+      font-size: 40px;
+    }
+    input,
+    textarea {
+      font-size: 20px;
+    }
+  }
+`;
+
+//--------------------
 export const StyleSpan = styled.span`
   position: absolute;
   bottom: -20px;
@@ -73,6 +130,11 @@ export const StyledButton = styled.button`
   background-color: ${(props) => props.theme.colors.titleBrown};
   color: ${(props) => props.theme.colors.bgColorWhite};
   font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    grid-column: 1 / span 2;
+    width: 50%;
+  }
 `;
 
 export const RadioButton = styled.div`
@@ -103,6 +165,7 @@ export const FormStyle = styled.form`
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     display: grid;
+    gap: 2rem 8rem;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 10rem;
     align-items: end;
