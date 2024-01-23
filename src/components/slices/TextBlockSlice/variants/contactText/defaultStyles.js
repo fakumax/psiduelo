@@ -17,7 +17,9 @@ export const Container = styled.div`
   margin: 4rem 0;
   gap: 4rem;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    grid-template-columns: 40% 50%;
+    grid-template-columns: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 `;
 
@@ -49,6 +51,18 @@ export const ContainerImageBorder = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     display: flex;
     width: auto;
-    height: 300px;
+    height: 20px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    height: 30px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    height: 45px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    height: 50px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    height: 62px;
   }
 `;
