@@ -9,7 +9,6 @@ const ImageWithFrase = (slice) => {
   return (
     <Wrapper>
       <ContainerTitle>
-        <h3>{title}</h3>
         <ContainerImage style={{ top: '0' }}>
           <PrismicNextImage
             field={imagecentral}

@@ -8,13 +8,15 @@ export const Wrapper = styled.section`
   flex-direction: column;
   place-content: center;
   background-color: ${(props) => props.theme.colors.bgjubilee};
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    padding: 4rem 0;
+  }
 `;
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
   background-color: ${(props) => props.theme.colors.bgjubilee};
-  margin: 4rem 0;
   gap: 4rem;
   h3 {
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
