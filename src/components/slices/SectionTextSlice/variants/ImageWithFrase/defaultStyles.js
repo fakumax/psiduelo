@@ -13,6 +13,8 @@ export const Wrapper = styled.section`
 export const ContainerTitle = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  grid-template-columns: 50% 50%;
+
   h3 {
     font-size: 16px;
     margin: 2rem;
@@ -22,8 +24,8 @@ export const ContainerTitle = styled(motion.div)`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row-reverse;
     display: grid;
-    grid-template-columns: 50% 50%; /* Crea dos columnas, cada una con el 50% del ancho */
-    grid-gap: 10px;
+    grid-template-columns: 100%;
+    margin-top: 2rem;
     h3 {
       order: 2;
     }
@@ -67,16 +69,17 @@ export const ContainerText = styled.div`
   margin: 2rem 0 0 0;
 
   h3 {
-    font-size: 30px;
+    font-size: 16px;
     font-weight: 500;
     max-width: 70%;
     line-height: 1.5;
     text-align: center;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
-      font-size: 16px;
-      max-width: 80%;
+      font-size: 25px;
+      max-width: 100%;
+      margin: 2rem 0;
     }
   }
 `;
