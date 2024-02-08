@@ -8,6 +8,7 @@ import {
   StyleSpan,
   StyledButton,
   FormStyle,
+  ContainerFieldMessage,
 } from './ContactStyle';
 
 const Turno = ({ text }) => {
@@ -142,13 +143,13 @@ const Turno = ({ text }) => {
             )}
           </RadioButton>
         </ContainerField>
-        <ContainerField>
+        <ContainerFieldMessage>
           <label>{text.message}</label>
           <div>
             <textarea {...register('mensaje')} />
             {errors.mensaje && <StyleSpan>{errors.mensaje.message}</StyleSpan>}
           </div>
-        </ContainerField>
+        </ContainerFieldMessage>
 
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : `${text.buttonsend}`}
