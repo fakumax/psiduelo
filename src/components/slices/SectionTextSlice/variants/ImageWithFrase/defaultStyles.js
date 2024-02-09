@@ -66,7 +66,7 @@ export const ContainerText = styled.div`
   flex-direction: row;
   place-items: center;
   justify-content: center;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0;
 
   h3 {
     font-size: 16px;

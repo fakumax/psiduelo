@@ -1531,7 +1531,7 @@ export interface TextBlockSliceContactTextPrimary {
   message: prismic.KeyTextField;
 
   /**
-   * ImageBorder field in *TextBlock → Primary*
+   * ImageBorder1 field in *TextBlock → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1539,6 +1539,16 @@ export interface TextBlockSliceContactTextPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   imageborder: prismic.ImageField<never>;
+
+  /**
+   * ImageBorder2 field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.imageborder2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageborder2: prismic.ImageField<never>;
 }
 
 /**
