@@ -18,6 +18,7 @@ export const Container = styled.div`
   grid-template-columns: 100%;
   background-color: ${(props) => props.theme.colors.bgjubilee};
   gap: 4rem;
+  margin: 4rem 0;
   h3 {
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     text-align: center;
@@ -26,9 +27,22 @@ export const Container = styled.div`
     padding: 0;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    margin: 0;
     h3 {
-      font-size: 32px;
+      font-size: 24px;
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    margin: 0;
+    h3 {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    h3 {
+      font-size: 28px;
       margin: 0;
     }
   }
