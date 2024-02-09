@@ -14,12 +14,12 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
   background-color: white;
-  margin: 4rem 0;
-  gap: 4rem;
+  //gap: 4rem;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-columns: 100%;
     width: 80%;
     margin: 0 auto;
+    gap: 0;
   }
 `;
 
@@ -38,11 +38,38 @@ export const ContainerImage = styled.div`
   }
 `;
 
-export const ContainerImageBorder = styled.div`
+export const ContainerImageBorderUp = styled.div`
   width: 100%;
   position: relative;
-  height: 25px;
-  top: -17px;
+  height: 40px;
+  top: -30px;
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    top: -40px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    height: 30px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    height: 45px;
+    top: -50px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    top: -70px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    top: -80px;
+  }
+`;
+export const ContainerImageBorderDown = styled.div`
+  width: 100%;
+  position: relative;
+  top: 30px;
+  transform: rotate(0.5turn);
   img {
     width: 100%;
     height: auto;
@@ -51,18 +78,20 @@ export const ContainerImageBorder = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     display: flex;
     width: auto;
-    height: 20px;
+    top: 40px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    height: 30px;
+    top: 40px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     height: 45px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     height: 50px;
+    top: 60px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    height: 62px;
+    position: relative;
+    top: 80px;
   }
 `;
