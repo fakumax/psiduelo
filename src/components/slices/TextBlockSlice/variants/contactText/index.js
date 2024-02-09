@@ -3,33 +3,37 @@ import React from 'react';
 import {
   Container,
   ContainerImage,
+  ContainerImageBorderDown,
+  ContainerImageBorderUp,
   Wrapper,
-  ContainerImageBorder,
 } from './defaultStyles.js';
 import { ContactForm } from '@/components/ResendEmail/ContactForm.jsx';
 import { PrismicNextImage } from '@prismicio/next';
 
 const ContactText = (slice) => {
+  console.log('slice', slice);
+  //   top: 80px;
+  // transform: rotate(0.5turn);
   return (
     <Wrapper>
       <Container>
-        <ContainerImageBorder>
+        <ContainerImageBorderUp>
           <PrismicNextImage
             field={slice.primary.imageborder}
             alt={slice.primary.imageborder.alt || 'Imagen de borde'}
             width={slice.primary.imageborder.dimensions.width}
             height={slice.primary.imageborder.dimensions.height}
           />
-        </ContainerImageBorder>
+        </ContainerImageBorderUp>
         <ContactForm text={slice.primary} />
-        <ContainerImageBorder style={{ top: '0' }}>
+        <ContainerImageBorderDown>
           <PrismicNextImage
             field={slice.primary.imageborder}
-            alt={slice.primary.imageborder.alt || 'Imagen de borde2'}
+            alt={slice.primary.imageborder.alt || 'Imagen de borde'}
             width={slice.primary.imageborder.dimensions.width}
             height={slice.primary.imageborder.dimensions.height}
           />
-        </ContainerImageBorder>
+        </ContainerImageBorderDown>
       </Container>
     </Wrapper>
   );

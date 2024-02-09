@@ -182,7 +182,15 @@
         "imageborder": {
           "type": "Image",
           "config": {
-            "label": "ImageBorder",
+            "label": "ImageBorder1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageborder2": {
+          "type": "Image",
+          "config": {
+            "label": "ImageBorder2",
             "constraint": {},
             "thumbnails": []
           }
