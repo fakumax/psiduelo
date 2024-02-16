@@ -23,6 +23,14 @@ export const ContainerRight = styled.div`
   text-align: justify;
 `;
 
+export const ContainerFoto = styled.div`
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  margin: 2rem auto;
+  text-align: center;
+`;
+
 export const ContainerImage = styled.div`
   display: flex;
   width: auto;
@@ -31,6 +39,19 @@ export const ContainerImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+`;
+
+export const ContainerImagePersonal = styled.div`
+  display: flex;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 `;
 

@@ -18,7 +18,7 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
   const allArticles = await client.getAllByType('article');
   const filteredArticles = allArticles.filter((article) => {
-    return article.data.options === 'articuloDiario';
+    return article.data.options !== 'articuloComun';
   });
   const navigation = await client.getSingle('navigation');
   const copyright = await client.getSingle('copyright');
