@@ -34,7 +34,7 @@
         "config": {
           "label": "Options",
           "placeholder": "Seleccione tipo de articulo para su visualización",
-          "options": ["articuloComun", "articuloDiario"]
+          "options": ["articuloComun", "articuloDiario", "articuloFoto"]
         }
       },
       "slices": {
