@@ -58,13 +58,9 @@ export const ContainerImagePersonal = styled.div`
 export const ArticleTitle = styled.h2`
   margin: 0;
   color: #333;
-  font-size: 24px;
   text-decoration: none;
-
-  a {
-    color: inherit; /* Ensure links are the same color as titles */
-    text-decoration: none;
-  }
+  font-family: var(--font-skeptisgraph);
+  font-size: 35px;
 `;
 
 export const ArticleDescription = styled.p`
