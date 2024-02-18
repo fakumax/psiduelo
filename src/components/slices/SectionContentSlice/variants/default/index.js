@@ -13,8 +13,16 @@ const Default = (slice) => {
   //console.log(slice.items);
   //console.log(slice.primary);
 
-  const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton,linkbutton } =
-    slice.primary;
+  const {
+    bgcolor,
+    bgleft,
+    titleleft,
+    textleft,
+    descripcionleft,
+    imageleft,
+    textbutton,
+    linkbutton,
+  } = slice.primary;
   return (
     <Wrapper color={bgcolor}>
       <LeftContainer>
@@ -26,7 +34,7 @@ const Default = (slice) => {
             <PrismicRichText field={titleleft} />
             <PrismicRichText field={descripcionleft} />
           </div>
-                                    <PrismicLink field={linkbutton}> { textbutton}</PrismicLink>
+          <PrismicLink field={linkbutton}> {textbutton}</PrismicLink>
         </WhiteContainer>
         <div className="ImagePaper">
           <PrismicNextImage field={bgleft} fallbackAlt="" />
@@ -48,7 +56,7 @@ const Default = (slice) => {
                   <div className="new1" />
                 </HeadTitle>
                 <PrismicRichText field={item.description} />
-                  <PrismicLink field={item.linkbutton}> {item.textbutton}</PrismicLink>
+                <PrismicLink field={item.linkbutton}> {item.textbutton}</PrismicLink>
               </div>
             </ContainerItems>
           );

@@ -73,7 +73,8 @@ export const WhiteContainer = styled.article`
   text-align: justify;
   gap: 20px;
 
-  button,a {
+  button,
+  a {
     display: flex;
     place-self: center;
     color: #7c5a19;
@@ -178,7 +179,8 @@ export const ContainerItems = styled.article`
   .WrapperImage {
     display: none;
   }
-  button,a {
+  button,
+  a {
     display: flex;
     place-self: start;
     color: #7c5a19;
@@ -189,7 +191,27 @@ export const ContainerItems = styled.article`
     cursor: pointer;
     padding: 0;
     font-weight: 600;
+    &:hover {
+      background: -webkit-linear-gradient(
+        left,
+        #fbf8cc,
+        #fde4cf,
+        #ffcfd2,
+        #f1c0e8,
+        #cfbaf0,
+        #a3c4f3,
+        #90dbf4,
+        #8eecf5,
+        #98f5e1,
+        #b9fbc0
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
+
   &:last-child {
     flex-direction: row-reverse;
     text-align: end;
