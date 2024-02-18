@@ -8,7 +8,6 @@ export const ContainerField = styled.div`
   label {
     font-size: 24px;
     color: ${(props) => props.theme.colors.bgColorSecondary};
-
     font-family: var(--font-skeptisgraph);
   }
   input,
@@ -44,6 +43,9 @@ export const ContainerField = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     width: 80%;
     margin: 0 auto;
+    label {
+      font-size: 50px;
+    }
   }
 `;
 
@@ -93,6 +95,9 @@ export const ContainerFieldMessage = styled.div`
     margin: 0 auto;
     grid-column: 1 / span 2;
     width: 50%;
+    label {
+      font-size: 50px;
+    }
   }
 `;
 

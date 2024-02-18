@@ -4,11 +4,10 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import {
   ContainerField,
+  FormStyle,
   RadioButton,
   StyleSpan,
   StyledButton,
-  FormStyle,
-  ContainerFieldMessage,
 } from './ContactStyle';
 
 const Turno = ({ text }) => {
@@ -143,13 +142,13 @@ const Turno = ({ text }) => {
             )}
           </RadioButton>
         </ContainerField>
-        <ContainerFieldMessage>
+        <ContainerField>
           <label>{text.message}</label>
           <div>
             <textarea {...register('mensaje')} />
             {errors.mensaje && <StyleSpan>{errors.mensaje.message}</StyleSpan>}
           </div>
-        </ContainerFieldMessage>
+        </ContainerField>
 
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : `${text.buttonsend}`}
