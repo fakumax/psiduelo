@@ -1,6 +1,6 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { BodyContainer, IconsGroup, Wrapper, Icon } from './defaultStyles';
+import { BodyContainer, IconsGroup, Wrapper, Icon, Frase } from './defaultStyles';
 
 //Icons
 import {
@@ -37,6 +37,13 @@ const Default = (slice) => {
           <Icon icon={faSpotify} />
         </Link>
       </IconsGroup>
+      <Frase>
+        <p>
+          &quot;Algunas veces solíamos hablar de iniciar una familia...pero en
+          que...nuestra familia ya había iniciado...&quot;
+        </p>
+        <span>Para Charís</span>
+      </Frase>
     </Wrapper>
   );
 };

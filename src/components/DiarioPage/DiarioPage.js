@@ -51,7 +51,7 @@ const DiarioPage = ({ articles }) => {
 
           return (
             <ArticleCard key={article.id}>
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
                 <PrismicLink document={article}>
                   <ContainerImage>
                     <PrismicNextImage

@@ -1,19 +1,13 @@
-import React from 'react';
-
+import { ContactForm } from '@/components/ResendEmail/ContactForm.jsx';
+import { PrismicNextImage } from '@prismicio/next';
 import {
   Container,
-  ContainerImage,
   ContainerImageBorderDown,
   ContainerImageBorderUp,
   Wrapper,
 } from './defaultStyles.js';
-import { ContactForm } from '@/components/ResendEmail/ContactForm.jsx';
-import { PrismicNextImage } from '@prismicio/next';
 
 const ContactText = (slice) => {
-  console.log('slice', slice);
-  //   top: 80px;
-  // transform: rotate(0.5turn);
   return (
     <Wrapper>
       <Container>

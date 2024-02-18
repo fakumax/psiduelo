@@ -166,7 +166,6 @@
 				"type": "Text"
 			},
 			"imageborder": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
@@ -184,6 +183,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"residence": {
@@ -192,7 +194,6 @@
 				"type": "Text"
 			},
 			"imageborder2": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
@@ -210,6 +211,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
@@ -284,6 +288,57 @@
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "preguntaFrecuente",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Given"
+						}
+					}
+				]
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit consequat id mollit sint eu sunt ipsum deserunt et eiusmod aliqua sunt adipisicing eiusmod. Officia nisi aliquip est laboris mollit proident."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"titlefaq",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "forty",
+							"type": "Text"
+						}
+					],
+					[
+						"descriptionfaq",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "species",
+							"type": "Text"
+						}
+					]
+				]
 			}
 		]
 	}
