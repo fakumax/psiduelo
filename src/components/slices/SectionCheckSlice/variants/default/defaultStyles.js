@@ -23,7 +23,6 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 50px;
     margin: 1rem 0;
-    letter-spacing: 4px;
   }
 
   .subContainer {
@@ -70,30 +69,35 @@ export const SubItem = styled.button`
   }
   p {
     line-height: 2;
-    font-size: 12px;
+    font-size: 16px;
     text-align: justify;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     width: 450px;
     margin: 20px;
+    padding: 2rem;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     width: auto;
     margin: 20px;
+    padding: 2rem;
   }
 
   .titleItems {
     align-items: center;
     display: flex;
     justify-content: center;
+    margin: 1rem 0;
     img {
       width: auto;
       max-height: 15px;
     }
     h3 {
       margin: 0;
-      font-size: 20px;
+      font-family: var(--font-skeptisgraph);
+      font-size: 45px;
+      font-weight: 400;
     }
   }
 `;
