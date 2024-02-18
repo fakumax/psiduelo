@@ -1,6 +1,6 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
-import { BodyContainer, IconsGroup, Wrapper, Icon } from './defaultStyles';
+import { BodyContainer, IconsGroup, Wrapper, Icon, Frase } from './defaultStyles';
 
 //Icons
 import {
@@ -18,6 +18,14 @@ const Default = (slice) => {
   const { bgimage, description, text, logo } = slice.primary;
   return (
     <Wrapper bgimage={bgimage.url}>
+      <Frase>
+        <p>
+          "Algunas veces solíamos hablar de iniciar una familia...pero en que...nuestra
+          familia ya había iniciado..."
+        </p>
+        <span>Para Charís</span>
+      </Frase>
+
       <BodyContainer>
         <PrismicNextImage field={logo} />
         <div>
