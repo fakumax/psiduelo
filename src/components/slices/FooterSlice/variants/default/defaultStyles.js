@@ -74,23 +74,35 @@ export const Icon = styled(FontAwesomeIcon)`
 
 export const Frase = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   position: relative;
-  left: 0;
-  bottom: 0;
-  padding-left: 2rem;
   background-color: #f5f5f5;
   width: 100%;
-  height: 80px;
-  display: flex;
+  height: 100px;
   place-content: center;
   align-items: center;
   p {
-    text-align: left !important;
+    text-align: center !important;
     font-family: ${(props) => props.theme.typography.fontFamily_belle};
   }
   span {
-    text-align: right;
-    padding-right: 1rem;
+    font-size: 12px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    flex-direction: row;
+    gap: 1rem;
+    padding-left: 2rem;
+    height: 80px;
+    place-content: center;
+    align-items: center;
+    p {
+      text-align: left !important;
+      font-family: ${(props) => props.theme.typography.fontFamily_belle};
+    }
+    span {
+      text-align: right;
+      padding-right: 1rem;
+    }
   }
 `;
