@@ -12,6 +12,7 @@ export const Container = styled.div`
   margin: 4rem 0;
   gap: 2rem;
   flex-direction: column;
+  padding: 0 1rem;
   h1 {
     font-size: 30px;
   }
@@ -35,11 +36,11 @@ export const Container = styled.div`
     text-align: justify;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
     h1 {
-      font-size: 20px;
+      font-size: 24px;
     }
     h3,
     p,
@@ -48,7 +49,7 @@ export const Container = styled.div`
     }
     p,
     li {
-      font-size: 12px;
+      font-size: 16px;
     }
   }
 `;
