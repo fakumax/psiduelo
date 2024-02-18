@@ -18,14 +18,6 @@ const Default = (slice) => {
   const { bgimage, description, text, logo } = slice.primary;
   return (
     <Wrapper bgimage={bgimage.url}>
-      <Frase>
-        <p>
-          "Algunas veces solíamos hablar de iniciar una familia...pero en que...nuestra
-          familia ya había iniciado..."
-        </p>
-        <span>Para Charís</span>
-      </Frase>
-
       <BodyContainer>
         <PrismicNextImage field={logo} />
         <div>
@@ -45,6 +37,13 @@ const Default = (slice) => {
           <Icon icon={faSpotify} />
         </Link>
       </IconsGroup>
+      <Frase>
+        <p>
+          "Algunas veces solíamos hablar de iniciar una familia...pero en que...nuestra
+          familia ya había iniciado..."
+        </p>
+        <span>Para Charís</span>
+      </Frase>
     </Wrapper>
   );
 };

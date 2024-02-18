@@ -1,7 +1,7 @@
 {
   "id": "text_block",
   "type": "SharedSlice",
-  "name": "TextBlock",
+  "name": "Textos",
   "description": "TextBlock",
   "variations": [
     {
@@ -285,6 +285,50 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "preguntaFrecuente",
+      "name": "PreguntaFrecuente",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "titlefaq": {
+          "type": "Text",
+          "config": {
+            "label": "TitleFaq",
+            "placeholder": ""
+          }
+        },
+        "descriptionfaq": {
+          "type": "Text",
+          "config": {
+            "label": "DescriptionFaq",
+            "placeholder": ""
+          }
+        }
+      }
     }
   ]
 }
