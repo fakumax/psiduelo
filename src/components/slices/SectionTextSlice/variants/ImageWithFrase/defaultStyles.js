@@ -44,7 +44,7 @@ export const ContainerImage = styled(motion.div)`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: flex;
     place-self: flex-end;
-    max-width: 250px;
+    max-width: 300px;
   }
 `;
 

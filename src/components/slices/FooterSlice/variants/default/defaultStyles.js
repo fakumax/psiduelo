@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Wrapper = styled.section`
+  position: relative;
   background-image: ${({ bgimage }) => `url(${bgimage})`};
   background-size: cover;
   width: 100%;
@@ -68,5 +69,28 @@ export const Icon = styled(FontAwesomeIcon)`
   color: #7c5a19;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     font-size: 20px;
+  }
+`;
+
+export const Frase = styled.div`
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding-left: 2rem;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  p {
+    text-align: left !important;
+    font-family: ${(props) => props.theme.typography.fontFamily_belle};
+  }
+  span {
+    text-align: right;
+    padding-right: 1rem;
   }
 `;

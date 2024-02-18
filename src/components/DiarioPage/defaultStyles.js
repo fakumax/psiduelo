@@ -21,6 +21,9 @@ export const ContainerRight = styled.div`
   overflow: hidden;
   padding: 0 2rem;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 export const ContainerFoto = styled.div`
@@ -33,7 +36,7 @@ export const ContainerFoto = styled.div`
 
 export const ContainerImage = styled.div`
   display: flex;
-  width: auto;
+  width: 300px;
   height: 300px;
   img {
     width: 100%;
@@ -58,13 +61,10 @@ export const ContainerImagePersonal = styled.div`
 export const ArticleTitle = styled.h2`
   margin: 0;
   color: #333;
-  font-size: 24px;
   text-decoration: none;
-
-  a {
-    color: inherit; /* Ensure links are the same color as titles */
-    text-decoration: none;
-  }
+  font-family: var(--font-skeptisgraph);
+  font-size: 50px;
+  font-weight: 400;
 `;
 
 export const ArticleDescription = styled.p`
