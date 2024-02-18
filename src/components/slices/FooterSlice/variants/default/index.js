@@ -39,8 +39,8 @@ const Default = (slice) => {
       </IconsGroup>
       <Frase>
         <p>
-          "Algunas veces solíamos hablar de iniciar una familia...pero en que...nuestra
-          familia ya había iniciado..."
+          &quot;Algunas veces solíamos hablar de iniciar una familia...pero en
+          que...nuestra familia ya había iniciado...&quot;
         </p>
         <span>Para Charís</span>
       </Frase>
