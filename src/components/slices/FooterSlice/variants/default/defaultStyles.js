@@ -74,16 +74,20 @@ export const Icon = styled(FontAwesomeIcon)`
 
 export const Frase = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   padding-left: 2rem;
-  width: 16%;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  place-content: center;
+  align-items: center;
   p {
     text-align: left !important;
-    font-style: italic;
+    font-family: ${(props) => props.theme.typography.fontFamily_belle};
   }
   span {
     text-align: right;
