@@ -280,6 +280,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AboutMeSlice
   | TextBlockSlice
   | HeroSlice
   | SectionTextSlice
@@ -343,6 +344,71 @@ export type AllDocumentTypes =
   | CopyrightDocument
   | NavigationDocument
   | PageDocument;
+
+/**
+ * Primary content in *AboutMe → Primary*
+ */
+export interface AboutMeSliceDefaultPrimary {
+  /**
+   * Title field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for AboutMe Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutMeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutMe*
+ */
+type AboutMeSliceVariation = AboutMeSliceDefault;
+
+/**
+ * AboutMe Shared Slice
+ *
+ * - **API ID**: `about_me`
+ * - **Description**: AboutMe
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSlice = prismic.SharedSlice<
+  "about_me",
+  AboutMeSliceVariation
+>;
 
 /**
  * Primary content in *Footer → Primary*
@@ -1915,6 +1981,10 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AboutMeSlice,
+      AboutMeSliceDefaultPrimary,
+      AboutMeSliceVariation,
+      AboutMeSliceDefault,
       FooterSlice,
       FooterSliceDefaultPrimary,
       FooterSliceDefaultItem,
