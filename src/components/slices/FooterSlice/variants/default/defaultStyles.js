@@ -85,6 +85,7 @@ export const Frase = styled.div`
   p {
     text-align: center !important;
     font-family: ${(props) => props.theme.typography.fontFamily_belle};
+    padding: 0 1rem;
   }
   span {
     font-size: 12px;
