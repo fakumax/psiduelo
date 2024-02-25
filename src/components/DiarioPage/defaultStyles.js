@@ -4,17 +4,25 @@ export const SectionList = styled.section`
   display: flex;
   gap: 20px;
   width: 100%;
-  display: flex;
   justify-content: center;
   flex-direction: column;
 `;
 
 export const ArticleCard = styled.article`
-  display: grid;
-  grid-template-columns: 30% 50%;
+  display: flex;
+  height: auto;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 2rem;
   margin: 2rem 0;
-  height: 300px;
-  place-content: center;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: grid;
+    grid-template-columns: 30% 50%;
+    margin: 2rem 0;
+    height: 300px;
+    place-content: center;
+  }
 `;
 
 export const ContainerRight = styled.div`
@@ -24,6 +32,14 @@ export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  p {
+    font-size: 16px;
+    color: ${(props) => props.theme.colors.titleBrown};
+    line-height: 20px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    align-self: flex-start;
+  }
 `;
 
 export const ContainerFoto = styled.div`
@@ -63,8 +79,11 @@ export const ArticleTitle = styled.h2`
   color: #333;
   text-decoration: none;
   font-family: var(--font-skeptisgraph);
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    font-size: 50px;
+  }
 `;
 
 export const ArticleDescription = styled.p`
