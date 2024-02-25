@@ -1,15 +1,14 @@
 import { PrismicNextImage } from '@prismicio/next';
-import { ContainerImage, Wrapper } from './defaultStyles';
+import { ContainerImage, TextContainer, Wrapper } from './defaultStyles';
 
 const Default = (slice) => {
-  console.log('--slice--About', slice);
   const { title, description, image } = slice.primary;
   return (
     <Wrapper>
-      <div>
+      <TextContainer>
         <h2>{title}</h2>
         <p>{description}</p>
-      </div>
+      </TextContainer>
       <ContainerImage>
         <PrismicNextImage field={image} />
       </ContainerImage>
