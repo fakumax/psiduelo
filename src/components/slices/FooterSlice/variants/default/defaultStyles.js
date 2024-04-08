@@ -93,7 +93,6 @@ export const Frase = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     flex-direction: row;
     gap: 1rem;
-    padding-left: 2rem;
     height: 80px;
     place-content: center;
     align-items: center;
