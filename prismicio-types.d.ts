@@ -1153,26 +1153,6 @@ export interface SectionTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textsecond: prismic.TitleField;
-
-  /**
-   * BgColor field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.bgcolor
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  bgcolor: prismic.ColorField;
-
-  /**
-   * ColorLetter field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.colorletter
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  colorletter: prismic.ColorField;
 }
 
 /**
@@ -1221,26 +1201,6 @@ export interface SectionTextSliceStaticPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textfirst: prismic.TitleField;
-
-  /**
-   * BgColor field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.bgcolor
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  bgcolor: prismic.ColorField;
-
-  /**
-   * ColorLetter field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.colorletter
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  colorletter: prismic.ColorField;
 }
 
 /**
@@ -1309,26 +1269,6 @@ export interface SectionTextSliceImageWithFrasePrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textfirst: prismic.TitleField;
-
-  /**
-   * BgColor field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.bgcolor
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  bgcolor: prismic.ColorField;
-
-  /**
-   * ColorLetter field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.colorletter
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  colorletter: prismic.ColorField;
 }
 
 /**
@@ -1417,26 +1357,6 @@ export interface SectionTextSliceImageWithTwoFrasesPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textfirst: prismic.TitleField;
-
-  /**
-   * BgColor field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.bgcolor
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  bgcolor: prismic.ColorField;
-
-  /**
-   * ColorLetter field in *SectionText → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.colorletter
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  colorletter: prismic.ColorField;
 }
 
 /**
