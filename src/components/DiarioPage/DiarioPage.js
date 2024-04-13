@@ -32,6 +32,7 @@ const DiarioPage = ({ articles }) => {
             alt={optionsFoto.imagecentral.alt || 'Imagen psicóloga'}
             width={optionsFoto.imagecentral.dimensions.width}
             height={optionsFoto.imagecentral.dimensions.height}
+            priority={true}
           />
         </ContainerImagePersonal>
         <div style={{ margin: '2rem auto' }}>
