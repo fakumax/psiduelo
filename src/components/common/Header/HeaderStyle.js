@@ -73,6 +73,10 @@ export const LogoStyle = styled.div`
 export const RightContainer = styled.div`
   place-self: center;
   display: none;
+  ul li {
+    text-wrap:nowrap
+  
+  }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: flex;
   }
