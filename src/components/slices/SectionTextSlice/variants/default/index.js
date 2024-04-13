@@ -5,7 +5,7 @@ import { Container, Transition, Wrapper } from './defaultStyles';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
-  //console.log('--slice--', slice);
+  console.log('--slice--', slice);
   const { imageleft, imageright, textfirst, textsecond, colorletter, bgcolor } =
     slice.primary;
   const [isVisible, setIsVisible] = useState(true);
@@ -17,9 +17,10 @@ const Default = (slice) => {
 
     return () => clearInterval(interval);
   }, [isVisible]);
-
+//color: #9e9ea0;
+//background-color:#f5f5f5
   return (
-    <Wrapper colorletter={colorletter} bgcolor={bgcolor}>
+    <Wrapper >
       <Container>
         <AnimatePresence>
           {isVisible && (
