@@ -70,16 +70,6 @@
 						}
 					}
 				]
-			},
-			"bgcolor": {
-				"__TYPE__": "FieldContent",
-				"value": "#564354",
-				"type": "Color"
-			},
-			"colorletter": {
-				"__TYPE__": "FieldContent",
-				"value": "#3d61a5",
-				"type": "Color"
 			}
 		},
 		"items": []
@@ -144,16 +134,6 @@
 						}
 					}
 				]
-			},
-			"bgcolor": {
-				"__TYPE__": "FieldContent",
-				"value": "#ab77a4",
-				"type": "Color"
-			},
-			"colorletter": {
-				"__TYPE__": "FieldContent",
-				"value": "#a8322c",
-				"type": "Color"
 			}
 		},
 		"items": [
@@ -223,16 +203,6 @@
 						}
 					}
 				]
-			},
-			"bgcolor": {
-				"__TYPE__": "FieldContent",
-				"value": "#23f936",
-				"type": "Color"
-			},
-			"colorletter": {
-				"__TYPE__": "FieldContent",
-				"value": "#1de302",
-				"type": "Color"
 			},
 			"title": {
 				"__TYPE__": "FieldContent",
@@ -358,16 +328,6 @@
 						}
 					}
 				]
-			},
-			"bgcolor": {
-				"__TYPE__": "FieldContent",
-				"value": "#c6a645",
-				"type": "Color"
-			},
-			"colorletter": {
-				"__TYPE__": "FieldContent",
-				"value": "#b747a8",
-				"type": "Color"
 			},
 			"subtitle": {
 				"__TYPE__": "FieldContent",

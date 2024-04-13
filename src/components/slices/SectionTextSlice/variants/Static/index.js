@@ -19,7 +19,7 @@ const Static = (slice) => {
   }, [isVisible]);
 
   return (
-    <Wrapper colorletter={colorletter} bgcolor={bgcolor}>
+    <Wrapper >
       <Container>
         <PrismicNextImage field={imageleft} alt="" />
         <PrismicRichText field={textfirst} />
