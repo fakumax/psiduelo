@@ -20,11 +20,17 @@ export async function getStaticProps({ previewData }) {
   const filteredArticles = allArticles.filter((article) => {
     return article.data.options !== 'articuloComun';
   });
+
+  // Ordenar los artículos filtrados por fecha de publicación en orden descendente
+  const sortedArticles = filteredArticles.sort((a, b) => {
+    return new Date(a.data.fecha_publicacion) - new Date(b.data.fecha_publicacion);
+  });
+
   const navigation = await client.getSingle('navigation');
   const copyright = await client.getSingle('copyright');
   return {
     props: {
-      articles: filteredArticles,
+      articles: sortedArticles,
       navigation,
       copyright,
     },
