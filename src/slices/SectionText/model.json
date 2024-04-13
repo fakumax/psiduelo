@@ -45,20 +45,6 @@
             "allowTargetBlank": true,
             "single": "heading3"
           }
-        },
-        "bgcolor": {
-          "type": "Color",
-          "config": {
-            "label": "BgColor",
-            "placeholder": ""
-          }
-        },
-        "colorletter": {
-          "type": "Color",
-          "config": {
-            "label": "ColorLetter",
-            "placeholder": ""
-          }
         }
       },
       "items": {}
@@ -94,20 +80,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"
-          }
-        },
-        "bgcolor": {
-          "type": "Color",
-          "config": {
-            "label": "BgColor",
-            "placeholder": ""
-          }
-        },
-        "colorletter": {
-          "type": "Color",
-          "config": {
-            "label": "ColorLetter",
-            "placeholder": ""
           }
         }
       },
@@ -159,20 +131,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"
-          }
-        },
-        "bgcolor": {
-          "type": "Color",
-          "config": {
-            "label": "BgColor",
-            "placeholder": ""
-          }
-        },
-        "colorletter": {
-          "type": "Color",
-          "config": {
-            "label": "ColorLetter",
-            "placeholder": ""
           }
         }
       },
@@ -238,20 +196,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"
-          }
-        },
-        "bgcolor": {
-          "type": "Color",
-          "config": {
-            "label": "BgColor",
-            "placeholder": ""
-          }
-        },
-        "colorletter": {
-          "type": "Color",
-          "config": {
-            "label": "ColorLetter",
-            "placeholder": ""
           }
         }
       },
