@@ -50,6 +50,17 @@ interface ArticleDocumentData {
   >;
 
   /**
+   * Fecha Publicación field in *Article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.fecha_publicacion
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  fecha_publicacion: prismic.DateField;
+
+  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
