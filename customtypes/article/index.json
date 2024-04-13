@@ -37,6 +37,13 @@
           "options": ["articuloComun", "articuloDiario", "articuloFoto"]
         }
       },
+      "fecha_publicacion": {
+        "type": "Date",
+        "config": {
+          "label": "Fecha Publicación",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

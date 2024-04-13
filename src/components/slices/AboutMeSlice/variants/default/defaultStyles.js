@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Wrapper = styled.section`
   display: grid;
@@ -8,13 +7,13 @@ export const Wrapper = styled.section`
   padding: 0 2rem;
   background-size: cover;
   height: min-content;
-  margin: 2rem 0;
+  margin: 4rem 0;
   align-items: center;
   gap: 2rem;
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    grid-template-columns: 50% 50%;
-
+    grid-template-columns: 40% 40%;
+    place-content:center;
     div p {
       font-size: 16px;
       text-align: justify;
@@ -42,9 +41,16 @@ export const TextContainer = styled.div`
     text-align: justify;
     margin: 0;
   }
+  @media(min-width: ${(props) => props.theme.breakpoints.md}){
+    h2{
+      font-size:60px
+    }
+  }
 `;
 export const ContainerImage = styled.div`
   height: auto;
+  max-height:450px;
+  max-width:450px;
   margin: 0 auto;
   img {
     width: 100%;
