@@ -54,6 +54,7 @@ export const ContainerImage = styled.div`
   display: flex;
   width: 300px;
   height: 300px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   img {
     width: 100%;
     height: 100%;
@@ -71,6 +72,7 @@ export const ContainerImagePersonal = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 `;
 
