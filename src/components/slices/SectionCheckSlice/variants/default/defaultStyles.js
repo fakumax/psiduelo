@@ -21,8 +21,9 @@ export const Container = styled.div`
     text-align: center;
     font-family: var(--font-skeptisgraph);
     font-weight: 400;
-    font-size: 50px;
+    font-size: 60px;
     margin: 1rem 0;
+    color: ${(props) => props.theme.colors.titleBrown}
   }
 
   .subContainer {
