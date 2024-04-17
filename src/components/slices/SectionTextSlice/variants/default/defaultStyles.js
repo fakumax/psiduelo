@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  color: ${(props) => props.colorletter};
-  background-color: ${(props) => props.bgcolor};
+  color: ${(props) => props.theme.colors.textTertiary};
+  background-color: ${(props) => props.theme.colors.bgColorCoral};
+  // background-color: #f5f5f5;
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;
