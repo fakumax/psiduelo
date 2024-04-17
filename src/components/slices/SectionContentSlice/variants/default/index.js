@@ -10,9 +10,6 @@ import {
 } from './defaultStyles';
 
 const Default = (slice) => {
-  //console.log(slice.items);
-  //console.log(slice.primary);
-
   const {
     bgcolor,
     bgleft,

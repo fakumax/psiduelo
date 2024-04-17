@@ -75,7 +75,6 @@ export const Icon = styled(FontAwesomeIcon)`
 export const Frase = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   position: relative;
   background-color: #f5f5f5;
   width: 100%;
@@ -88,10 +87,11 @@ export const Frase = styled.div`
     padding: 0 1rem;
   }
   span {
-    font-size: 12px;
+    font-family: ${(props) => props.theme.typography.fontFamily_belle};
+    font-size: 16px;
+    color: #7c5a19;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
-    flex-direction: row;
     gap: 1rem;
     height: 80px;
     place-content: center;
@@ -102,7 +102,6 @@ export const Frase = styled.div`
     }
     span {
       text-align: right;
-      padding-right: 1rem;
     }
   }
 `;
