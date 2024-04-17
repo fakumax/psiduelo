@@ -17,10 +17,10 @@ const Default = (slice) => {
 
     return () => clearInterval(interval);
   }, [isVisible]);
-//color: #9e9ea0;
-//background-color:#f5f5f5
+  //color: #9e9ea0;
+  //background-color:#f5f5f5
   return (
-    <Wrapper >
+    <Wrapper>
       <Container>
         <AnimatePresence>
           {isVisible && (
