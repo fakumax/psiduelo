@@ -371,6 +371,16 @@ export interface AboutMeSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
+   * ImagePlant field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.imageplant
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageplant: prismic.ImageField<never>;
+
+  /**
    * Description field in *AboutMe → Primary*
    *
    * - **Field Type**: Text

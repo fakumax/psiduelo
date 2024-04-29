@@ -19,6 +19,14 @@
             "placeholder": ""
           }
         },
+        "imageplant": {
+          "type": "Image",
+          "config": {
+            "label": "ImagePlant",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "description": {
           "type": "Text",
           "config": {
