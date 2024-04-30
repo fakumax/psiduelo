@@ -34,8 +34,11 @@ export const ContainerRight = styled.div`
   gap: 1rem;
   p {
     font-size: 16px;
-    color: ${(props) => props.theme.colors.titleBrown};
+    color: ${(props) => props.theme.colors.primary};
     line-height: 20px;
+  }
+  h2 {
+    color: ${(props) => props.theme.colors.primary};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     align-self: flex-start;
