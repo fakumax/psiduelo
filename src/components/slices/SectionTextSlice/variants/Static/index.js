@@ -5,27 +5,15 @@ import { Container, Transition, Wrapper } from './defaultStyles';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Static = (slice) => {
-  //console.log('--slice--', slice);
-  const { imageleft, imageright, textfirst, textsecond, colorletter, bgcolor } =
-    slice.primary;
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(!isVisible);
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, [isVisible]);
+  console.log('--slice--', slice);
+  const { imageleft, imageright, textfirst, colorbg } = slice.primary;
 
   return (
-    <Wrapper >
+    <Wrapper bgColor={colorbg}>
       <Container>
         <PrismicNextImage field={imageleft} alt="" />
         <PrismicRichText field={textfirst} />
-
         <PrismicNextImage field={imageright} alt="" />
-        <PrismicRichText field={textsecond} />
       </Container>
     </Wrapper>
   );

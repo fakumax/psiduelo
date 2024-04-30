@@ -134,6 +134,11 @@
 						}
 					}
 				]
+			},
+			"colorbg": {
+				"__TYPE__": "FieldContent",
+				"value": "#693861",
+				"type": "Color"
 			}
 		},
 		"items": [
