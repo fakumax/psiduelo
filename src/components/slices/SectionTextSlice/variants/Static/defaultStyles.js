@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   color: ${(props) => props.colorletter};
-  background-color: ${(props) => props.bgcolor};
+  background-color: ${(props) => props.bgColor};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;
   width: 100%;
   justify-content: center;
   max-height: 200px;
-  height: 200px;
+  height: 150px;
   align-items: center;
+  margin: 1rem 0;
   img {
     max-width: 40px;
     height: 100%;
@@ -49,11 +50,13 @@ export const Container = styled.div`
   margin: 0;
 
   h3 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
     max-width: 70%;
     line-height: 1.5;
     text-align: center;
+    margin: 0;
+    color: ${(props) => props.theme.colors.primary};
   }
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
