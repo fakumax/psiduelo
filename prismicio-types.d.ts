@@ -436,16 +436,6 @@ export type AboutMeSlice = prismic.SharedSlice<
  */
 export interface FooterSliceDefaultPrimary {
   /**
-   * BgImage field in *Footer → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.bgimage
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  bgimage: prismic.ImageField<never>;
-
-  /**
    * Description field in *Footer → Primary*
    *
    * - **Field Type**: Rich Text
@@ -474,41 +464,36 @@ export interface FooterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.TitleField;
-}
-
-/**
- * Primary content in *Footer → Items*
- */
-export interface FooterSliceDefaultItem {
-  /**
-   * Text field in *Footer → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.items[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
 
   /**
-   * Link field in *Footer → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Image field in *Footer → Items*
+   * ImagePlant field in *Footer → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.items[].image
+   * - **API ID Path**: footer.primary.imageplant
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  imageplant: prismic.ImageField<never>;
+
+  /**
+   * paperTop field in *Footer → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.papertop
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  papertop: prismic.ImageField<never>;
+
+  /**
+   * paperBottom field in *Footer → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.paperbottom
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  paperbottom: prismic.ImageField<never>;
 }
 
 /**
@@ -521,7 +506,7 @@ export interface FooterSliceDefaultItem {
 export type FooterSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<FooterSliceDefaultPrimary>,
-  Simplify<FooterSliceDefaultItem>
+  never
 >;
 
 /**
@@ -1938,7 +1923,6 @@ declare module "@prismicio/client" {
       AboutMeSliceDefault,
       FooterSlice,
       FooterSliceDefaultPrimary,
-      FooterSliceDefaultItem,
       FooterSliceVariation,
       FooterSliceDefault,
       HeroSlice,
