@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  color: ${(props) => props.theme.colors.textTertiary};
-  background-color: ${(props) => props.theme.colors.bgColorCoral};
-  // background-color: #f5f5f5;
+  color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.bgColorLight3};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;
@@ -17,7 +16,8 @@ export const Wrapper = styled.section`
     height: 100%;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 200px;
+    height: 150px;
+    max-height: 200px;
   }
 `;
 
