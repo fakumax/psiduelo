@@ -65,6 +65,20 @@ export const ContainerImage = styled.div`
   }
 `;
 
+export const Description = styled.div`
+  margin: 2rem auto;
+  h3 {
+    color: ${(props) => props.theme.colors.primary};
+    font-family: var(--font-skeptisgraph);
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
+
 export const ContainerImagePersonal = styled.div`
   display: flex;
   width: 300px;

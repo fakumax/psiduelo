@@ -9,6 +9,7 @@ import {
   ContainerImagePersonal,
   ContainerRight,
   SectionList,
+  Description,
 } from './defaultStyles';
 
 const DiarioPage = ({ articles }) => {
@@ -35,11 +36,11 @@ const DiarioPage = ({ articles }) => {
             priority={true}
           />
         </ContainerImagePersonal>
-        <div style={{ margin: '2rem auto' }}>
+        <Description>
           <h3>{optionsFoto.title}</h3>
           <p>{optionsFoto.subtitle}</p>
           <p>{optionsFoto.subtitle2}</p>
-        </div>
+        </Description>
       </ContainerFoto>
       <SectionList>
         {optionsDiario.map((article) => {
