@@ -32,7 +32,7 @@ export const WrapperCard = styled.div`
     &:hover {
       div {
         opacity: 1;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.8);
       }
     }
   }
