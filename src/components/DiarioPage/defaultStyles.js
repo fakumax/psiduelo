@@ -39,6 +39,24 @@ export const ContainerRight = styled.div`
   }
   h2 {
     color: ${(props) => props.theme.colors.primary};
+    &:hover {
+      background: -webkit-linear-gradient(
+        left,
+        #fbf8cc,
+        #fde4cf,
+        #ffcfd2,
+        #f1c0e8,
+        #cfbaf0,
+        #a3c4f3,
+        #90dbf4,
+        #8eecf5,
+        #98f5e1,
+        #b9fbc0
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     align-self: flex-start;
