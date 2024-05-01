@@ -34,8 +34,11 @@ export const ContainerRight = styled.div`
   gap: 1rem;
   p {
     font-size: 16px;
-    color: ${(props) => props.theme.colors.titleBrown};
+    color: ${(props) => props.theme.colors.primary};
     line-height: 20px;
+  }
+  h2 {
+    color: ${(props) => props.theme.colors.primary};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     align-self: flex-start;
@@ -59,6 +62,20 @@ export const ContainerImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+`;
+
+export const Description = styled.div`
+  margin: 2rem auto;
+  h3 {
+    color: ${(props) => props.theme.colors.primary};
+    font-family: var(--font-skeptisgraph);
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 

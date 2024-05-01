@@ -12,10 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "bgimage": {
-          "type": "Image",
-          "config": { "label": "BgImage", "constraint": {}, "thumbnails": [] }
-        },
         "description": {
           "type": "StructuredText",
           "config": {
@@ -27,7 +23,11 @@
         },
         "logo": {
           "type": "Image",
-          "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
         "text": {
           "type": "StructuredText",
@@ -37,22 +37,33 @@
             "allowTargetBlank": true,
             "single": "heading4"
           }
+        },
+        "imageplant": {
+          "type": "Image",
+          "config": {
+            "label": "ImagePlant",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "papertop": {
+          "type": "Image",
+          "config": {
+            "label": "paperTop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "paperbottom": {
+          "type": "Image",
+          "config": {
+            "label": "paperBottom",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
-      "items": {
-        "text": {
-          "type": "Text",
-          "config": { "label": "Text", "placeholder": "" }
-        },
-        "link": {
-          "type": "Link",
-          "config": { "label": "Link", "placeholder": "", "select": null }
-        },
-        "image": {
-          "type": "Image",
-          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
-        }
-      }
+      "items": {}
     }
   ]
 }

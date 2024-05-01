@@ -81,6 +81,13 @@
             "allowTargetBlank": true,
             "single": "heading3"
           }
+        },
+        "colorbg": {
+          "type": "Color",
+          "config": {
+            "label": "ColorBg",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
