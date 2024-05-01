@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 import { ContainerImage, ContainerText, ContainerTitle, Wrapper } from './defaultStyles';
 
 const ImageWithFrase = (slice) => {
-  //console.log('--slice--', slice);
+  console.log('--slice--', slice);
   const { title, imagecentral, imageleft, imageright, textfirst } = slice.primary;
 
   return (
