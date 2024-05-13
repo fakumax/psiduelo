@@ -45,6 +45,13 @@
             "allowTargetBlank": true,
             "single": "heading3"
           }
+        },
+        "colorbg": {
+          "type": "Color",
+          "config": {
+            "label": "ColorBg",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -203,6 +210,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"
+          }
+        },
+        "imageplant": {
+          "type": "Image",
+          "config": {
+            "label": "ImagePlant",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

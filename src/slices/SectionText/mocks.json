@@ -70,6 +70,11 @@
 						}
 					}
 				]
+			},
+			"colorbg": {
+				"__TYPE__": "FieldContent",
+				"value": "#779db8",
+				"type": "Color"
 			}
 		},
 		"items": []
@@ -343,6 +348,29 @@
 				"__TYPE__": "FieldContent",
 				"value": "degree",
 				"type": "Text"
+			},
+			"imageplant": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			}
 		},
 		"items": [

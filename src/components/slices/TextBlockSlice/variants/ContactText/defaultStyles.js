@@ -7,19 +7,19 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   place-content: center;
-  background-color: ${(props) => props.theme.colors.bgjubilee};
+  background-color: ${(props) => props.theme.colors.bgColorLight3};
+  margin: 0 auto;
 `;
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
   background-color: white;
-  //gap: 4rem;
+  position: relative;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-columns: 100%;
-    width: 80%;
-    margin: 0 auto;
-    gap: 0;
+    width: 60%;
+    margin: 5rem auto;
   }
 `;
 
@@ -43,6 +43,7 @@ export const ContainerImageBorderUp = styled.div`
   position: relative;
   height: 40px;
   top: -30px;
+  position: absolute;
   img {
     width: 100%;
     height: auto;
@@ -60,9 +61,6 @@ export const ContainerImageBorderUp = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     top: -70px;
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    top: -80px;
   }
 `;
 export const ContainerImageBorderDown = styled.div`
