@@ -15,7 +15,9 @@ export const ArticleCard = styled.article`
   flex-direction: column-reverse;
   gap: 2rem;
   margin: 2rem 0;
-
+  &:first-child {
+    margin-top: 0;
+  }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: grid;
     grid-template-columns: 30% 50%;
@@ -67,8 +69,12 @@ export const ContainerFoto = styled.div`
   display: flex;
   flex-direction: column;
   place-content: center;
-  margin: 2rem auto;
+  margin-top: 2rem;
   text-align: center;
+  position: relative;
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    margin: 2rem auto;
+  }
 `;
 
 export const ContainerImage = styled.div`
@@ -84,16 +90,25 @@ export const ContainerImage = styled.div`
 `;
 
 export const Description = styled.div`
-  margin: 2rem auto;
+  margin: 1rem 1rem 0 1rem;
+
   h3 {
     color: ${(props) => props.theme.colors.primary};
     font-family: var(--font-skeptisgraph);
     font-weight: 400;
-    font-size: 50px;
+    font-size: 36px;
     margin-bottom: 1rem;
+    line-height: 30px;
   }
   p {
     color: ${(props) => props.theme.colors.primary};
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    margin: 2rem auto;
+    h3 {
+      font-size: 50px;
+      line-height: 24px;
+    }
   }
 `;
 
@@ -131,4 +146,25 @@ export const ArticleDescription = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const ContainerImagePlant = styled.div`
+  width: 30px;
+  transform-origin: 50% 50%;
+  transform: rotate(-72deg);
+  position: relative;
+  display: flex;
+  align-self: center;
+  bottom: 0px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    top: 100%;
+    position: absolute;
+  }
 `;
