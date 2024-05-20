@@ -1159,6 +1159,16 @@ export interface SectionTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textsecond: prismic.TitleField;
+
+  /**
+   * ColorBg field in *SectionText → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.colorbg
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  colorbg: prismic.ColorField;
 }
 
 /**
@@ -1373,6 +1383,16 @@ export interface SectionTextSliceImageWithTwoFrasesPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   textfirst: prismic.TitleField;
+
+  /**
+   * ImagePlant field in *SectionText → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.imageplant
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageplant: prismic.ImageField<never>;
 }
 
 /**

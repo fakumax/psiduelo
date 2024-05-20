@@ -10,6 +10,7 @@ import {
   ContainerRight,
   SectionList,
   Description,
+  ContainerImagePlant,
 } from './defaultStyles';
 
 const DiarioPage = ({ articles }) => {
@@ -20,8 +21,9 @@ const DiarioPage = ({ articles }) => {
   const optionsFoto = articles
     .filter((article) => article.data.options === 'articuloFoto')
     .map((article) => {
-      const { title, subtitle, subtitle2, imagecentral } = article.data.slices[0].primary;
-      return { title, subtitle, subtitle2, imagecentral };
+      const { title, subtitle, subtitle2, imagecentral, imageplant } =
+        article.data.slices[0].primary;
+      return { title, subtitle, subtitle2, imagecentral, imageplant };
     })[0];
 
   return (
@@ -41,6 +43,9 @@ const DiarioPage = ({ articles }) => {
           <p>{optionsFoto.subtitle}</p>
           <p>{optionsFoto.subtitle2}</p>
         </Description>
+        <ContainerImagePlant>
+          <PrismicNextImage field={optionsFoto.imageplant} />
+        </ContainerImagePlant>
       </ContainerFoto>
       <SectionList>
         {optionsDiario.map((article) => {

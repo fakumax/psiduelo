@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
   console.log('--slice--', slice);
-  const { imageleft, imageright, textfirst, textsecond, colorletter, bgcolor } =
-    slice.primary;
+  const { imageleft, imageright, textfirst, textsecond, colorbg } = slice.primary;
   const [isVisible, setIsVisible] = useState(true);
 
+  console.log('colorbg', colorbg);
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(!isVisible);
@@ -20,7 +20,7 @@ const Default = (slice) => {
   //color: #9e9ea0;
   //background-color:#f5f5f5
   return (
-    <Wrapper>
+    <Wrapper bgcolor={colorbg}>
       <Container>
         <AnimatePresence>
           {isVisible && (

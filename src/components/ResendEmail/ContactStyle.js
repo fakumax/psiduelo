@@ -7,15 +7,15 @@ export const ContainerField = styled.div`
 
   label {
     font-size: 24px;
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
     font-family: var(--font-skeptisgraph);
   }
   input,
   textarea {
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
     flex: 1;
     border: none;
-    border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
+    border-bottom: 1px solid ${(props) => props.theme.colors.primary};
     transition: border-color 0.3s;
     height: 40px;
     width: 100%;
@@ -31,7 +31,7 @@ export const ContainerField = styled.div`
   input:focus,
   textarea:focus {
     outline: none;
-    border-bottom-color: ${(props) => props.theme.colors.titleBrown};
+    border-bottom-color: ${(props) => props.theme.colors.primary};
   }
   div {
     position: relative;
@@ -44,7 +44,7 @@ export const ContainerField = styled.div`
     width: 80%;
     margin: 0 auto;
     label {
-      font-size: 50px;
+      font-size: 40px;
     }
   }
 `;
@@ -56,16 +56,16 @@ export const ContainerFieldMessage = styled.div`
 
   label {
     font-size: 24px;
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
 
     font-family: var(--font-skeptisgraph);
   }
   input,
   textarea {
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
     flex: 1;
     border: none;
-    border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
+    border-bottom: 1px solid ${(props) => props.theme.colors.primary};
     transition: border-color 0.3s;
     height: 40px;
     width: 100%;
@@ -85,7 +85,6 @@ export const ContainerFieldMessage = styled.div`
   }
   div {
     position: relative;
-    color: red;
     display: flex;
     flex: 1;
     width: 100%;
@@ -130,8 +129,7 @@ export const FormContact = styled.form`
   gap: 2rem;
   display: grid;
   flex-direction: column;
-  margin: 0 1rem;
-
+  margin: 1.5rem 0;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     /* grid-column: 1 / span 2;
     width: 50%; */

@@ -21,7 +21,6 @@ const ContactForm = ({ text }) => {
   });
 
   const onSubmit = async (data) => {
-    console.log('contactFORM----->', data);
     try {
       const response = await fetch('/api/ResendEmail', {
         method: 'POST',
@@ -46,8 +45,7 @@ const ContactForm = ({ text }) => {
         return;
       }
 
-      // toast error
-      console.log(responseData.error);
+      // console.log(responseData.error);
       toast.error('Ha sucedido un error!');
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);

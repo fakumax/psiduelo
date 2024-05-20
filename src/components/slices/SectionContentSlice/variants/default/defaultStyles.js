@@ -18,7 +18,7 @@ export const HeadTitle = styled.div`
   position: relative;
   h2 {
     font-weight: 400;
-    font-size: 50px;
+    font-size: 44px;
     margin: 0;
     font-family: var(--font-skeptisgraph);
   }
@@ -77,11 +77,11 @@ export const WhiteContainer = styled.article`
   a {
     display: flex;
     place-self: center;
-    color: #7c5a19;
+    color: ${(props) => props.theme.colors.primary};
     font-family: var(--font-hijrnotes);
     border: none;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     padding: 0;
     font-weight: 600;
@@ -109,6 +109,9 @@ export const WhiteContainer = styled.article`
     height: auto;
     display: flex;
     margin: 0 auto;
+    box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
   }
   img {
     width: 100%;
@@ -128,7 +131,6 @@ export const WhiteContainer = styled.article`
     p {
       font-size: 16px;
       line-height: 20px;
-      word-spacing: 2px;
       font-weight: 400;
       font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     }
@@ -142,10 +144,10 @@ export const WhiteContainer = styled.article`
       padding: 0 30px;
       h2 {
         margin: 0;
-        font-size: 50px;
+        font-size: 44px;
       }
       p {
-        line-height: 30px;
+        line-height: 24px;
       }
     }
   }
@@ -198,11 +200,11 @@ export const ContainerItems = styled.article`
   a {
     display: flex;
     place-self: start;
-    color: #7c5a19;
+    color: ${(props) => props.theme.colors.primary};
     font-family: var(--font-hijrnotes);
     border: none;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     padding: 0;
     font-weight: 600;
@@ -258,6 +260,9 @@ export const ContainerItems = styled.article`
       position: relative;
       width: 160px;
       height: 200px;
+      box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
       img {
         width: 100%;
         height: 100%;
