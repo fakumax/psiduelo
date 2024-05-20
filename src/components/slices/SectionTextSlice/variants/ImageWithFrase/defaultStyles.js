@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  color: ${(props) => props.colorletter};
-  background-color: ${(props) => props.theme.colors.bgjubilee};
+  color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.bgColorLight2};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   padding: 10px 0;
   display: flex;
@@ -40,6 +40,7 @@ export const ContainerImage = styled(motion.div)`
     width: 100%;
     height: auto;
     border-radius: 50%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: flex;
@@ -77,7 +78,7 @@ export const ContainerText = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
-      font-size: 25px;
+      font-size: 24px;
       max-width: 100%;
       margin: 2rem 0;
     }

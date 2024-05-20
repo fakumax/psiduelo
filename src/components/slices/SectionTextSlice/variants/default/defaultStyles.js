@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  color: ${(props) => props.theme.colors.textTertiary};
-  background-color: ${(props) => props.theme.colors.bgColorCoral};
-  // background-color: #f5f5f5;
+  color: ${(props) => props.theme.colors.primary};
+  /* background-color: ${(props) => props.bgcolor}; */
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;
@@ -17,7 +16,8 @@ export const Wrapper = styled.section`
     height: 100%;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 200px;
+    height: 150px;
+    max-height: 200px;
   }
 `;
 
@@ -28,6 +28,8 @@ export const Transition = styled(motion.div)`
   justify-content: center;
   padding: 2rem 0;
   gap: 1rem;
+  max-width: 70%;
+  margin: 0px auto;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     padding: 0;
     align-content: center;
@@ -59,7 +61,7 @@ export const Container = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
-      font-size: 24px;
+      font-size: 20px;
     }
     img {
       position: relative;

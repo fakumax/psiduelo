@@ -11,10 +11,9 @@ export const WrapperCard = styled.div`
   width: 300px;
   display: flex;
   position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* -webkit-box-shadow: -20px 18px 27px -1px rgba(143, 143, 143, 1);
-  -moz-box-shadow: -20px 18px 27px -1px rgba(143, 143, 143, 1);
-  box-shadow: -20px 18px 27px -1px rgba(143, 143, 143, 1); */
+  box-shadow: -12px 12px 15px -8px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: -12px 12px 15px -8px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: -12px 12px 15px -8px rgba(0, 0, 0, 0.8);
 
   .ImageContainer {
     height: 94%;
@@ -33,7 +32,7 @@ export const WrapperCard = styled.div`
     &:hover {
       div {
         opacity: 1;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.8);
       }
     }
   }
@@ -57,7 +56,7 @@ export const HoverText = styled.div`
       font-family: var(--font-skeptisgraph);
       font-weight: 500;
       padding: 30px;
-      color: ${(props) => props.theme.colors.titleBrown};
+      color: ${(props) => props.theme.colors.primary};
       font-size: 40px;
       line-height: 40px;
     }
