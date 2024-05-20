@@ -68,8 +68,8 @@ const Default = (slice) => {
 
       <Frase>
         <p>
-          &quot;Algunas veces solíamos hablar de iniciar una familia...pero es
-          que...nuestra familia ya había iniciado...&quot;
+          &quot;Algunas veces solíamos hablar de iniciar una familia... pero es que...
+          nuestra familia ya había iniciado...&quot;
         </p>
         <span>Para Charís</span>
       </Frase>
