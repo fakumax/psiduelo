@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   place-content: center;
-  background-color: ${(props) => props.theme.colors.bgjubilee};
+  background-color: ${(props) => props.theme.colors.bgColorLight2};
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     padding: 4rem 0;
   }
@@ -16,11 +16,12 @@ export const Wrapper = styled.section`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  background-color: ${(props) => props.theme.colors.bgjubilee};
   gap: 4rem;
   margin: 4rem 0;
   h3 {
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    //font-family: var(--font-skeptisgraph);
+    color: ${(props) => props.theme.colors.primary};
     text-align: center;
     font-size: 18px;
     margin-bottom: -25px;

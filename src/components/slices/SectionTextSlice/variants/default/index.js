@@ -9,7 +9,7 @@ const Default = (slice) => {
   const { imageleft, imageright, textfirst, textsecond, colorbg } = slice.primary;
   const [isVisible, setIsVisible] = useState(true);
 
-  console.log('colorbg', colorbg);
+  console.log('colorbgss', colorbg);
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(!isVisible);

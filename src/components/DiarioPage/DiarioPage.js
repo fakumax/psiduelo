@@ -44,7 +44,7 @@ const DiarioPage = ({ articles }) => {
           <p>{optionsFoto.subtitle2}</p>
         </Description>
         <ContainerImagePlant>
-          <PrismicNextImage field={optionsFoto.imageplant} />
+          <PrismicNextImage field={optionsFoto.imageplant} fallbackAlt="" />
         </ContainerImagePlant>
       </ContainerFoto>
       <SectionList>
