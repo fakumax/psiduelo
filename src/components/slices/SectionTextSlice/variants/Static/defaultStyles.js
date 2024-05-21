@@ -38,9 +38,6 @@ export const Transition = styled(motion.div)`
     padding: 0;
     align-content: center;
   }
-  /* display: ${(props) => (props.isVisible ? 'block' : 'none')}; */
-  /* opacity: ${(props) => (props.isVisible ? 1 : 0)}; */
-  /* animation: ${(props) => (props.isVisible ? 'block' : 'none')} 0.3s ease-in-out; */
 `;
 
 export const Container = styled.div`
@@ -50,18 +47,18 @@ export const Container = styled.div`
   margin: 0;
 
   h3 {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 16px;
     max-width: 70%;
+    font-weight: 500;
     line-height: 1.5;
     text-align: center;
     margin: 0;
     color: ${(props) => props.theme.colors.primary};
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
-      font-size: 16px;
-      max-width: 80%;
+      font-size: 24px;
+      max-width: 70%;
     }
   }
 `;

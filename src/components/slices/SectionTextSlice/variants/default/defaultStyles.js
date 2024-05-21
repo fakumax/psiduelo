@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   color: ${(props) => props.theme.colors.primary};
-  /* background-color: ${(props) => props.bgcolor}; */
+  background-color: ${(props) => props.bgcolor || props.theme.colors.bgColorLight2};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   display: flex;
   position: relative;

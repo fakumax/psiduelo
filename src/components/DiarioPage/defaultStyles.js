@@ -90,8 +90,8 @@ export const ContainerImage = styled.div`
 `;
 
 export const Description = styled.div`
-  margin: 1rem 1rem 0 1rem;
-
+  margin: 2rem auto 0rem;
+  width: 70%;
   h3 {
     color: ${(props) => props.theme.colors.primary};
     font-family: var(--font-skeptisgraph);
@@ -107,7 +107,7 @@ export const Description = styled.div`
     margin: 2rem auto;
     h3 {
       font-size: 50px;
-      line-height: 24px;
+      line-height: 40px;
     }
   }
 `;
@@ -128,13 +128,14 @@ export const ContainerImagePersonal = styled.div`
 
 export const ArticleTitle = styled.h2`
   margin: 0;
-  color: #333;
   text-decoration: none;
   font-family: var(--font-skeptisgraph);
   font-size: 40px;
   font-weight: 400;
+  text-align: center;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     font-size: 50px;
+    text-align: left;
   }
 `;
 

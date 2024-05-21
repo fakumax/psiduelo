@@ -17,6 +17,7 @@ export const Wrapper = styled.section`
 export const HeadTitle = styled.div`
   position: relative;
   h2 {
+    color: ${(props) => props.theme.colors.primary};
     font-weight: 400;
     font-size: 44px;
     margin: 0;
@@ -122,6 +123,7 @@ export const WhiteContainer = styled.article`
   .TextLeft {
     padding: 0 20px;
     h2 {
+      color: ${(props) => props.theme.colors.primary};
       text-align: center;
       line-height: 35px;
       font-family: var(--font-skeptisgraph);
