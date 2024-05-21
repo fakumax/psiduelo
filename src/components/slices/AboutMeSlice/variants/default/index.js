@@ -7,7 +7,6 @@ import {
 } from './defaultStyles';
 
 const Default = (slice) => {
-  console.log('Slice', slice);
   const { title, description, image, imageplant } = slice.primary;
   return (
     <Wrapper>
@@ -15,7 +14,7 @@ const Default = (slice) => {
         <h2>{title}</h2>
         <div>
           <ContainerImagePlant>
-            <PrismicNextImage field={imageplant} />
+            <PrismicNextImage field={imageplant} fallbackAlt="" />
           </ContainerImagePlant>
           <p>{description}</p>
         </div>

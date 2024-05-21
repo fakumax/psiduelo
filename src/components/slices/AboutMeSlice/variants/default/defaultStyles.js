@@ -42,6 +42,7 @@ export const TextContainer = styled.div`
     margin: 0;
     margin-top: 5rem;
     text-indent: 40px;
+    padding: 0 2%;
   }
   > div {
     margin: 0;
