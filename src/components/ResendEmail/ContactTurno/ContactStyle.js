@@ -44,7 +44,7 @@ export const ContainerField = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     label {
-      font-size: 50px;
+      font-size: 40px;
     }
     input,
     textarea {
@@ -69,8 +69,8 @@ export const StyledButton = styled.button`
   width: 92%;
   text-transform: uppercase;
   margin: 2rem auto;
-  background-color: ${(props) => props.theme.colors.titleBrown};
-  color: ${(props) => props.theme.colors.bgColorWhite};
+  background-color: ${(props) => props.theme.colors.primary};
+  color: white;
   font-family: ${(props) => props.theme.typography.fontFamily_crimson};
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
@@ -107,7 +107,8 @@ export const FormStyle = styled.form`
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     display: flex;
-    gap: 2rem 8rem;
-    padding: 0 10rem;
+    width: 30%;
+    margin: 0 auto;
+    line-height: 30px;
   }
 `;
