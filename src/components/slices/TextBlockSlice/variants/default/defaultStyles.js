@@ -40,13 +40,16 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
-    h1 {
-      font-size: 20px;
-    }
+
     p,
     li {
       font-size: 12px;
       padding: 0 2rem;
+    }
+    h1 {
+      font-size: 40px;
+      padding: 0 1rem;
+      line-height: 40px;
     }
   }
 `;

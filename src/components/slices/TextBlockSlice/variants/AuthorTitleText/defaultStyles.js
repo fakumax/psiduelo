@@ -46,9 +46,7 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
-    h1 {
-      font-size: 20px;
-    }
+
     h3,
     p,
     li {
@@ -57,6 +55,11 @@ export const Container = styled.div`
     p,
     li {
       font-size: 12px;
+    }
+    h1 {
+      font-size: 40px;
+      padding: 0 1rem;
+      line-height: 40px;
     }
   }
 `;
