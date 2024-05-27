@@ -69,7 +69,7 @@ export const TextTitle = styled.div`
   h3 {
     font-family: var(--font-skeptisgraph);
     font-weight: 500;
-    color: ${(props) => props.theme.colors.titleBrown};
+    color: ${(props) => props.theme.colors.primary};
     font-size: 30px;
     word-wrap: break-word;
     text-align: center;

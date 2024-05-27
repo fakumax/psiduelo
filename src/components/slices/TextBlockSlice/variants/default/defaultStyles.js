@@ -26,7 +26,17 @@ export const Container = styled.div`
     font-family: 'Crimson Text';
     text-align: justify;
   }
-
+  h1 {
+    font-family: var(--font-skeptisgraph);
+    color: ${(props) => props.theme.colors.primary};
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    padding: 1rem 1rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;

@@ -34,7 +34,13 @@ export const Container = styled.div`
     font-size: 16px;
     text-align: justify;
   }
-
+  h1 {
+    font-family: var(--font-skeptisgraph);
+    color: ${(props) => props.theme.colors.primary};
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     gap: 1rem;
     margin: 2rem 0;
