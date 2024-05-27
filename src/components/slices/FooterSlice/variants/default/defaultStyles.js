@@ -14,7 +14,7 @@ export const Wrapper = styled.section`
   div h4,
   div p {
     color: ${(props) => props.theme.colors.primary};
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     text-align: center;
     margin: 0;
@@ -25,7 +25,7 @@ export const Wrapper = styled.section`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     div p {
-      font-size: 16px;
+      font-size: 20px;
     }
     div h4 {
       font-size: 20px;
@@ -84,7 +84,7 @@ export const Frase = styled.div`
   }
   span {
     font-family: ${(props) => props.theme.typography.fontFamily_belle};
-    font-size: 16px;
+    font-size: 20px;
     color: ${(props) => props.theme.colors.primary};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
