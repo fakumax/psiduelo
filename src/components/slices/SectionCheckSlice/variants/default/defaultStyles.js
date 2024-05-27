@@ -21,9 +21,9 @@ export const Container = styled.div`
     text-align: center;
     font-family: var(--font-skeptisgraph);
     font-weight: 400;
-    font-size: 60px;
+    font-size: 44px;
     margin: 1rem 0;
-    color: ${(props) => props.theme.colors.titleBrown}
+    color: ${(props) => props.theme.colors.primary};
   }
 
   .subContainer {
@@ -64,7 +64,7 @@ export const SubItem = styled.button`
   }
 
   h3 {
-    color: ${(props) => props.theme.colors.titleBrown};
+    color: ${(props) => props.theme.colors.primary};
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     padding-bottom: 1rem;
   }
@@ -73,6 +73,7 @@ export const SubItem = styled.button`
     font-size: 16px;
     text-align: justify;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    color: ${(props) => props.theme.colors.primary};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     width: 450px;
@@ -97,7 +98,7 @@ export const SubItem = styled.button`
     h3 {
       margin: 0;
       font-family: var(--font-skeptisgraph);
-      font-size: 45px;
+      font-size: 40px;
       font-weight: 400;
     }
   }
