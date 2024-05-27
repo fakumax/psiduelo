@@ -26,13 +26,13 @@ export const Transition = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
   gap: 1rem;
-  max-width: 70%;
+  max-width: 80%;
   margin: 0px auto;
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     padding: 0;
     align-content: center;
+    max-width: 70%;
   }
 `;
 
@@ -40,7 +40,7 @@ export const Container = styled.div`
   h3 {
     font-size: 16px;
     font-weight: 500;
-    padding: 0rem 2rem;
+
     line-height: 1.5;
     text-align: center;
     display: flex;
@@ -62,6 +62,7 @@ export const Container = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     h3 {
       font-size: 20px;
+      padding: 0rem 2rem;
     }
     img {
       position: relative;
