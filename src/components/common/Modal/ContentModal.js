@@ -1,10 +1,8 @@
 import { PrismicRichText } from '@prismicio/react';
 import { Container, Wrapper } from './ModalStyle';
+import { ContainerImagePersonal } from '@/components/DiarioPage/defaultStyles';
 
 const ContentModal = ({ data }) => {
-  const titles = data.title[0].text;
-  const description = data.description.map((item) => item.text).join(' ');
-
   return (
     <Wrapper>
       <Container>
@@ -13,8 +11,7 @@ const ContentModal = ({ data }) => {
           {data.description.map((item, index) => {
             <PrismicRichText field={item.text} key={index} />;
           })}
-          <p>{description}</p>
-          {/* <PrismicRichText field={item.text} /> */}
+          <PrismicRichText field={data.texto_modal} />
         </div>
       </Container>
     </Wrapper>
