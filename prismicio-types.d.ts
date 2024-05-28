@@ -906,6 +906,16 @@ export interface SectionCheckSliceDefaultItem {
   title: prismic.TitleField;
 
   /**
+   * Texto Modal field in *SectionCheck → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_check.items[].texto_modal
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto_modal: prismic.RichTextField;
+
+  /**
    * Description field in *SectionCheck → Items*
    *
    * - **Field Type**: Rich Text
