@@ -100,6 +100,20 @@
 								}
 							]
 						}
+					],
+					[
+						"texto_modal",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Voluptate ut velit non. Esse elit consectetur velit amet. Deserunt commodo aliqua duis cillum."
+									}
+								}
+							]
+						}
 					]
 				]
 			}
