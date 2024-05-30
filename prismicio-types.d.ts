@@ -436,16 +436,6 @@ export type AboutMeSlice = prismic.SharedSlice<
  */
 export interface FooterSliceDefaultPrimary {
   /**
-   * Description field in *Footer → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
    * Logo field in *Footer → Primary*
    *
    * - **Field Type**: Image
@@ -456,14 +446,24 @@ export interface FooterSliceDefaultPrimary {
   logo: prismic.ImageField<never>;
 
   /**
-   * Text field in *Footer → Primary*
+   * Title field in *Footer → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.text
+   * - **API ID Path**: footer.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.TitleField;
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * ImagePlant field in *Footer → Primary*
@@ -1325,36 +1325,6 @@ export type SectionTextSliceImageWithFrase = prismic.SharedSliceVariation<
  */
 export interface SectionTextSliceImageWithTwoFrasesPrimary {
   /**
-   * Title field in *SectionText → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * subtitle field in *SectionText → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitle: prismic.KeyTextField;
-
-  /**
-   * subtitle2 field in *SectionText → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.subtitle2
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitle2: prismic.KeyTextField;
-
-  /**
    * ImageCentral field in *SectionText → Primary*
    *
    * - **Field Type**: Image
@@ -1365,34 +1335,24 @@ export interface SectionTextSliceImageWithTwoFrasesPrimary {
   imagecentral: prismic.ImageField<never>;
 
   /**
-   * ImageLeft field in *SectionText → Primary*
+   * Title field in *SectionText → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.imageleft
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  imageleft: prismic.ImageField<never>;
-
-  /**
-   * ImageRight field in *SectionText → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.imageright
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  imageright: prismic.ImageField<never>;
-
-  /**
-   * TextFirst field in *SectionText → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: section_text.primary.textfirst
+   * - **API ID Path**: section_text.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  textfirst: prismic.TitleField;
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *SectionText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * ImagePlant field in *SectionText → Primary*

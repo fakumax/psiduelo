@@ -11,26 +11,6 @@ export const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  div h4,
-  div p {
-    color: ${(props) => props.theme.colors.primary};
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-  }
-  div h4 {
-    font-size: 16px;
-    font-weight: 700;
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    div p {
-      font-size: 20px;
-    }
-    div h4 {
-      font-size: 20px;
-    }
-  }
 `;
 
 export const BodyContainer = styled.div`
@@ -77,27 +57,25 @@ export const Frase = styled.div`
   height: 100px;
   place-content: center;
   align-items: center;
-  p {
-    text-align: center !important;
-    font-family: ${(props) => props.theme.typography.fontFamily_belle};
-    padding: 0 1rem;
-  }
+  height: 120px;
+  p,
   span {
-    font-family: ${(props) => props.theme.typography.fontFamily_belle};
-    font-size: 20px;
     color: ${(props) => props.theme.colors.primary};
+    text-align: center;
+    font-family: ${(props) => props.theme.typography.fontFamily_belle};
+    font-size: 16px;
+    margin: 0 1rem;
   }
+
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
-    height: 120px;
     place-content: center;
     align-items: center;
     margin-top: 2rem;
-    p {
-      text-align: left !important;
-      font-family: ${(props) => props.theme.typography.fontFamily_belle};
-    }
+    height: 150px;
+
+    p,
     span {
-      text-align: right;
+      font-size: 20px;
     }
   }
 `;
@@ -119,4 +97,27 @@ export const ContainerImagePlant = styled.div`
 
 export const Details = styled.div`
   margin-top: 2rem;
+  align-items: center;
+  h3 {
+    margin: 1rem 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: var(--font-skeptisgraph);
+    font-weight: 400;
+    color: ${(props) => props.theme.colors.primary};
+    text-align: center;
+  }
+  p {
+    color: ${(props) => props.theme.colors.primary};
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 16px;
+    text-align: center;
+    margin: 0 1rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    h3 {
+      font-size: 50px;
+    }
+  }
 `;
