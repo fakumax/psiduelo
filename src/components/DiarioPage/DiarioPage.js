@@ -21,9 +21,10 @@ const DiarioPage = ({ articles }) => {
   const optionsFoto = articles
     .filter((article) => article.data.options === 'articuloFoto')
     .map((article) => {
-      const { title, subtitle, subtitle2, imagecentral, imageplant } =
+      console.log('art', article);
+      const { title, description, imagecentral, imageplant } =
         article.data.slices[0].primary;
-      return { title, subtitle, subtitle2, imagecentral, imageplant };
+      return { title, description, imagecentral, imageplant };
     })[0];
 
   return (
@@ -39,9 +40,8 @@ const DiarioPage = ({ articles }) => {
           />
         </ContainerImagePersonal>
         <Description>
-          <h3>{optionsFoto.title}</h3>
-          <p>{optionsFoto.subtitle}</p>
-          <p>{optionsFoto.subtitle2}</p>
+          <PrismicRichText field={optionsFoto.title} />
+          <PrismicRichText field={optionsFoto.description} />
         </Description>
         <ContainerImagePlant>
           <PrismicNextImage field={optionsFoto.imageplant} fallbackAlt="" />
