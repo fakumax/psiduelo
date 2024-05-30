@@ -2,12 +2,12 @@ import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
 import {
   BodyContainer,
-  IconsGroup,
-  Wrapper,
-  Icon,
-  Frase,
   ContainerImagePlant,
   Details,
+  Frase,
+  Icon,
+  IconsGroup,
+  Wrapper,
 } from './defaultStyles';
 
 //Icons
@@ -22,16 +22,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 const Default = (slice) => {
-  console.log('--slice--Footer', slice);
-  const { description, text, logo, imageplant, papertop, paperbottom } = slice.primary;
-  console.log('papertop', papertop);
-  console.log('paperl', paperbottom);
+  const { description, title, logo, imageplant } = slice.primary;
+
   return (
     <Wrapper>
       <div>
-        {/* <div>
-          <PrismicNextImage field={papertop} />
-        </div> */}
         <div>
           <BodyContainer>
             <div>
@@ -39,12 +34,12 @@ const Default = (slice) => {
                 <PrismicNextImage field={logo} />
               </div>
               <ContainerImagePlant>
-                <PrismicNextImage field={imageplant} />
+                <PrismicNextImage field={imageplant} fallbackAlt="" />
               </ContainerImagePlant>
             </div>
 
             <Details>
-              <PrismicRichText field={text} />
+              <PrismicRichText field={title} />
               <PrismicRichText field={description} />
             </Details>
           </BodyContainer>
@@ -61,9 +56,6 @@ const Default = (slice) => {
             </Link>
           </IconsGroup>
         </div>
-        {/* <div>
-          <PrismicNextImage field={paperbottom} />
-        </div> */}
       </div>
 
       <Frase>

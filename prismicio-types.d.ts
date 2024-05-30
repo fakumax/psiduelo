@@ -436,16 +436,6 @@ export type AboutMeSlice = prismic.SharedSlice<
  */
 export interface FooterSliceDefaultPrimary {
   /**
-   * Description field in *Footer → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
    * Logo field in *Footer → Primary*
    *
    * - **Field Type**: Image
@@ -456,14 +446,24 @@ export interface FooterSliceDefaultPrimary {
   logo: prismic.ImageField<never>;
 
   /**
-   * Text field in *Footer → Primary*
+   * Title field in *Footer → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.text
+   * - **API ID Path**: footer.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.TitleField;
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 
   /**
    * ImagePlant field in *Footer → Primary*
