@@ -91,23 +91,27 @@ export const ContainerImage = styled.div`
 
 export const Description = styled.div`
   margin: 2rem auto 0rem;
-  width: 70%;
+
   h3 {
-    color: ${(props) => props.theme.colors.primary};
+    margin: 1rem 1rem;
+    font-size: 40px;
+    line-height: 40px;
     font-family: var(--font-skeptisgraph);
     font-weight: 400;
-    font-size: 36px;
-    margin-bottom: 1rem;
-    line-height: 30px;
+    color: ${(props) => props.theme.colors.primary};
+    text-align: center;
   }
   p {
     color: ${(props) => props.theme.colors.primary};
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 16px;
+    text-align: center;
+    margin: 0 1rem;
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
     margin: 2rem auto;
     h3 {
       font-size: 50px;
-      line-height: 40px;
     }
   }
 `;
