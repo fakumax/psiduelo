@@ -7,36 +7,28 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 80%;
   display: flex;
-  margin: 4rem auto;
-  gap: 2rem;
-  flex-direction: column;
-  h1 {
-    font-size: 30px;
-  }
-  h2,
-  h1 {
-    font-family: 'Crimson Text';
+  width: 100%;
+  margin: 2rem auto;
+  h3 {
+    font-family: var(--font-skeptisgraph);
+    color: ${(props) => props.theme.colors.bgColorSecondary};
     text-align: center;
   }
-  p,
-  li {
+  p {
     font-size: 16px;
-    font-family: 'Crimson Text';
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    color: ${(props) => props.theme.colors.primary};
     text-align: justify;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
-    gap: 1rem;
-    margin: 2rem 0;
-    h1 {
-      font-size: 20px;
-    }
-    p,
-    li {
-      font-size: 12px;
-      padding: 0 2rem;
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 80%;
+    margin: 4rem auto;
+    gap: 2rem;
+    flex-direction: column;
+    h3 {
+      margin-bottom: 2rem;
     }
   }
 `;

@@ -1,6 +1,5 @@
 import { PrismicRichText } from '@prismicio/react';
 import { Container, Wrapper } from './ModalStyle';
-import { ContainerImagePersonal } from '@/components/DiarioPage/defaultStyles';
 
 const ContentModal = ({ data }) => {
   return (
