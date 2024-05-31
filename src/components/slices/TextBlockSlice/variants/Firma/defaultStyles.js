@@ -9,34 +9,22 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  margin: 4rem 0;
-  gap: 2rem;
-  flex-direction: column;
-  h1 {
-    font-size: 30px;
+  margin-bottom: 1rem;
+  justify-content: end;
+  span {
+    padding-right: 2rem;
+    color: ${(props) => props.theme.colors.bgColorSecondary};
+    font-family: var(--font-skeptisgraph);
+    font-size: 25px;
+    font-weight: 400;
   }
-  h2,
-  h1 {
-    font-family: 'Crimson Text';
-    text-align: center;
-  }
-  p,
-  li {
-    font-size: 16px;
-    font-family: 'Crimson Text';
-    text-align: justify;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
-    gap: 1rem;
-    margin: 2rem 0;
-    h1 {
-      font-size: 20px;
-    }
-    p,
-    li {
-      font-size: 12px;
-      padding: 0 2rem;
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: end;
+    span {
+      font-size: 35px;
     }
   }
 `;
