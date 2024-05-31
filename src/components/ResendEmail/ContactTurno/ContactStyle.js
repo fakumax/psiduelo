@@ -6,7 +6,7 @@ export const ContainerField = styled.div`
 
   label {
     font-size: 24px;
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
     text-align: left;
     padding: 0 10px;
     font-family: var(--font-skeptisgraph);
@@ -14,10 +14,10 @@ export const ContainerField = styled.div`
 
   input,
   textarea {
-    color: ${(props) => props.theme.colors.bgColorSecondary};
+    color: ${(props) => props.theme.colors.primary};
     flex: 1;
     border: none;
-    border-bottom: 1px solid ${(props) => props.theme.colors.bgColorSecondary};
+    border-bottom: 1px solid ${(props) => props.theme.colors.primary};
     transition: border-color 0.3s;
     height: 40px;
     width: 100%;
@@ -103,7 +103,7 @@ export const FormStyle = styled.form`
   gap: 4rem 8rem;
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
+  margin: 0 2rem;
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     display: flex;
