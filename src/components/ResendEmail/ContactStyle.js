@@ -129,10 +129,9 @@ export const FormContact = styled.form`
   gap: 2rem;
   display: grid;
   flex-direction: column;
-  margin: 1.5rem 0;
+  margin: 2rem;
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    /* grid-column: 1 / span 2;
-    width: 50%; */
     grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem 0;
   }
 `;
