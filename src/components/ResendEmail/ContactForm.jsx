@@ -45,7 +45,6 @@ const ContactForm = ({ text }) => {
         return;
       }
 
-      // console.log(responseData.error);
       toast.error('Ha sucedido un error!');
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);
