@@ -10,7 +10,7 @@ const customStyles = {
     bottom: 'auto',
     transform: 'translate(-50%, -50%)',
     height: '80%',
-    width: '60%',
+    width: '70%',
     position: 'relative',
   },
   closeButton: {
