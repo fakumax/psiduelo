@@ -1,55 +1,61 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+    max-width: 1200px;
+    margin: 4rem auto;
+  }
 `;
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  margin: 4rem 0;
-  gap: 2rem;
   flex-direction: column;
-  h1 {
-    font-size: 30px;
-  }
-  h2,
-  h1 {
-    font-family: 'Crimson Text';
-    text-align: center;
-  }
+  margin: 1rem 0;
+  gap: 1rem;
   p,
   li {
     font-size: 16px;
+    font-weight: 400;
     font-family: 'Crimson Text';
     text-align: justify;
+    color: ${(props) => props.theme.colors.primary};
   }
-  h1 {
+
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-skeptisgraph);
     color: ${(props) => props.theme.colors.primary};
-    font-size: 50px;
+    font-size: 40px;
     font-weight: normal;
     text-align: center;
+    line-height: 36px;
   }
-  h3 {
-    text-align: center;
-    padding: 1rem 1rem;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     gap: 1rem;
     margin: 2rem 0;
-
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     p,
     li {
-      font-size: 12px;
-      padding: 0 2rem;
+      font-size: 16px;
+      font-family: 'Crimson Text';
+      text-align: justify;
     }
-    h1 {
-      font-size: 40px;
-      padding: 0 1rem;
-      line-height: 40px;
+    h1,
+    h2 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 44px;
     }
   }
 `;
