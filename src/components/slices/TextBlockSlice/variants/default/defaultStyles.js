@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
     max-width: 1200px;
-    margin: 4rem auto;
+    margin: 4rem auto 0rem;
   }
 `;
 
@@ -27,13 +27,20 @@ export const Container = styled.div`
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-family: var(--font-skeptisgraph);
     color: ${(props) => props.theme.colors.primary};
     font-size: 40px;
     font-weight: normal;
     text-align: center;
     line-height: 36px;
+    margin: 0 0 1rem 0;
+  }
+  h4 {
+    text-align: left;
+    font-size: 36px;
+    margin: 1rem 0;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
