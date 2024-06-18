@@ -1400,14 +1400,14 @@ export type SectionTextSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
   /**
-   * Text field in *Textos → Primary*
+   * Text field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Ingrese el texto
    * - **API ID Path**: text_block.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
@@ -1415,7 +1415,7 @@ export interface TextBlockSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Textos Slice
+ * Default variation for Text Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1428,11 +1428,11 @@ export type TextBlockSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceTitleTextPrimary {
   /**
-   * Title field in *Textos → Primary*
+   * Title field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1442,7 +1442,7 @@ export interface TextBlockSliceTitleTextPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Text field in *Textos → Primary*
+   * Text field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1453,7 +1453,7 @@ export interface TextBlockSliceTitleTextPrimary {
 }
 
 /**
- * TitleText variation for Textos Slice
+ * TitleText variation for Text Slice
  *
  * - **API ID**: `titleText`
  * - **Description**: Default
@@ -1466,11 +1466,11 @@ export type TextBlockSliceTitleText = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceAuthorTitleTextPrimary {
   /**
-   * Author field in *Textos → Primary*
+   * Author field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1480,7 +1480,7 @@ export interface TextBlockSliceAuthorTitleTextPrimary {
   author: prismic.KeyTextField;
 
   /**
-   * Title field in *Textos → Primary*
+   * Title field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1490,7 +1490,7 @@ export interface TextBlockSliceAuthorTitleTextPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Text field in *Textos → Primary*
+   * Text field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1501,7 +1501,7 @@ export interface TextBlockSliceAuthorTitleTextPrimary {
 }
 
 /**
- * AuthorTitleText variation for Textos Slice
+ * AuthorOLD variation for Text Slice
  *
  * - **API ID**: `authorTitleText`
  * - **Description**: Default
@@ -1514,11 +1514,11 @@ export type TextBlockSliceAuthorTitleText = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceFirmaPrimary {
   /**
-   * Text field in *Textos → Primary*
+   * Text field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1529,7 +1529,7 @@ export interface TextBlockSliceFirmaPrimary {
 }
 
 /**
- * Firma variation for Textos Slice
+ * Firma variation for Text Slice
  *
  * - **API ID**: `firma`
  * - **Description**: Default
@@ -1542,11 +1542,11 @@ export type TextBlockSliceFirma = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceShortTextDiarioPrimary {
   /**
-   * Title field in *Textos → Primary*
+   * Title field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1556,7 +1556,7 @@ export interface TextBlockSliceShortTextDiarioPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Text field in *Textos → Primary*
+   * Text field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1567,7 +1567,7 @@ export interface TextBlockSliceShortTextDiarioPrimary {
 }
 
 /**
- * ShortTextDiario variation for Textos Slice
+ * ShortTextDiario variation for Text Slice
  *
  * - **API ID**: `shortTextDiario`
  * - **Description**: Default
@@ -1580,11 +1580,11 @@ export type TextBlockSliceShortTextDiario = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceContactTextPrimary {
   /**
-   * Name field in *Textos → Primary*
+   * Name field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1594,7 +1594,7 @@ export interface TextBlockSliceContactTextPrimary {
   name: prismic.KeyTextField;
 
   /**
-   * Email field in *Textos → Primary*
+   * Email field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1604,7 +1604,7 @@ export interface TextBlockSliceContactTextPrimary {
   email: prismic.KeyTextField;
 
   /**
-   * Phone field in *Textos → Primary*
+   * Phone field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1614,7 +1614,7 @@ export interface TextBlockSliceContactTextPrimary {
   phone: prismic.KeyTextField;
 
   /**
-   * Residence field in *Textos → Primary*
+   * Residence field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1624,7 +1624,7 @@ export interface TextBlockSliceContactTextPrimary {
   residence: prismic.KeyTextField;
 
   /**
-   * Message field in *Textos → Primary*
+   * Message field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1634,7 +1634,7 @@ export interface TextBlockSliceContactTextPrimary {
   message: prismic.KeyTextField;
 
   /**
-   * ImageBorder1 field in *Textos → Primary*
+   * ImageBorder1 field in *Text → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1644,7 +1644,7 @@ export interface TextBlockSliceContactTextPrimary {
   imageborder: prismic.ImageField<never>;
 
   /**
-   * ImageBorder2 field in *Textos → Primary*
+   * ImageBorder2 field in *Text → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1655,7 +1655,7 @@ export interface TextBlockSliceContactTextPrimary {
 }
 
 /**
- * contactText variation for Textos Slice
+ * contactText variation for Text Slice
  *
  * - **API ID**: `contactText`
  * - **Description**: Default
@@ -1668,11 +1668,11 @@ export type TextBlockSliceContactText = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSliceContactTurnoPrimary {
   /**
-   * Titulo field in *Textos → Primary*
+   * Titulo field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1682,7 +1682,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   titulo: prismic.KeyTextField;
 
   /**
-   * Email field in *Textos → Primary*
+   * Email field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1692,7 +1692,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   email: prismic.KeyTextField;
 
   /**
-   * Name field in *Textos → Primary*
+   * Name field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1702,7 +1702,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   name: prismic.KeyTextField;
 
   /**
-   * Age field in *Textos → Primary*
+   * Age field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1712,7 +1712,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   age: prismic.KeyTextField;
 
   /**
-   * Perdida field in *Textos → Primary*
+   * Perdida field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1722,7 +1722,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   perdida: prismic.KeyTextField;
 
   /**
-   * HowTime field in *Textos → Primary*
+   * HowTime field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1732,7 +1732,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   howtime: prismic.KeyTextField;
 
   /**
-   * Feeling field in *Textos → Primary*
+   * Feeling field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1742,7 +1742,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   feeling: prismic.KeyTextField;
 
   /**
-   * ToldAnyone field in *Textos → Primary*
+   * ToldAnyone field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1752,7 +1752,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   toldanyone: prismic.KeyTextField;
 
   /**
-   * ReceivedTherapy field in *Textos → Primary*
+   * ReceivedTherapy field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1762,7 +1762,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   receivedtherapy: prismic.KeyTextField;
 
   /**
-   * Message field in *Textos → Primary*
+   * Message field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1772,7 +1772,7 @@ export interface TextBlockSliceContactTurnoPrimary {
   message: prismic.KeyTextField;
 
   /**
-   * ButtonSend field in *Textos → Primary*
+   * ButtonSend field in *Text → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1783,7 +1783,7 @@ export interface TextBlockSliceContactTurnoPrimary {
 }
 
 /**
- * ContactTurno variation for Textos Slice
+ * ContactTurno variation for Text Slice
  *
  * - **API ID**: `contactTurno`
  * - **Description**: Default
@@ -1796,11 +1796,11 @@ export type TextBlockSliceContactTurno = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Textos → Primary*
+ * Primary content in *Text → Primary*
  */
 export interface TextBlockSlicePreguntaFrecuentePrimary {
   /**
-   * Title field in *Textos → Primary*
+   * Title field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1810,7 +1810,7 @@ export interface TextBlockSlicePreguntaFrecuentePrimary {
   title: prismic.RichTextField;
 
   /**
-   * Subtitle field in *Textos → Primary*
+   * Subtitle field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1821,11 +1821,11 @@ export interface TextBlockSlicePreguntaFrecuentePrimary {
 }
 
 /**
- * Primary content in *Textos → Items*
+ * Primary content in *Text → Items*
  */
 export interface TextBlockSlicePreguntaFrecuenteItem {
   /**
-   * TitleFaq field in *Textos → Items*
+   * TitleFaq field in *Text → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1835,7 +1835,7 @@ export interface TextBlockSlicePreguntaFrecuenteItem {
   titlefaq: prismic.KeyTextField;
 
   /**
-   * DescriptionFaq field in *Textos → Items*
+   * DescriptionFaq field in *Text → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1846,7 +1846,7 @@ export interface TextBlockSlicePreguntaFrecuenteItem {
 }
 
 /**
- * PreguntaFrecuente variation for Textos Slice
+ * PreguntaFrecuente variation for Text Slice
  *
  * - **API ID**: `preguntaFrecuente`
  * - **Description**: Default
@@ -1859,7 +1859,45 @@ export type TextBlockSlicePreguntaFrecuente = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Textos*
+ * Primary content in *Text → Primary*
+ */
+export interface TextBlockSliceAuthorPrimary {
+  /**
+   * Author field in *Text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Ingrese autor
+   * - **API ID Path**: text_block.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Text field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Ingrese el texto
+   * - **API ID Path**: text_block.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Author variation for Text Slice
+ *
+ * - **API ID**: `author`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceAuthor = prismic.SharedSliceVariation<
+  "author",
+  Simplify<TextBlockSliceAuthorPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
  */
 type TextBlockSliceVariation =
   | TextBlockSliceDefault
@@ -1869,10 +1907,11 @@ type TextBlockSliceVariation =
   | TextBlockSliceShortTextDiario
   | TextBlockSliceContactText
   | TextBlockSliceContactTurno
-  | TextBlockSlicePreguntaFrecuente;
+  | TextBlockSlicePreguntaFrecuente
+  | TextBlockSliceAuthor;
 
 /**
- * Textos Shared Slice
+ * Text Shared Slice
  *
  * - **API ID**: `text_block`
  * - **Description**: TextBlock
@@ -1965,6 +2004,7 @@ declare module "@prismicio/client" {
       TextBlockSliceContactTurnoPrimary,
       TextBlockSlicePreguntaFrecuentePrimary,
       TextBlockSlicePreguntaFrecuenteItem,
+      TextBlockSliceAuthorPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
       TextBlockSliceTitleText,
@@ -1974,6 +2014,7 @@ declare module "@prismicio/client" {
       TextBlockSliceContactText,
       TextBlockSliceContactTurno,
       TextBlockSlicePreguntaFrecuente,
+      TextBlockSliceAuthor,
     };
   }
 }

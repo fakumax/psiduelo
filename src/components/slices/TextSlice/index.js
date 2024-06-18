@@ -1,4 +1,5 @@
 import {
+  Author,
   AuthorTitleText,
   ContactText,
   ContactTurno,
@@ -8,11 +9,12 @@ import {
   TitleText,
 } from './variants';
 
-export const TextBlockSlice = ({ slice }) => {
+export const TextSlice = ({ slice }) => {
   const { variation } = slice;
 
   const typeOfComponents = {
     ['default']: Default,
+    ['author']: Author,
     ['titleText']: TitleText,
     ['preguntaFrecuente']: PreguntaFrecuente,
     ['authorTitleText']: AuthorTitleText,
