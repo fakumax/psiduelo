@@ -5,11 +5,9 @@ import { Container, Transition, Wrapper } from './defaultStyles';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Default = (slice) => {
-  console.log('--slice--', slice);
   const { imageleft, imageright, textfirst, textsecond, colorbg } = slice.primary;
   const [isVisible, setIsVisible] = useState(true);
 
-  console.log('colorbgss', colorbg);
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(!isVisible);
@@ -17,8 +15,7 @@ const Default = (slice) => {
 
     return () => clearInterval(interval);
   }, [isVisible]);
-  //color: #9e9ea0;
-  //background-color:#f5f5f5
+
   return (
     <Wrapper bgcolor={colorbg}>
       <Container>

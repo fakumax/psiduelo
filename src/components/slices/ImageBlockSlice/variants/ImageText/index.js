@@ -3,7 +3,6 @@ import { ContainerImage, Wrapper } from './defaultStyles';
 import { PrismicRichText } from '@prismicio/react';
 
 const ImageText = (slice) => {
-  //console.log('--slice--ImageBlockSlice', slice);
   const { image, title } = slice.primary;
   return (
     <Wrapper>
