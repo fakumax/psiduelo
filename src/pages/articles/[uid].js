@@ -1,4 +1,4 @@
-import { Layout } from '@/components/common/Layout';
+import { LayoutArticle } from '@/components/common/LayoutArticle';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import * as prismic from '@prismicio/client';
@@ -6,7 +6,6 @@ import {  SliceZone } from '@prismicio/react';
 import Head from 'next/head';
 
 export default function Article({ article, navigation, copyright }) {
-  console.log("ARTICLE INFO----->",article);
   if (article) {
     article.data.slices = article.data.slices.filter(
       (item) => item.variation !== 'shortTextDiario',
@@ -16,7 +15,7 @@ export default function Article({ article, navigation, copyright }) {
   const imageUrl = article && article.data.image ? article.data.image.url : null;
 
   return (
-    <Layout
+    <LayoutArticle
       withHeaderDivider={false}
       withProfile={false}
       navigation={navigation}
@@ -34,7 +33,7 @@ export default function Article({ article, navigation, copyright }) {
         {imageUrl && <meta property="og:image" content={imageUrl} />}
       </Head>
       <SliceZone slices={article.data.slices} components={components} />
-    </Layout>
+    </LayoutArticle>
   );
 }
 
