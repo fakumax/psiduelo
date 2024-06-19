@@ -2,7 +2,6 @@ import Card from './Card';
 import { Container, Wrapper } from './defaultStyles';
 
 const SameStyle = (slice) => {
-  //console.log('--slice--SameStyle', slice);
   const { color } = slice.primary;
   return (
     <Wrapper>
