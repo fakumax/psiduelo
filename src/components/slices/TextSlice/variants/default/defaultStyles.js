@@ -45,7 +45,7 @@ export const Container = styled.div`
   h4 + p {
     text-indent: 2em;
   }
-  p + h4 + p {
+  p + h4 {
     margin: 2rem 0 1rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
