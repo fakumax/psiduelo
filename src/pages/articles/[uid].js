@@ -2,7 +2,7 @@ import { LayoutArticle } from '@/components/common/LayoutArticle';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import * as prismic from '@prismicio/client';
-import {  SliceZone } from '@prismicio/react';
+import { SliceZone } from '@prismicio/react';
 import Head from 'next/head';
 
 export default function Article({ article, navigation, copyright }) {
@@ -12,6 +12,7 @@ export default function Article({ article, navigation, copyright }) {
     );
   }
   const title = article ? prismic.asText(article.data.title) : 'Articulo';
+
   const imageUrl = article && article.data.image ? article.data.image.url : null;
 
   return (
@@ -22,14 +23,17 @@ export default function Article({ article, navigation, copyright }) {
       copyright={copyright}
     >
       <Head>
-        <title>Psi Duelo | {title}</title>
+        <title>{`Psi Duelo | ${title}`}</title>
         <meta name="description" content={title} />
         <meta name="keywords" content="tu, lista, de, palabras, clave" />
         <meta name="author" content="Tu Nombre o Nombre del Sitio" />
         <meta property="og:title" content={`Psi Duelo | ${title}`} />
         <meta property="og:description" content={title} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.tusitio.com/articulo/${article?.uid}`} />
+        <meta
+          property="og:url"
+          content={`https://www.tusitio.com/articulo/${article?.uid}`}
+        />
         {imageUrl && <meta property="og:image" content={imageUrl} />}
       </Head>
       <SliceZone slices={article.data.slices} components={components} />
