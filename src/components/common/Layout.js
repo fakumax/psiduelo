@@ -1,7 +1,5 @@
 import { Header, Copyright as Copr } from '@/components/common';
-
 import localFont from 'next/font/local';
-
 import { Marcellus } from 'next/font/google';
 import { useState } from 'react';
 
@@ -42,4 +40,3 @@ export const Layout = ({ navigation, copyright, children }) => {
     </div>
   );
 };
-// Copr
