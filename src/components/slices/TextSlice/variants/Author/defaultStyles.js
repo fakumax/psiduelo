@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 0 2rem;
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
     max-width: 1200px;
-    margin: 4rem auto 0rem;
   }
 `;
 
@@ -14,8 +13,6 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
-  gap: 1rem;
   p,
   li {
     font-size: 16px;
@@ -35,17 +32,21 @@ export const Container = styled.div`
     font-weight: normal;
     text-align: center;
     line-height: 36px;
-    margin: 0 0 1rem 0;
+    margin: 2rem 0;
   }
   h4 {
     text-align: left;
-    font-size: 36px;
-    margin: 1rem 0;
+    font-size: 32px;
+    margin: 2rem 0 1rem;
+  }
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p {
+    text-indent: 2em;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    gap: 1rem;
-    margin: 2rem 0;
     ul {
       display: flex;
       flex-direction: column;
@@ -69,8 +70,8 @@ export const Container = styled.div`
 
 export const Autor = styled.span`
   font-size: 16px;
-  color: #9e9ea0;
+  color: ${(props) => props.theme.colors.secondary};
   font-style: italic;
   text-align: end;
-  margin: 0 20px;
+  margin: 0 10px;
 `;

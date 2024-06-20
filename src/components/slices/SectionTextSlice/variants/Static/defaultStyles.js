@@ -1,28 +1,30 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
+  height: 100px;
+  max-height: 150px;
+  padding: 10px 0;
+  margin: 2rem 0;
   color: ${(props) => props.colorletter};
   background-color: ${(props) => props.bgColor};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
-  display: flex;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-  max-height: 200px;
-  height: 150px;
-  align-items: center;
-  margin: 1rem 0;
   img {
-    max-width: 40px;
     height: 100%;
+    max-width: 30px;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 100px;
-    max-height: 150px;
-    padding: 10px 0;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    max-height: 200px;
+    height: 150px;
+    align-items: center;
+    margin: 3rem 0;
     img {
-      max-width: 30px;
+      max-width: 40px;
     }
   }
 `;
