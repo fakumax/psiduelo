@@ -6,7 +6,7 @@ const Static = (slice) => {
   const { imageleft, imageright, textfirst, colorbg } = slice.primary;
 
   return (
-    <Wrapper bgColor={colorbg}>
+    <Wrapper bgColor={colorbg || '#FEFAF9'}>
       <Container>
         <PrismicNextImage field={imageleft} fallbackAlt="" />
         <PrismicRichText field={textfirst} />

@@ -103,8 +103,8 @@ export const Theme = {
     bgColorLight4: '#FEFAF9',
 
     primary: '#7c5a19',
+    secondary: '#9e9ea0',
     // textSecondary: '#605E5C',
-    // textTertiary: '#9e9ea0', // text color
     // textTertiaryBtn: '#323130',
     // lightGray: '#323130',
     // lightGray2: '#666666',
