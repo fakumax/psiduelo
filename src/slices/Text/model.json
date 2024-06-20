@@ -1,7 +1,7 @@
 {
   "id": "text_block",
   "type": "SharedSlice",
-  "name": "Textos",
+  "name": "Text",
   "description": "TextBlock",
   "variations": [
     {
@@ -16,9 +16,9 @@
           "type": "StructuredText",
           "config": {
             "label": "Text",
-            "placeholder": "",
+            "placeholder": "Ingrese el texto",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
           }
         }
       },
@@ -55,7 +55,7 @@
     },
     {
       "id": "authorTitleText",
-      "name": "AuthorTitleText",
+      "name": "AuthorOLD",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -329,6 +329,33 @@
           }
         }
       }
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "author": {
+          "type": "Text",
+          "config": {
+            "label": "Author",
+            "placeholder": "Ingrese autor"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "Ingrese el texto",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

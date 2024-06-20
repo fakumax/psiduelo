@@ -9,7 +9,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Proident veniam quis proident officia eu qui commodo sint incididunt dolor."
+							"text": "In mollit voluptate excepteur officia veniam excepteur enim est elit officia enim nisi. In qui laboris qui. Veniam cillum pariatur laboris sunt aute mollit duis enim nisi minim dolore duis."
 						}
 					}
 				]
@@ -339,6 +339,34 @@
 						}
 					]
 				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "author",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing consequat veniam cupidatat proident magna dolore enim anim elit fugiat adipisicing officia. Nulla officia voluptate adipisicing non nulla consequat minim sit anim sunt consequat tempor dolor eiusmod proident."
+						}
+					}
+				]
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "prepare",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
 			}
 		]
 	}
