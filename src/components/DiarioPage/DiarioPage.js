@@ -21,7 +21,6 @@ const DiarioPage = ({ articles }) => {
   const optionsFoto = articles
     .filter((article) => article.data.options === 'articuloFoto')
     .map((article) => {
-      console.log('art', article);
       const { title, description, imagecentral, imageplant } =
         article.data.slices[0].primary;
       return { title, description, imagecentral, imageplant };

@@ -3,7 +3,6 @@ import { FaHeart } from 'react-icons/fa';
 import { Wrapper } from './CopyrightStyles';
 
 const Copyright = ({ copyright }) => {
-  //console.log('--slice--', copyright);
   const { text, link } = copyright.data;
   const date = new Date();
 
