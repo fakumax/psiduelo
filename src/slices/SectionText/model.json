@@ -194,6 +194,49 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "staticLarge",
+      "name": "StaticLarge",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imageleft": {
+          "type": "Image",
+          "config": {
+            "label": "ImageLeft",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageright": {
+          "type": "Image",
+          "config": {
+            "label": "ImageRight",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "textfirst": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextFirst",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "colorbg": {
+          "type": "Color",
+          "config": {
+            "label": "ColorBg",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

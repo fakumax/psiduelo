@@ -1,4 +1,4 @@
-import { Default, Static, ImageWithFrase } from './variants';
+import { Default, Static, ImageWithFrase, StaticLarge } from './variants';
 
 export const SectionTextSlice = ({ slice }) => {
   const { variation } = slice;
@@ -6,6 +6,7 @@ export const SectionTextSlice = ({ slice }) => {
   const typeOfComponents = {
     ['default']: Default,
     ['static']: Static,
+    ['staticLarge']: StaticLarge,
     ['imageWithFrase']: ImageWithFrase,
   };
 

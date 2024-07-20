@@ -1359,13 +1359,72 @@ export type SectionTextSliceImageWithTwoFrases = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SectionText → StaticLarge → Primary*
+ */
+export interface SectionTextSliceStaticLargePrimary {
+  /**
+   * ImageLeft field in *SectionText → StaticLarge → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.staticLarge.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *SectionText → StaticLarge → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.staticLarge.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageright: prismic.ImageField<never>;
+
+  /**
+   * TextFirst field in *SectionText → StaticLarge → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.staticLarge.primary.textfirst
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textfirst: prismic.TitleField;
+
+  /**
+   * ColorBg field in *SectionText → StaticLarge → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_text.staticLarge.primary.colorbg
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  colorbg: prismic.ColorField;
+}
+
+/**
+ * StaticLarge variation for SectionText Slice
+ *
+ * - **API ID**: `staticLarge`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionTextSliceStaticLarge = prismic.SharedSliceVariation<
+  "staticLarge",
+  Simplify<SectionTextSliceStaticLargePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SectionText*
  */
 type SectionTextSliceVariation =
   | SectionTextSliceDefault
   | SectionTextSliceStatic
   | SectionTextSliceImageWithFrase
-  | SectionTextSliceImageWithTwoFrases;
+  | SectionTextSliceImageWithTwoFrases
+  | SectionTextSliceStaticLarge;
 
 /**
  * SectionText Shared Slice
@@ -1969,11 +2028,13 @@ declare module "@prismicio/client" {
       SectionTextSliceStaticPrimary,
       SectionTextSliceImageWithFrasePrimary,
       SectionTextSliceImageWithTwoFrasesPrimary,
+      SectionTextSliceStaticLargePrimary,
       SectionTextSliceVariation,
       SectionTextSliceDefault,
       SectionTextSliceStatic,
       SectionTextSliceImageWithFrase,
       SectionTextSliceImageWithTwoFrases,
+      SectionTextSliceStaticLarge,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceTitleTextPrimary,
