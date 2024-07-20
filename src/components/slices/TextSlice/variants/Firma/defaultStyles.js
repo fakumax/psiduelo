@@ -4,12 +4,12 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 2rem;
 `;
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  margin-bottom: 1rem;
   justify-content: end;
   span {
     padding-right: 2rem;
