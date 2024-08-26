@@ -32,7 +32,6 @@ const DiarioPage = ({ articles }) => {
         <ContainerImagePersonal>
           <PrismicNextImage
             field={optionsFoto.imagecentral}
-            alt={optionsFoto.imagecentral.alt || 'Imagen psicóloga'}
             width={optionsFoto.imagecentral.dimensions.width}
             height={optionsFoto.imagecentral.dimensions.height}
             priority={true}
@@ -43,7 +42,7 @@ const DiarioPage = ({ articles }) => {
           <PrismicRichText field={optionsFoto.description} />
         </Description>
         <ContainerImagePlant>
-          <PrismicNextImage field={optionsFoto.imageplant} fallbackAlt="" />
+          <PrismicNextImage field={optionsFoto.imageplant} />
         </ContainerImagePlant>
       </ContainerFoto>
       <SectionList>
@@ -62,7 +61,6 @@ const DiarioPage = ({ articles }) => {
                   <ContainerImage>
                     <PrismicNextImage
                       field={article.data.image}
-                      alt={article.data.image.alt || 'Imagen de diario'}
                       width={article.data.image.dimensions.width}
                       height={article.data.image.dimensions.height}
                     />

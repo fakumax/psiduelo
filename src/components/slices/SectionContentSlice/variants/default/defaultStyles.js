@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   width: 100%;
   display: flex;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.$bgcolor};
   height: fit-content;
   flex-direction: column;
   height: fit-content;

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   padding: 10px 0;
   margin: 2rem 0;
   color: ${(props) => props.colorletter};
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$colorbg || '#FEFAF9'};
   font-family: ${(props) => props.theme.typography.fontFamily_belle};
   img {
     height: 100%;

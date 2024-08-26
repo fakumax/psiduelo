@@ -11,7 +11,6 @@ const ImageWithFrase = (slice) => {
         <ContainerImage style={{ top: '0' }}>
           <PrismicNextImage
             field={imagecentral}
-            alt={imagecentral.alt || 'Imagen de titulo'}
             width={imagecentral.dimensions.width}
             height={imagecentral.dimensions.height}
           />
@@ -19,7 +18,7 @@ const ImageWithFrase = (slice) => {
       </ContainerTitle>
       <ContainerText>
         <PrismicRichText field={textfirst} />
-        <PrismicNextImage field={imageright} alt="" />
+        <PrismicNextImage field={imageright} />
       </ContainerText>
     </Wrapper>
   );

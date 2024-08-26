@@ -18,12 +18,12 @@ export const Individual = ({ id, children, items }) => {
     case '1':
       return (
         <Component1>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
-          <div className='container'>
-            <div className='line1' />
-            <div className='line2'>
+          <div className="container">
+            <div className="line1" />
+            <div className="line2">
               <h3>
                 <PrismicText field={items.text} />
               </h3>
@@ -34,48 +34,45 @@ export const Individual = ({ id, children, items }) => {
     case '2':
       return (
         <Component2>
-          <div className='container'>
+          <div className="container">
             <h3>
               <PrismicText field={items.text} />
             </h3>
-            <div className='ImageContainer'>
-              <PrismicNextImage field={items.image} alt='' />
+            <div className="ImageContainer">
+              <PrismicNextImage field={items.image} />
             </div>
           </div>
-          <div className='line1' />
-          <div className='line2' />
+          <div className="line1" />
+          <div className="line2" />
         </Component2>
       );
     case '3':
       return (
         <Component3>
-          <div className='container'>
-            <div className='lines-1'>
-              <div className='line0' />
-              <div className='line1' />
+          <div className="container">
+            <div className="lines-1">
+              <div className="line0" />
+              <div className="line1" />
             </div>
-            <div className='lines-2'>
-              <div className='line2' />
-              <div className='line3' />
+            <div className="lines-2">
+              <div className="line2" />
+              <div className="line3" />
             </div>
 
             <h3>
               <PrismicText field={items.text} />
             </h3>
-            {/* <div className='ImageContainer'>
-              <PrismicNextImage field={items.image} alt='' />
-            </div> */}
           </div>
         </Component3>
       );
     case '4':
       return (
         <Component4>
-          <div className='firstSquare' />
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="firstSquare" />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
-          <div className='secondSquare'>
+          <div className="secondSquare">
             <h3>
               <PrismicText field={items.text} />
             </h3>
@@ -85,11 +82,11 @@ export const Individual = ({ id, children, items }) => {
     case '5':
       return (
         <Component5>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
 
-          <div className='secondSquare'>
+          <div className="secondSquare">
             <h3>
               <PrismicText field={items.text} />
             </h3>
@@ -99,10 +96,10 @@ export const Individual = ({ id, children, items }) => {
     case '6':
       return (
         <Component6>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
-          <div className='secondSquare'>
+          <div className="secondSquare">
             <h3>
               <PrismicText field={items.text} />
             </h3>
@@ -112,38 +109,38 @@ export const Individual = ({ id, children, items }) => {
     case '7':
       return (
         <Component7>
-          <div className='firstSquare'>
+          <div className="firstSquare">
             <h3>
               <PrismicText field={items.text} />
             </h3>
           </div>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
         </Component7>
       );
     case '8':
       return (
         <Component8>
-          <div className='firstSquare'>
+          <div className="firstSquare">
             <h3>
               <PrismicText field={items.text} />
             </h3>
           </div>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
         </Component8>
       );
     case '9':
       return (
         <Component9>
-          <div className='lines-1'>
-            <div className='line0' />
-            <div className='line1' />
+          <div className="lines-1">
+            <div className="line0" />
+            <div className="line1" />
           </div>
-          <div className='ImageContainer'>
-            <PrismicNextImage field={items.image} alt='' />
+          <div className="ImageContainer">
+            <PrismicNextImage field={items.image} />
           </div>
         </Component9>
       );

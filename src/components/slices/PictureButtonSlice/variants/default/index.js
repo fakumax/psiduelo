@@ -1,6 +1,4 @@
-import { PrismicNextImage } from '@prismicio/next';
-import { BackgroundImage, Button, Container, Wrapper } from './defaultStyles';
-import { PrismicRichText } from '@prismicio/react';
+import { Container, Wrapper } from './defaultStyles';
 import Card from './Card';
 
 const Default = (slice) => {

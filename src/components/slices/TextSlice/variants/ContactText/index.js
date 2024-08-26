@@ -14,7 +14,6 @@ const ContactText = (slice) => {
         <ContainerImageBorderUp>
           <PrismicNextImage
             field={slice.primary.imageborder}
-            alt={slice.primary.imageborder.alt || 'Imagen de borde'}
             width={slice.primary.imageborder.dimensions.width}
             height={slice.primary.imageborder.dimensions.height}
           />
@@ -23,7 +22,6 @@ const ContactText = (slice) => {
         <ContainerImageBorderDown>
           <PrismicNextImage
             field={slice.primary.imageborder}
-            alt={slice.primary.imageborder.alt || 'Imagen de borde'}
             width={slice.primary.imageborder.dimensions.width}
             height={slice.primary.imageborder.dimensions.height}
           />

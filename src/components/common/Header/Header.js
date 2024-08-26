@@ -45,7 +45,7 @@ export const Header = ({ navigation, show, setShow }) => {
           ))}
         </ul>
       </LeftContainer>
-      <IconBurger show={show} onClick={handleClick}>
+      <IconBurger $show={show} onClick={handleClick}>
         <AiOutlineMenu size={25} />
       </IconBurger>
 
