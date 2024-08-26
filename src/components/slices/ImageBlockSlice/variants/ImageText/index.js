@@ -8,7 +8,7 @@ const ImageText = (slice) => {
     <Wrapper>
       <ContainerImage>
         <PrismicRichText field={title} />
-        <PrismicNextImage field={image} />
+        <PrismicNextImage field={image} fallbackAlt="" />
       </ContainerImage>
     </Wrapper>
   );

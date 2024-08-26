@@ -31,7 +31,7 @@ const Default = (slice) => {
           <BodyContainer>
             <div>
               <div>
-                <PrismicNextImage field={logo} />
+                <PrismicNextImage field={logo} fallbackAlt="" />
               </div>
               <ContainerImagePlant>
                 <PrismicNextImage field={imageplant} fallbackAlt="" />

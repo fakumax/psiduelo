@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
-import { PrismicRichText, PrismicText } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
+import { PrismicRichText } from '@prismicio/react';
 import {
   ContainerItems,
   HeadTitle,
@@ -15,10 +15,10 @@ import { fetchArticles } from '@/utils/fetchArticles';
 const Default = (slice) => {
   const [articles, setArticles] = useState(null);
   console.log(slice.items);
-  const { bgcolor, bgleft, titleleft, textleft, descripcionleft, imageleft, textbutton } =
+  const { bgcolor, bgleft, titleleft, descripcionleft, imageleft, textbutton } =
     slice.primary;
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la apertura/cierre del modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
   const openModal = (uid) => {
@@ -43,7 +43,7 @@ const Default = (slice) => {
   }, []);
 
   return (
-    <Wrapper color={bgcolor}>
+    <Wrapper $bgcolor={bgcolor}>
       <LeftContainer>
         <WhiteContainer>
           <div className="ImageLeft">
@@ -73,7 +73,7 @@ const Default = (slice) => {
             <ContainerItems key={index}>
               <div className="WrapperImage">
                 <div className="ImageContainer">
-                  <PrismicNextImage field={item.image} />
+                  <PrismicNextImage field={item.image} fallbackAlt="" />
                 </div>
               </div>
               <div className="TextContainer">
