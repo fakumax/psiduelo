@@ -6,7 +6,7 @@ const Default = (slice) => {
   return (
     <Wrapper>
       <ContainerImage>
-        <PrismicNextImage field={image} />
+        <PrismicNextImage field={image} fallbackAlt="" />
       </ContainerImage>
     </Wrapper>
   );
