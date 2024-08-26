@@ -44,7 +44,7 @@ const Default = (slice) => {
             <ContainerItems key={index}>
               <div className="WrapperImage">
                 <div className="ImageContainer">
-                  <PrismicNextImage field={item.image} />
+                  <PrismicNextImage field={item.image} fallbackAlt="" />
                 </div>
               </div>
               <div className="TextContainer">

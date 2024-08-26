@@ -7,7 +7,7 @@ const ImageParagraph = (slice) => {
   return (
     <Wrapper>
       <ContainerImage>
-        <PrismicNextImage field={image} />
+        <PrismicNextImage field={image} fallbackAlt="" />
         <PrismicRichText field={subtitle} />
       </ContainerImage>
     </Wrapper>

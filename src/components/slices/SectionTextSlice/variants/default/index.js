@@ -17,7 +17,7 @@ const Default = (slice) => {
   }, [isVisible]);
 
   return (
-    <Wrapper bgcolor={colorbg}>
+    <Wrapper $colorbg={colorbg}>
       <Container>
         <AnimatePresence>
           {isVisible && (
@@ -27,7 +27,7 @@ const Default = (slice) => {
               transition={{ duration: 2 }}
               exit={{ opacity: 0, display: 'flex' }}
             >
-              <PrismicNextImage className="imageleft" field={imageleft} alt="" />
+              <PrismicNextImage className="imageleft" field={imageleft} fallbackAlt="" />
               <PrismicRichText field={textfirst} />
             </Transition>
           )}
@@ -39,7 +39,11 @@ const Default = (slice) => {
               exit={{ opacity: 1, display: 'flex' }}
               style={{ flexDirection: 'row-reverse' }}
             >
-              <PrismicNextImage className="imageright" field={imageright} alt="" />
+              <PrismicNextImage
+                className="imageright"
+                field={imageright}
+                fallbackAlt=""
+              />
               <PrismicRichText field={textsecond} />
             </Transition>
           )}
