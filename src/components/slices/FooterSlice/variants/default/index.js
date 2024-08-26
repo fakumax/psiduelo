@@ -44,10 +44,16 @@ const Default = (slice) => {
             </Details>
           </BodyContainer>
           <IconsGroup>
-            <Icon icon={faWhatsapp} />
+            <Link
+              href="https://wa.me/5493764847080"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon={faWhatsapp} />
+            </Link>
             <Icon icon={faInstagram} />
             <Icon icon={faFacebookF} />
-            <Link href="mailto:destinatario@example.com">
+            <Link href="mailto:psiduelo@gmail.com">
               <Icon icon={faEnvelope} />
             </Link>
             <Icon icon={faDiscord} />
