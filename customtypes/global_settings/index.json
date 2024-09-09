@@ -1,0 +1,18 @@
+{
+  "format": "custom",
+  "id": "global_settings",
+  "label": "Global Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Social Links": {
+      "whatsappnumber": {
+        "type": "Text",
+        "config": {
+          "label": "WhatsappNumber",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
