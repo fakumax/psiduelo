@@ -163,6 +163,38 @@ export type CopyrightDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for Global Settings documents
+ */
+interface GlobalSettingsDocumentData {
+  /**
+   * WhatsappNumber field in *Global Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: global_settings.whatsappnumber
+   * - **Tab**: Social Links
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  whatsappnumber: prismic.KeyTextField;
+}
+
+/**
+ * Global Settings document from Prismic
+ *
+ * - **API ID**: `global_settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GlobalSettingsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<GlobalSettingsDocumentData>,
+    "global_settings",
+    Lang
+  >;
+
+/**
  * Item in *Navigation → NavLeft*
  */
 export interface NavigationDocumentDataNavleftItem {
@@ -353,6 +385,7 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | ArticleDocument
   | CopyrightDocument
+  | GlobalSettingsDocument
   | NavigationDocument
   | PageDocument;
 
@@ -1976,6 +2009,8 @@ declare module "@prismicio/client" {
       ArticleDocumentDataSlicesSlice,
       CopyrightDocument,
       CopyrightDocumentData,
+      GlobalSettingsDocument,
+      GlobalSettingsDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataNavleftItem,
