@@ -5,35 +5,15 @@ import * as prismicH from '@prismicio/helpers';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import { Layout } from '@/components/common/Layout';
-import { useEffect, useState } from 'react';
-import { Loading } from '@/components/common/Loading/Loading';
 
 const Index = ({ page, navigation, copyright }) => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    };
-
-    fetchData();
-  }, []);
-
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Layout navigation={navigation} copyright={copyright}>
-          <Head>
-            <title>{prismicH.asText(page.data.title)}</title>
-          </Head>
-          <SliceZone slices={page.data.slices} components={components} />
-        </Layout>
-      )}
-    </>
+    <Layout navigation={navigation} copyright={copyright}>
+      <Head>
+        <title>{prismicH.asText(page.data.title)}</title>
+      </Head>
+      <SliceZone slices={page.data.slices} components={components} />
+    </Layout>
   );
 };
 
