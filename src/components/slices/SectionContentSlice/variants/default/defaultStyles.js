@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   width: 100%;
   display: flex;
-  background-color: ${(props) => props.$bgcolor};
+  background-color: ${(props) => props.theme.colors.bgColorLight2};
   height: fit-content;
   flex-direction: column;
   height: fit-content;
@@ -45,19 +45,16 @@ export const LeftContainer = styled.aside`
       display: flex;
       height: 100%;
       position: absolute;
-      right: -50px;
+      top: 0;
+      right: 0;
+      transform: translateX(50%);
+      z-index: 1;
+      pointer-events: none;
+
       img {
         width: auto;
         height: 100%;
         object-fit: cover;
-        max-height: fit-content;
-        background: linear-gradient(
-          to right,
-          white 0%,
-          white 50%,
-          transparent 50%,
-          transparent 100%
-        );
       }
     }
   }
@@ -261,7 +258,8 @@ export const ContainerItems = styled.article`
     .ImageContainer {
       position: relative;
       width: 160px;
-      height: 200px;
+      justify-content: center;
+      display: flex;
       box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
       -webkit-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: -4px 4px 15px -4px rgba(0, 0, 0, 0.75);
