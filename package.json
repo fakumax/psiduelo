@@ -1,6 +1,6 @@
 {
   "name": "psiduelo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Proyect using NextJS, Prismic and Styled-components",
   "private": true,
   "author": "Facundo Vergara",
