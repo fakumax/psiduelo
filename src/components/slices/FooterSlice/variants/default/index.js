@@ -45,7 +45,7 @@ const Default = (slice) => {
           </BodyContainer>
           <IconsGroup>
             <Link
-              href="https://wa.me/5493764847080"
+              href="https://wa.me/5493765529404"
               target="_blank"
               rel="noopener noreferrer"
             >
