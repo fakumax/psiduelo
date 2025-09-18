@@ -17,7 +17,7 @@ const ResendEmailTurno = async (req, res) => {
   } = req.body;
   const { data, error } = await resend.emails.send({
     from: 'Web Reserva Turno PSIDUELO <onboarding@resend.dev>',
-    to: ['fakumax@gmail.com'],
+    to: ['psiduelo@gmail.com'],
     subject: 'Reservar Turno | PSIDUELO',
     react: ResendEmailTemplateTurno({
       email,
