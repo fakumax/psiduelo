@@ -23,7 +23,8 @@ import Link from 'next/link';
 
 const Default = (slice) => {
   const { description, title, logo, imageplant } = slice.primary;
-
+  const WHATSAPP_E164 = "+5493765529404";
+  const WHATSAPP_DIGITS = WHATSAPP_E164.replace("+", "");
   return (
     <Wrapper>
       <div>
@@ -45,12 +46,13 @@ const Default = (slice) => {
           </BodyContainer>
           <IconsGroup>
             <Link
-              href="https://wa.me/5493765529404"
+              href={`https://wa.me/${WHATSAPP_DIGITS}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Icon icon={faWhatsapp} />
             </Link>
+
             <Icon icon={faInstagram} />
             <Icon icon={faFacebookF} />
             <Link href="mailto:psiduelo@gmail.com">
@@ -61,6 +63,12 @@ const Default = (slice) => {
               <Icon icon={faSpotify} />
             </Link>
           </IconsGroup>
+          <div className="ftvilm">
+            <p>
+              WhatsApp para sesiones:{' '}
+              <a href={`tel:${WHATSAPP_E164}`}>{WHATSAPP_E164}</a>
+            </p>
+          </div>
         </div>
       </div>
 
