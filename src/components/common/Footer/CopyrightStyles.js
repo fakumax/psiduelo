@@ -5,7 +5,7 @@ export const Wrapper = styled.footer`
   display: flex;
   place-content: center;
   height: fit-content;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   p,
   a {
     font-size: 8px;

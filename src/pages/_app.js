@@ -16,7 +16,14 @@ const App = ({ Component, pageProps }) => {
   const { globalSettings } = pageProps;
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const MIN_LOADING_TIME = 500; 
+  const FADE_OUT_DURATION = 200; 
+
   useEffect(() => {
+    let loadingStartTime = null;
+    let timeoutId = null;
+
     const handleClick = (e) => {
       const target = e.target.closest('a');
       if (
@@ -24,7 +31,8 @@ const App = ({ Component, pageProps }) => {
         target.href &&
         !target.href.startsWith('mailto:') &&
         !target.href.startsWith('tel:') &&
-        !target.href.startsWith('#')
+        !target.href.startsWith('#') &&
+        !target.target // No abrir en nueva pestaña
       ) {
         try {
           const currentOrigin = window.location.origin;
@@ -35,9 +43,19 @@ const App = ({ Component, pageProps }) => {
             const newPath = linkUrl.pathname;
 
             if (currentPath !== newPath) {
+              loadingStartTime = Date.now();
+              setIsClosing(false);
               setLoading(true);
               gtag.pageview(newPath);
-              setTimeout(() => setLoading(false), 3000);
+
+              // Cerrar el loading después del tiempo mínimo + fade
+              timeoutId = setTimeout(() => {
+                setIsClosing(true);
+                setTimeout(() => {
+                  setLoading(false);
+                  setIsClosing(false);
+                }, FADE_OUT_DURATION);
+              }, MIN_LOADING_TIME);
             }
           }
         } catch (error) {
@@ -50,6 +68,7 @@ const App = ({ Component, pageProps }) => {
 
     return () => {
       document.removeEventListener('click', handleClick, true);
+      if (timeoutId) clearTimeout(timeoutId);
     };
   }, []);
   return (
@@ -60,7 +79,7 @@ const App = ({ Component, pageProps }) => {
         {globalSettings?.whatsappnumber && (
           <ButtonWhatsapp whatsappNumber={globalSettings.whatsappnumber} />
         )}
-        {loading && <Loading />}
+        {loading && <Loading isClosing={isClosing} />}
       </ThemeProvider>
     </PrismicProvider>
   );

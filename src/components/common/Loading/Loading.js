@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
 const loadingAnimation = keyframes`
   90%, 100% {
@@ -16,19 +16,28 @@ const fadeIn = keyframes`
   }
 `;
 
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 const LoaderOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  animation: ${fadeIn} 0.2s ease-out;
+  animation: ${(props) => (props.$isClosing ? fadeOut : fadeIn)} ${(props) => (props.$isClosing ? '0.4s' : '0.3s')} ease-out forwards;
 `;
 
 const LoaderContainer = styled.div`
@@ -66,9 +75,9 @@ const LoadingText = styled.p`
   letter-spacing: 0.3px;
 `;
 
-const Loading = () => {
+const Loading = ({ isClosing = false }) => {
   return (
-    <LoaderOverlay>
+    <LoaderOverlay $isClosing={isClosing}>
       <LoaderContainer>
         <Loader />
         <LoadingText>Cargando...</LoadingText>
