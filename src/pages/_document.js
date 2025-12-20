@@ -26,23 +26,37 @@ class MyDocument extends Document {
 
   render() {
     const gaTrackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+    const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
     return (
       <Html lang="es">
         <Head>
+          {/* SEO Meta Tags */}
           <meta
             name="description"
-            content="Descubre cómo la Psicóloga Diplomada y Especialista en Duelo puede ayudarte con atención psicológica online. Ofrecemos terapias personalizadas para adolescentes y adultos hispanohablantes, enfocándonos en el proceso de duelo y otros desafíos emocionales. Contacta hoy mismo para una consulta virtual y empieza tu camino hacia la recuperación emocional."
+            content="Psicóloga especialista en duelo y pérdidas. Acompaño a mujeres adultas en el proceso de duelo por fallecimiento de seres queridos y duelo por pérdida de mascotas. Terapia online personalizada en español. Supera el dolor con apoyo profesional."
           />
           <meta
             name="keywords"
-            content="psicóloga, especialista en duelo, atención psicológica online, terapia online, psicología, duelo, terapia para adolescentes, terapia para adultos, consulta psicológica, apoyo emocional, salud mental, hispanohablantes, terapia de duelo, terapia personalizada, recuperación emocional"
+            content="psicóloga especialista en duelo, terapia de duelo online, duelo por pérdida de mascotas, duelo por muerte de mascota, pérdida de un ser querido, psicóloga online español, terapia para mujeres, duelo adultos, acompañamiento en el duelo, superar la pérdida, psicología del duelo, terapia de pérdidas, apoyo emocional duelo, elaborar el duelo, proceso de duelo"
           />
-          <meta name="author" content="Facundo Vergara" />
+          <meta name="robots" content="index, follow" />
+          <meta name="theme-color" content="#ffffff" />
+          
+          {/* Open Graph / Facebook */}
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Psiduelo" />
+          <meta property="og:title" content="Psicóloga Especialista en Duelo | Terapia Online" />
+          <meta
+            property="og:description"
+            content="Acompaño a mujeres adultas en el proceso de duelo por pérdida de seres queridos y mascotas. Terapia online personalizada en español."
+          />
+          <meta property="og:locale" content="es_ES" />
+
           <link
             rel="icon"
             type="image/png"
             sizes="any"
-            href="https://prismic.io/favicon.ico"
+            href="/favicon.ico"
           />
 
           {/* Preconnect to external fonts */}
@@ -67,7 +81,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* Google Analytics */}
+          {/* Google Analytics & Google Ads */}
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
@@ -79,6 +93,7 @@ class MyDocument extends Document {
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
                     gtag('config', '${gaTrackingId}');
+                    gtag('config', '${googleAdsId}');
                   `,
             }}
           />
