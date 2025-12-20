@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import Link from 'next/link';
 import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
 import {
   ContainerField,
@@ -8,6 +9,7 @@ import {
   StyledButton,
   FormContact,
   ContainerFieldMessage,
+  LinkToOtherForm,
 } from './ContactStyle';
 
 const ContactForm = ({ text }) => {
@@ -97,6 +99,12 @@ const ContactForm = ({ text }) => {
         <StyledButton disabled={isSubmitting}>
           {isSubmitting ? 'enviando' : 'Enviar'}
         </StyledButton>
+
+        <Link href="/reservar-turno" passHref legacyBehavior>
+          <LinkToOtherForm>
+            <span>📅</span> ¿Quieres reservar tu primera sesión de terapia?
+          </LinkToOtherForm>
+        </Link>
       </FormContact>
     </>
   );

@@ -1,5 +1,6 @@
 import { FormSchema } from '@/components/ResendEmail/ContactTurno/FormSchema.js';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import {
@@ -8,14 +9,16 @@ import {
   RadioButton,
   StyleSpan,
   StyledButton,
+  Spinner,
 } from './ContactStyle';
 
 const Turno = ({ text }) => {
+  const [isSuccess, setIsSuccess] = useState(false);
+  
   const {
     register,
     handleSubmit,
     reset,
-
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(FormSchema),
@@ -50,6 +53,7 @@ const Turno = ({ text }) => {
       if (responseData.success) {
         console.log({ data: responseData.data });
         toast.success('Mensaje enviado. ¡Muchas gracias!');
+        setIsSuccess(true);
         reset();
         return;
       }
@@ -150,8 +154,17 @@ const Turno = ({ text }) => {
           </div>
         </ContainerField>
 
-        <StyledButton disabled={isSubmitting}>
-          {isSubmitting ? 'enviando' : `${text.buttonsend}`}
+        <StyledButton 
+          disabled={isSubmitting || isSuccess} 
+          $isSuccess={isSuccess}
+        >
+          {isSubmitting ? (
+            <><Spinner /> Enviando...</>
+          ) : isSuccess ? (
+            '✓ Enviado'
+          ) : (
+            text.buttonsend
+          )}
         </StyledButton>
       </FormStyle>
     </>

@@ -48,7 +48,7 @@ class MyDocument extends Document {
           <meta property="og:title" content="Psicóloga Especialista en Duelo | Terapia Online" />
           <meta
             property="og:description"
-            content="Acompaño a mujeres adultas en el proceso de duelo por pérdida de seres queridos y mascotas. Terapia online personalizada en español."
+            content="Acompañamiento profesional en el proceso de duelo por pérdida de seres queridos y mascotas. Terapia online personalizada."
           />
           <meta property="og:locale" content="es_ES" />
 

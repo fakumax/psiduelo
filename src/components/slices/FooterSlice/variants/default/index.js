@@ -63,12 +63,6 @@ const Default = (slice) => {
               <Icon icon={faSpotify} />
             </Link>
           </IconsGroup>
-          <div className="ftvilm">
-            <p>
-              WhatsApp para sesiones:{' '}
-              <a href={`tel:${WHATSAPP_E164}`}>{WHATSAPP_E164}</a>
-            </p>
-          </div>
         </div>
       </div>
 

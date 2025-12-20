@@ -7,7 +7,8 @@ const ResendEmail = async (req, res) => {
   console.log('REQUEST----->', req.body);
   const { name, email, phone, message, residence } = req.body;
   const { data, error } = await resend.emails.send({
-    from: 'Web PSIDUELO <onboarding@resend.dev>',
+    from: 'Web PSIDUELO <no-reply@psiduelo.com>',
+    replyTo: 'psiduelo@gmail.com',
     to: ['psiduelo@gmail.com'],
     subject: 'Mensaje nuevo | PSIDUELO',
     react: ResendEmailTemplate({
