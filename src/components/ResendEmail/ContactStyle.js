@@ -4,13 +4,13 @@ export const ContainerField = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 
   label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.primary};
-    font-family: var(--font-skeptisgraph);
-    opacity: 0.9;
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-style: italic;
   }
   input,
   textarea {
@@ -18,26 +18,27 @@ export const ContainerField = styled.div`
     flex: 1;
     border: none;
     border-bottom: 1px solid rgba(139, 109, 76, 0.3);
-    transition: all 0.3s ease;
-    height: 42px;
+    transition: border-color 0.3s ease;
+    height: 40px;
     width: 100%;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     font-size: 0.95rem;
-    padding: 0 8px;
+    padding: 0 4px;
     background-color: transparent;
     border-radius: 0;
   }
   textarea {
-    height: 100px;
-    padding: 12px 8px;
-    resize: vertical;
-    min-height: 80px;
+    field-sizing: content;
+    min-height: 40px;
+    max-height: 200px;
+    padding: 10px 4px;
+    resize: none;
+    height: auto;
   }
   input:focus,
   textarea:focus {
     outline: none;
     border-bottom-color: ${(props) => props.theme.colors.primary};
-    background-color: rgba(255, 255, 255, 0.5);
   }
   input::placeholder,
   textarea::placeholder {
@@ -52,7 +53,7 @@ export const ContainerField = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     label {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
     }
     input, textarea {
       font-size: 1rem;
@@ -64,13 +65,13 @@ export const ContainerFieldMessage = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 
   label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.primary};
-    font-family: var(--font-skeptisgraph);
-    opacity: 0.9;
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-style: italic;
   }
   input,
   textarea {
@@ -78,25 +79,26 @@ export const ContainerFieldMessage = styled.div`
     flex: 1;
     border: none;
     border-bottom: 1px solid rgba(139, 109, 76, 0.3);
-    transition: all 0.3s ease;
-    height: 42px;
+    transition: border-color 0.3s ease;
+    height: 40px;
     width: 100%;
     font-family: ${(props) => props.theme.typography.fontFamily_crimson};
     font-size: 0.95rem;
-    padding: 0 8px;
+    padding: 0 4px;
     background-color: transparent;
   }
   textarea {
-    height: 100px;
-    padding: 12px 8px;
-    resize: vertical;
-    min-height: 80px;
+    field-sizing: content;
+    min-height: 40px;
+    max-height: 200px;
+    padding: 10px 4px;
+    resize: none;
+    height: auto;
   }
   input:focus,
   textarea:focus {
     outline: none;
     border-bottom-color: ${(props) => props.theme.colors.primary};
-    background-color: rgba(255, 255, 255, 0.5);
   }
   div {
     position: relative;
@@ -106,10 +108,8 @@ export const ContainerFieldMessage = styled.div`
   }
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-column: 1 / span 2;
-    max-width: 60%;
-    margin: 0 auto;
     label {
-      font-size: 1.6rem;
+      font-size: 1.1rem;
     }
   }
 `;
@@ -128,20 +128,17 @@ export const StyledButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  padding: 14px 32px;
+  padding: 12px 28px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 220px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin: 2.5rem auto 0;
-  background: linear-gradient(135deg, 
-    ${(props) => props.theme.colors.titleBrown} 0%, 
-    ${(props) => props.theme.colors.primary} 100%
-  );
-  color: ${(props) => props.theme.colors.bgColorWhite};
+  margin: 1.5rem auto 0;
+  background-color: #8B6D4C;
+  color: white;
   font-family: ${(props) => props.theme.typography.fontFamily_crimson};
   font-weight: 500;
   transition: all 0.3s ease;
@@ -168,15 +165,13 @@ export const StyledButton = styled.button`
 `;
 
 export const FormContact = styled.form`
-  gap: 1.75rem;
+  gap: 1.25rem;
   display: grid;
   grid-template-columns: 1fr;
-  padding: 0.5rem;
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 2.5rem;
-    padding: 1rem;
+    gap: 1.5rem 2rem;
   }
 `;
 
