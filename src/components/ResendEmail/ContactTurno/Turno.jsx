@@ -1,8 +1,8 @@
 import { FormSchema } from '@/components/ResendEmail/ContactTurno/FormSchema.js';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
+import dynamic from 'next/dynamic';
 import {
   ContainerField,
   FormStyle,
@@ -10,10 +10,24 @@ import {
   StyleSpan,
   StyledButton,
   Spinner,
+  StatusMessage,
+  TurnstileWrapper,
 } from './ContactStyle';
 
+const Turnstile = dynamic(
+  () => import('@marsidev/react-turnstile').then((mod) => mod.Turnstile),
+  { ssr: false }
+);
+
 const Turno = ({ text }) => {
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [status, setStatus] = useState({ type: null, message: '' });
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const [mounted, setMounted] = useState(false);
+  const turnstileRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const {
     register,
@@ -29,6 +43,13 @@ const Turno = ({ text }) => {
   });
 
   const onSubmit = async (data) => {
+    if (!turnstileToken) {
+      setStatus({ type: 'error', message: '✗ Por favor, completá la verificación de seguridad.' });
+      return;
+    }
+    
+    setStatus({ type: null, message: '' });
+    
     try {
       const response = await fetch('/api/ResendEmailTurno', {
         method: 'POST',
@@ -45,6 +66,7 @@ const Turno = ({ text }) => {
           toldanyone: data.toldanyone,
           receivedtherapy: data.receivedtherapy,
           message: data.mensaje,
+          turnstileToken,
         }),
       });
 
@@ -52,16 +74,29 @@ const Turno = ({ text }) => {
 
       if (responseData.success) {
         console.log({ data: responseData.data });
-        toast.success('Mensaje enviado. ¡Muchas gracias!');
-        setIsSuccess(true);
+        setStatus({ 
+          type: 'success', 
+          message: '✓ ¡Solicitud enviada correctamente! Nos pondremos en contacto pronto para coordinar tu turno.' 
+        });
         reset();
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
         return;
       }
 
       console.log(responseData.error);
-      toast.error('Ha sucedido un error!');
+      setStatus({ 
+        type: 'error', 
+        message: '✗ No se pudo enviar la solicitud. Por favor, intentá de nuevo.' 
+      });
+      turnstileRef.current?.reset();
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);
+      setStatus({ 
+        type: 'error', 
+        message: '✗ Error de conexión. Por favor, intentá de nuevo más tarde.' 
+      });
+      turnstileRef.current?.reset();
     }
   };
 
@@ -154,18 +189,42 @@ const Turno = ({ text }) => {
           </div>
         </ContainerField>
 
+        <TurnstileWrapper>
+          {mounted && (
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={process.env.NODE_ENV === 'development' 
+                ? '1x00000000000000000000AA' 
+                : process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              onSuccess={setTurnstileToken}
+              onError={() => setTurnstileToken(null)}
+              onExpire={() => setTurnstileToken(null)}
+              options={{
+                theme: 'light',
+                size: 'normal',
+              }}
+            />
+          )}
+        </TurnstileWrapper>
+
         <StyledButton 
-          disabled={isSubmitting || isSuccess} 
-          $isSuccess={isSuccess}
+          disabled={isSubmitting || status.type === 'success' || !turnstileToken} 
+          $isSuccess={status.type === 'success'}
         >
           {isSubmitting ? (
             <><Spinner /> Enviando...</>
-          ) : isSuccess ? (
+          ) : status.type === 'success' ? (
             '✓ Enviado'
           ) : (
             text.buttonsend
           )}
         </StyledButton>
+        
+        {status.message && (
+          <StatusMessage $success={status.type === 'success'} $error={status.type === 'error'}>
+            {status.message}
+          </StatusMessage>
+        )}
       </FormStyle>
     </>
   );

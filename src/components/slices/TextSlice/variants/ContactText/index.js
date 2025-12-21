@@ -20,13 +20,13 @@ const ContactText = (slice) => {
       <Container>
         <FormWrapper>
           <PaperBorderTop>
-            <PrismicNextImage field={slice.primary.imageborder} />
+            <PrismicNextImage field={slice.primary.imageborder} fallbackAlt="" />
           </PaperBorderTop>
           <FormSection>
             <ContactForm text={slice.primary} />
           </FormSection>
           <PaperBorderBottom>
-            <PrismicNextImage field={slice.primary.imageborder} />
+            <PrismicNextImage field={slice.primary.imageborder} fallbackAlt="" />
           </PaperBorderBottom>
         </FormWrapper>
         <SideSection>

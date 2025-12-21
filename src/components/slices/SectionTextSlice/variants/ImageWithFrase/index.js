@@ -13,12 +13,13 @@ const ImageWithFrase = (slice) => {
             field={imagecentral}
             width={imagecentral.dimensions.width}
             height={imagecentral.dimensions.height}
+            fallbackAlt=""
           />
         </ContainerImage>
       </ContainerTitle>
       <ContainerText>
         <PrismicRichText field={textfirst} />
-        <PrismicNextImage field={imageright} />
+        <PrismicNextImage field={imageright} fallbackAlt="" />
       </ContainerText>
     </Wrapper>
   );

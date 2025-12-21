@@ -1,7 +1,13 @@
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
+import { useState } from 'react';
 import {
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionWrapper,
   BodyContainer,
+  ContactInfo,
   ContainerImagePlant,
   Details,
   Frase,
@@ -18,11 +24,13 @@ import {
   faSpotify,
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
 const Default = (slice) => {
   const { description, title, logo, imageplant } = slice.primary;
+  const [isOpen, setIsOpen] = useState(false);
   const WHATSAPP_E164 = "+5493765529404";
   const WHATSAPP_DIGITS = WHATSAPP_E164.replace("+", "");
   return (
@@ -44,6 +52,42 @@ const Default = (slice) => {
               <PrismicRichText field={description} />
             </Details>
           </BodyContainer>
+
+          <AccordionWrapper>
+            <AccordionItem>
+              <AccordionHeader onClick={() => setIsOpen(!isOpen)} $isOpen={isOpen}>
+                <span>Contacto</span>
+                <FontAwesomeIcon icon={faChevronDown} className="chevron" />
+              </AccordionHeader>
+              <AccordionContent $isOpen={isOpen}>
+                <ContactInfo>
+                  <div className="contact-item">
+                    <strong>Correo:</strong>
+                    <a href="mailto:psiduelo@gmail.com">psiduelo@gmail.com</a>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Teléfono:</strong>
+                    <a href={`https://wa.me/${WHATSAPP_DIGITS}`} target="_blank" rel="noopener noreferrer">
+                      +54 9 376 552-9404
+                    </a>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Horario de atención:</strong>
+                    <span>Lunes a Viernes de 9:00 a 18:00 hs</span>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Modalidad:</strong>
+                    <span>Atención Online</span>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Ubicación:</strong>
+                    <span>Posadas, Misiones, Argentina</span>
+                  </div>
+                </ContactInfo>
+              </AccordionContent>
+            </AccordionItem>
+          </AccordionWrapper>
+
           <IconsGroup>
             <Link
               href={`https://wa.me/${WHATSAPP_DIGITS}`}

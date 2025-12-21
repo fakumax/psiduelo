@@ -19,6 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@hookform/resolvers": "^3.6.0",
+    "@marsidev/react-turnstile": "^1.4.0",
     "@prismicio/client": "^7.5.0",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.6.0",

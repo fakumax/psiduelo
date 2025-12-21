@@ -200,3 +200,44 @@ export const LinkToOtherForm = styled.a`
     font-size: 1.2em;
   }
 `;
+
+export const StatusMessage = styled.div`
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease;
+  
+  ${(props) => props.$success && `
+    background-color: rgba(72, 169, 110, 0.1);
+    color: #2d8a54;
+    border: 1px solid rgba(72, 169, 110, 0.3);
+  `}
+  
+  ${(props) => props.$error && `
+    background-color: rgba(196, 92, 92, 0.1);
+    color: #c45c5c;
+    border: 1px solid rgba(196, 92, 92, 0.3);
+  `}
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+export const TurnstileWrapper = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+`;

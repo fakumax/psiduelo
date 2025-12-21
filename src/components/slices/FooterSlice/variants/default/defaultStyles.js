@@ -31,6 +31,87 @@ export const BodyContainer = styled.div`
   }
 `;
 
+export const AccordionWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+`;
+
+export const AccordionItem = styled.div`
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+export const AccordionHeader = styled.button`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  span {
+    font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+    font-size: 16px;
+    color: ${(props) => props.theme.colors.primary};
+    font-weight: 600;
+  }
+
+  .chevron {
+    font-size: 12px;
+    color: ${(props) => props.theme.colors.primary};
+    transition: transform 0.3s ease;
+    transform: ${(props) => (props.$isOpen ? 'rotate(180deg)' : 'rotate(0)')};
+  }
+`;
+
+export const AccordionContent = styled.div`
+  max-height: ${(props) => (props.$isOpen ? '300px' : '0')};
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: ${(props) => (props.$isOpen ? '0 16px 16px' : '0 16px')};
+`;
+
+export const ContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+
+    strong {
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+      font-size: 14px;
+      color: ${(props) => props.theme.colors.primary};
+    }
+
+    span, a {
+      font-family: ${(props) => props.theme.typography.fontFamily_crimson};
+      font-size: 14px;
+      color: ${(props) => props.theme.colors.textPrimary};
+    }
+
+    a {
+      color: ${(props) => props.theme.colors.primary};
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+`;
+
 export const IconsGroup = styled.div`
   width: 100%;
   display: flex;
