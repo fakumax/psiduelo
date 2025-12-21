@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
+import { useState, useRef, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { FormSchema } from '@/components/ResendEmail/FormSchema.js';
 import {
   ContainerField,
@@ -8,9 +9,25 @@ import {
   StyledButton,
   FormContact,
   ContainerFieldMessage,
+  StatusMessage,
+  TurnstileWrapper,
 } from './ContactStyle';
 
+const Turnstile = dynamic(
+  () => import('@marsidev/react-turnstile').then((mod) => mod.Turnstile),
+  { ssr: false }
+);
+
 const ContactForm = ({ text }) => {
+  const [status, setStatus] = useState({ type: null, message: '' });
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const [mounted, setMounted] = useState(false);
+  const turnstileRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
   const {
     register,
     handleSubmit,
@@ -21,6 +38,13 @@ const ContactForm = ({ text }) => {
   });
 
   const onSubmit = async (data) => {
+    if (!turnstileToken) {
+      setStatus({ type: 'error', message: '✗ Por favor, completá la verificación de seguridad.' });
+      return;
+    }
+    
+    setStatus({ type: null, message: '' });
+    
     try {
       const response = await fetch('/api/ResendEmail', {
         method: 'POST',
@@ -33,6 +57,7 @@ const ContactForm = ({ text }) => {
           phone: data.telefono,
           residence: data.residencia,
           message: data.mensaje,
+          turnstileToken,
         }),
       });
 
@@ -40,14 +65,28 @@ const ContactForm = ({ text }) => {
 
       if (responseData.success) {
         console.log({ data: responseData.data });
-        toast.success('Mensaje enviado. ¡Muchas gracias!');
+        setStatus({ 
+          type: 'success', 
+          message: '✓ ¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.' 
+        });
         reset();
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
         return;
       }
 
-      toast.error('Ha sucedido un error!');
+      setStatus({ 
+        type: 'error', 
+        message: '✗ No se pudo enviar el mensaje. Por favor, intentá de nuevo.' 
+      });
+      turnstileRef.current?.reset();
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);
+      setStatus({ 
+        type: 'error', 
+        message: '✗ Error de conexión. Por favor, intentá de nuevo más tarde.' 
+      });
+      turnstileRef.current?.reset();
     }
   };
 
@@ -94,9 +133,33 @@ const ContactForm = ({ text }) => {
           </div>
         </ContainerFieldMessage>
 
-        <StyledButton disabled={isSubmitting}>
-          {isSubmitting ? 'enviando' : 'Enviar'}
+        <TurnstileWrapper>
+          {mounted && (
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={process.env.NODE_ENV === 'development' 
+                ? '1x00000000000000000000AA' 
+                : process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              onSuccess={setTurnstileToken}
+              onError={() => setTurnstileToken(null)}
+              onExpire={() => setTurnstileToken(null)}
+              options={{
+                theme: 'light',
+                size: 'normal',
+              }}
+            />
+          )}
+        </TurnstileWrapper>
+
+        <StyledButton disabled={isSubmitting || status.type === 'success' || !turnstileToken}>
+          {isSubmitting ? 'Enviando...' : status.type === 'success' ? '✓ Enviado' : 'Enviar'}
         </StyledButton>
+        
+        {status.message && (
+          <StatusMessage $success={status.type === 'success'} $error={status.type === 'error'}>
+            {status.message}
+          </StatusMessage>
+        )}
       </FormContact>
     </>
   );

@@ -1,9 +1,16 @@
 import { ContactForm } from '@/components/ResendEmail/ContactForm.jsx';
 import { PrismicNextImage } from '@prismicio/next';
+import Link from 'next/link';
 import {
   Container,
-  ContainerImageBorderDown,
-  ContainerImageBorderUp,
+  FormWrapper,
+  FormSection,
+  PaperBorderTop,
+  PaperBorderBottom,
+  SideSection,
+  SideTitle,
+  SideText,
+  SideButton,
   Wrapper,
 } from './defaultStyles.js';
 
@@ -11,21 +18,26 @@ const ContactText = (slice) => {
   return (
     <Wrapper>
       <Container>
-        <ContainerImageBorderUp>
-          <PrismicNextImage
-            field={slice.primary.imageborder}
-            width={slice.primary.imageborder.dimensions.width}
-            height={slice.primary.imageborder.dimensions.height}
-          />
-        </ContainerImageBorderUp>
-        <ContactForm text={slice.primary} />
-        <ContainerImageBorderDown>
-          <PrismicNextImage
-            field={slice.primary.imageborder}
-            width={slice.primary.imageborder.dimensions.width}
-            height={slice.primary.imageborder.dimensions.height}
-          />
-        </ContainerImageBorderDown>
+        <FormWrapper>
+          <PaperBorderTop>
+            <PrismicNextImage field={slice.primary.imageborder} fallbackAlt="" />
+          </PaperBorderTop>
+          <FormSection>
+            <ContactForm text={slice.primary} />
+          </FormSection>
+          <PaperBorderBottom>
+            <PrismicNextImage field={slice.primary.imageborder} fallbackAlt="" />
+          </PaperBorderBottom>
+        </FormWrapper>
+        <SideSection>
+          <SideTitle>¿Querés comenzar tu proceso terapéutico?</SideTitle>
+          <SideText>
+            Reservá tu primera consulta y empezamos a trabajar en tu bienestar emocional.
+          </SideText>
+          <Link href="/reservar-turno" passHref legacyBehavior>
+            <SideButton>Reservar turno</SideButton>
+          </Link>
+        </SideSection>
       </Container>
     </Wrapper>
   );

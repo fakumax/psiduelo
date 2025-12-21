@@ -26,6 +26,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.6.0
         version: 3.9.0(react-hook-form@7.53.0(react@18.3.1))
+      '@marsidev/react-turnstile':
+        specifier: ^1.4.0
+        version: 1.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@prismicio/client':
         specifier: ^7.5.0
         version: 7.8.0
@@ -270,6 +273,12 @@ packages:
   '@lukeed/uuid@2.0.1':
     resolution: {integrity: sha512-qC72D4+CDdjGqJvkFMMEAtancHUQ7/d/tAiHf64z8MopFDmcrtbcJuerDtFceuAfQJ2pDSfCKCtbqoGBNnwg0w==}
     engines: {node: '>=8'}
+
+  '@marsidev/react-turnstile@1.4.0':
+    resolution: {integrity: sha512-3aR7mh4lATeayWt6GjWuYyLjM0GL148z7/ZQl0rLKGpDYIrWgoU2PYsdAdA9fzH+JysW3Q2OaPfHvv66cwcAZg==}
+    peerDependencies:
+      react: ^17.0.2 || ^18.0.0 || ^19.0
+      react-dom: ^17.0.2 || ^18.0.0 || ^19.0
 
   '@msgpack/msgpack@2.8.0':
     resolution: {integrity: sha512-h9u4u/jiIRKbq25PM+zymTyW6bhTzELvOoUd+AvYriWOAKpLGnIamaET3pnHYoI5iYphAHBI4ayx0MehR+VVPQ==}
@@ -2822,6 +2831,11 @@ snapshots:
   '@lukeed/uuid@2.0.1':
     dependencies:
       '@lukeed/csprng': 1.1.0
+
+  '@marsidev/react-turnstile@1.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@msgpack/msgpack@2.8.0': {}
 
