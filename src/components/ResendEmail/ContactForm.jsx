@@ -71,7 +71,9 @@ const ContactForm = ({ text }) => {
         });
         reset();
         setTurnstileToken(null);
-        turnstileRef.current?.reset();
+        if (turnstileRef.current && typeof turnstileRef.current.reset === 'function') {
+          turnstileRef.current.reset();
+        }
         return;
       }
 
@@ -79,14 +81,18 @@ const ContactForm = ({ text }) => {
         type: 'error', 
         message: '✗ No se pudo enviar el mensaje. Por favor, intentá de nuevo.' 
       });
-      turnstileRef.current?.reset();
+      if (turnstileRef.current && typeof turnstileRef.current.reset === 'function') {
+        turnstileRef.current.reset();
+      }
     } catch (error) {
       console.error('Error al enviar el correo electrónico', error);
       setStatus({ 
         type: 'error', 
         message: '✗ Error de conexión. Por favor, intentá de nuevo más tarde.' 
       });
-      turnstileRef.current?.reset();
+      if (turnstileRef.current && typeof turnstileRef.current.reset === 'function') {
+        turnstileRef.current.reset();
+      }
     }
   };
 
@@ -145,7 +151,7 @@ const ContactForm = ({ text }) => {
               onExpire={() => setTurnstileToken(null)}
               options={{
                 theme: 'light',
-                size: 'normal',
+                size: 'invisible',
               }}
             />
           )}
