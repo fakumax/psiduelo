@@ -81,7 +81,7 @@ const Default = (slice) => {
                   </div>
                   <div className="contact-item">
                     <strong>Ubicación:</strong>
-                    <span>Posadas, Misiones, Argentina</span>
+                    <span>Posadas - Misiones</span>
                   </div>
                 </ContactInfo>
               </AccordionContent>
