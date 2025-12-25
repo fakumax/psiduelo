@@ -2,6 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
+    html {
+      overflow-x: hidden;
+    }
+
     body {
 		margin: 0;
     box-sizing: border-box;
@@ -9,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 		max-width: 1600px;
  		margin: 0 auto;
 		min-height: 100vh;
+		overflow-x: hidden;
 		font-family: ${({ theme }) => theme.typography.fontFamily_crimson};
 		letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
 				h1 {
