@@ -160,7 +160,7 @@ export const ContainerImagePlant = styled.div`
   position: relative;
   display: flex;
   align-self: center;
-  bottom: 0px;
+  bottom: -25px;
 
   img {
     width: 100%;

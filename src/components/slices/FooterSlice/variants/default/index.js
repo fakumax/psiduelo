@@ -79,10 +79,6 @@ const Default = (slice) => {
                     <strong>Modalidad:</strong>
                     <span>Atención Online</span>
                   </div>
-                  <div className="contact-item">
-                    <strong>Ubicación:</strong>
-                    <span>Posadas - Misiones</span>
-                  </div>
                 </ContactInfo>
               </AccordionContent>
             </AccordionItem>
