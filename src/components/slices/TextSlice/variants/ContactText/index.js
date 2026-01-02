@@ -30,9 +30,9 @@ const ContactText = (slice) => {
           </PaperBorderBottom>
         </FormWrapper>
         <SideSection>
-          <SideTitle>¿Querés comenzar tu proceso terapéutico?</SideTitle>
+          <SideTitle>¿Necesitas acompañamiento para atravesar tu duelo?</SideTitle>
           <SideText>
-            Reservá tu primera consulta y empezamos a trabajar en tu bienestar emocional.
+            Reservá tu primera consulta y comencemos a trabajar en tu proceso de recuperación emocional.
           </SideText>
           <Link href="/reservar-turno" passHref legacyBehavior>
             <SideButton>Reservar turno</SideButton>
